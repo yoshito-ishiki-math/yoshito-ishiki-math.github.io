@@ -23,7 +23,7 @@ python3 -m http.server 8000
 - `yoshitostyle.css`: 全ページ共通の見た目
 - `yoshito.js`: 日本語・英語の表示切替
 
-`materials.html` は未完成なので、現在はホームページからリンクしていません。`index__2024_09.html` は古いトップページの保存用です。
+`materials.html` は未完成なので、現在はホームページからリンクしていません。
 
 ## 業績を追加する
 
