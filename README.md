@@ -20,10 +20,9 @@ python3 -m http.server 8000
 - `talks.html`: 講演一覧
 - `notes.html`: 数学メモ・ノート
 - `lecturenotes.html`: 講義ノート
+- `materials.html`: 学会アブストラクト・発表スライド
 - `yoshitostyle.css`: 全ページ共通の見た目
 - `yoshito.js`: 日本語・英語の表示切替
-
-`materials.html` は未完成なので、現在はホームページからリンクしていません。
 
 ## 業績を追加する
 
