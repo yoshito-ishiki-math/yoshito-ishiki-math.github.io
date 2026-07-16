@@ -43,6 +43,33 @@ a {
   line-height: 1.8;
 }
 
+.recent-papers-hint {
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.recent-papers-list {
+  max-height: 20rem;
+  margin-top: 0;
+  padding: 1rem 2.5rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-gutter: stable;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.recent-papers-list:focus {
+  outline: 2px solid #4676D7;
+  outline-offset: 2px;
+}
+
+.recent-papers-list li + li {
+  margin-top: 0.75rem;
+}
+
 .flex-list {
   display: flex;
   flex-wrap: wrap;
