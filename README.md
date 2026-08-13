@@ -21,6 +21,7 @@ python3 -m http.server 8000
 - `notes.html`: 数学メモ・ノート
 - `lecturenotes.html`: 講義ノート
 - `materials.html`: 学会アブストラクト・発表スライド
+- `ai-research-reports.html`: AI支援研究報告と版・引用情報
 - `yoshitostyle.css`: 全ページ共通の見た目
 - `yoshito.js`: 日本語・英語の表示切替
 

@@ -70,6 +70,72 @@ a {
   margin-top: 0.75rem;
 }
 
+.report-card {
+  margin: 1.5rem 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.report-summary {
+  padding: 1.25rem;
+  cursor: pointer;
+}
+
+.report-summary h2 {
+  display: inline;
+  margin: 0;
+  font-size: 1.35rem;
+}
+
+.report-summary:hover,
+.report-summary:focus-visible {
+  background-color: #f7f9ff;
+}
+
+.report-summary:focus-visible {
+  outline: 2px solid #4676D7;
+  outline-offset: 2px;
+}
+
+.report-details {
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid #ddd;
+}
+
+.report-meta {
+  padding-left: 1.25rem;
+}
+
+.citation-block {
+  position: relative;
+  margin: 0.75rem 0 1.5rem;
+}
+
+.citation-block pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.copy-button {
+  margin-bottom: 0.5rem;
+}
+
+.hash-value {
+  display: block;
+  padding: 0.75rem;
+  overflow-wrap: anywhere;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
 .flex-list {
   display: flex;
   flex-wrap: wrap;

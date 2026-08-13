@@ -11,4 +11,21 @@ function translation(argLang) {
   document.documentElement.lang = argLang;
 }
 
+// Copy citation text while keeping it selectable when JavaScript is unavailable.
+function copyText(elementId, button) {
+  const element = document.getElementById(elementId);
+
+  if (!element || !navigator.clipboard) {
+    return;
+  }
+
+  navigator.clipboard.writeText(element.textContent.trim()).then(function () {
+    const originalLabel = button.textContent;
+    button.textContent = "Copied";
+    window.setTimeout(function () {
+      button.textContent = originalLabel;
+    }, 1600);
+  });
+}
+
 translation("en");
