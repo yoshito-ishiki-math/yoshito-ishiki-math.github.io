@@ -12,20 +12,25 @@ function translation(argLang) {
 }
 
 // Copy citation text while keeping it selectable when JavaScript is unavailable.
-function copyText(elementId, button) {
+async function copyText(elementId, button) {
   const element = document.getElementById(elementId);
-
-  if (!element || !navigator.clipboard) {
-    return;
+  let status = button.parentElement.querySelector('.copy-status');
+  if (!status) {
+    status = document.createElement('p');
+    status.className = 'copy-status';
+    status.setAttribute('role', 'status');
+    button.parentElement.appendChild(status);
   }
-
-  navigator.clipboard.writeText(element.textContent.trim()).then(function () {
-    const originalLabel = button.textContent;
-    button.textContent = "Copied";
-    window.setTimeout(function () {
-      button.textContent = originalLabel;
-    }, 1600);
-  });
+  const japanese = document.documentElement.lang === 'ja';
+  try {
+    if (!element || !navigator.clipboard) throw new Error('Clipboard unavailable');
+    await navigator.clipboard.writeText(element.textContent.trim());
+    status.textContent = japanese ? 'コピーしました。' : 'Copied.';
+  } catch {
+    status.textContent = japanese
+      ? 'コピーできませんでした。引用文を選択してコピーしてください。'
+      : 'Could not copy. Please select and copy the citation text.';
+  }
 }
 
 translation("en");
