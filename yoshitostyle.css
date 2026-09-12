@@ -43,6 +43,25 @@ a {
   line-height: 1.8;
 }
 
+.site-nav, .page-toc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.site-nav [aria-current="page"] {
+  font-weight: bold;
+  text-decoration-thickness: 2px;
+}
+
+[id] {
+  scroll-margin-top: 1rem;
+}
+
 .recent-papers-hint {
   margin-bottom: 0.5rem;
   color: #555;

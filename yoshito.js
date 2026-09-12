@@ -1,5 +1,6 @@
 // Show the selected language and hide the other language.
 function translation(argLang) {
+  if (argLang !== 'en' && argLang !== 'ja') return;
   const elements = document.getElementsByClassName("cngLang");
 
   for (let i = 0; i < elements.length; i++) {
@@ -8,7 +9,12 @@ function translation(argLang) {
   }
 
   // Tell browsers and screen readers which language is currently displayed.
-  document.documentElement.lang = argLang;
+  if (elements.length) document.documentElement.lang = argLang;
+  try {
+    localStorage.setItem('site-language', argLang);
+  } catch {
+    // Language switching also works when browser storage is unavailable.
+  }
 }
 
 // Copy citation text while keeping it selectable when JavaScript is unavailable.
@@ -33,4 +39,11 @@ async function copyText(elementId, button) {
   }
 }
 
-translation("en");
+let initialLanguage = 'en';
+try {
+  const savedLanguage = localStorage.getItem('site-language');
+  if (savedLanguage === 'en' || savedLanguage === 'ja') initialLanguage = savedLanguage;
+} catch {
+  // Keep the default when browser storage is unavailable.
+}
+translation(initialLanguage);
