@@ -1,0 +1,30 @@
+% Vector reconstruction of the original diagram, retaining its labels and incidences.
+\begin{tikzpicture}[x=.95cm,y=.95cm,line width=.55pt,font=\footnotesize]
+\draw (0,0) rectangle (12,12);
+\foreach \x/\y/\lab in {7/1/0,1/1/1,1/7/2,7/7/3}{\draw (\x,\y) rectangle +(4,4);}
+\draw (6,0)--(9,1) (7,3)--(5,3) (3,5)--(3,7) (5,9)--(7,9) (9,7)--(12,6);
+\node at (6,6){$Q$};\node at (3,9){$Q_2$};\node at (9,9){$Q_3$};
+\node[below] at (6,0){$q$};\node[right] at (12,6){$q'$};
+\node[below] at (9,1){$q_0$};\node[above left] at (7,3){$q'_0$};
+\node[above right] at (5,3){$q_1$};\node[above right] at (3,5){$q'_1$};
+\node[below right] at (3,7){$q_2$};\node[above right] at (5,9){$q'_2$};
+\node[above left] at (7,9){$q_3$};\node[below] at (9,7){$q'_3$};
+\node[below] at (8,.65){$A_0$};\node[below] at (6,3){$A_1$};
+\node[right] at (3,6){$A_2$};\node[below] at (6,9){$A_3$};\node[below] at (10.4,6.55){$A_4$};
+\foreach \x/\y/\lab in {7.333/1.333/00,9.333/1.333/01,9.333/3.333/02,7.333/3.333/03,3.333/3.333/10,1.333/1.333/12,1.333/3.333/13}{
+\draw (\x,\y) rectangle +(1.333,1.333);\node at (\x+.666,\y+.666){$Q_{\lab}$};}
+\draw (3.333,1.333) rectangle (4.666,2.666);
+\draw (9,1)--(8,1.333) (8.666,2)--(9.333,2) (10,2.666)--(10,3.333) (9.333,4)--(8.666,4) (8,3.333)--(7,3);
+\node at (9,3){$Q_0$};\node[below] at (8,1.333){$q_{00}$};
+\node[above right,inner sep=1pt] at (8.666,2){$q'_{00}$};
+\node[below right,inner sep=1pt] at (8,3.333){$q'_{03}$};
+\node[anchor=west,inner sep=.3pt,font=\scriptsize] at (9.15,1.18){$A_{00}$};
+\node[below,inner sep=1pt] at (9,2){$A_{01}$};
+\node[right,inner sep=1pt] at (10,3){$A_{02}$};
+\node[below,inner sep=1pt] at (9,4){$A_{03}$};
+\node[below,inner sep=1pt] at (7.55,3.18){$A_{04}$};
+\draw (5,3)--(4.666,4) (4,3.333)--(4,2.666) (3.333,2)--(2.666,2) (2,2.666)--(2,3.333) (2.666,4)--(3,5);
+\node at (3,3){$Q_1$};\node[right,inner sep=1pt] at (4.8,3.8){$A_{10}$};
+\foreach \x/\y in {3.444/2.111,4.111/2.111,4.111/1.444,3.444/1.444}{\draw (\x,\y) rectangle +(.444,.444);}
+\draw (4,2.666)--(3.666,2.555) (3.888,2.333)--(4.111,2.333) (4.333,2.111)--(4.333,1.888) (4.111,1.666)--(3.888,1.666) (3.666,1.888)--(3.333,2);
+\end{tikzpicture}

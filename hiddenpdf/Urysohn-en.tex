@@ -1,0 +1,1207 @@
+% English translation of ../Urysohn/Urysohn-fr.tex.
+% Formula contents, numbering, and alignment follow the French TeX.
+% See TRANSLATION-NOTES.md in this directory.
+\documentclass[a4paper,12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[mathscr]{eucal}
+\pagestyle{plain}
+\newcommand{\fais}{\mathfrak{F}}
+\newcommand{\iso}{\mathfrak{I}}
+\newcommand{\srcpage}[1]{} % Original printed-page boundary.
+\setlength{\emergencystretch}{2em}
+\begin{document}
+\title{On a universal metric space}
+\author{\textsc{Posthumous memoir of Paul Urysohn,}\\
+\textsc{edited by Paul Alexandroff (Moscow).}}
+\maketitle
+\srcpage{43}
+\section*{I. --- Preliminaries.}
+\paragraph{1.}
+By a \textit{metric space}, or a \textit{class} $(\mathscr{D})$,\footnote{The very important notion of a metric space is due to Mr.~Fréchet. He first introduced it in 1906 under another name, which was subsequently replaced by the designation ``class $(\mathscr{D})$.'' The term ``metric space'' was proposed by Mr.~Hausdorff.}
+we mean a set consisting of elements of an entirely arbitrary nature, such that for any two elements $x$ and $y$ of this set a nonnegative number $\rho(x,y)$ is defined, called the \textit{distance} between the two \textit{points} $x$ and $y$ of the metric space, and satisfying the following conditions:
+
+$1^\circ$ $\rho(x,y)=0$ if and only if the two elements $x$ and $y$ are identical;
+
+$2^\circ$ $\rho(x,y)=\rho(y,x)$;
+
+$3^\circ$ For any three points $x$, $y$, $z$ of the given metric space, we always have
+\[
+\rho(x,y)+\rho(y,z)\geqq\rho(x,z).
+\]
+\paragraph{2.}
+Let $E$ be a metric space and $A$ any subset of points of $E$. Let $x$ denote an arbitrary point of $E$, belonging or not belonging to $A$. With $x$ fixed, let $y$ denote any (variable) point of $A$, and consider the set of all nonnegative numbers $\rho(x,y)$ obtained by taking each point of $A$ in turn as $y$. The infimum of this set of nonnegative numbers is itself a nonnegative number, which we shall denote by $\rho(x,A)$ and call the \textit{distance between the point $x$ and the set $A$}. It is clear
+\srcpage{44}
+that if $x$ belongs to $A$, the distance $\rho(x,A)$ is zero, since the infimum in question is then attained and equals $\rho(x,x)=0$.
+
+However, for $\rho(x,A)$ to be zero it is not necessary that $x$ be a point of $A$: we see at once that the equality $\rho(x,A)=0$ means precisely that there are points of $A$ (coinciding or not coinciding with $x$) whose distance from $x$ is as small as desired. Now a point $x$ (belonging or not belonging to $A$) is called an \textit{accumulation point of $A$} if there are points of $A$ \textit{different} from $x$ whose distance from $x$ is as small as desired.
+
+The set of all points $x$ of the space $E$ such that $\rho(x,A)=0$ is called \textit{the closure of the set $A$} and will henceforth be denoted by $\overline{A}$. Clearly, $\overline{A}$ consists of all the points of $A$ and all the accumulation points of $A$. It is easy to see that $\overline{A}$ is always a closed set.
+
+We shall always denote by $A-B$ (where $A$ and $B$ are any two sets, each of which may reduce to a single point or even to the empty set) the set of all points of $A$ that do not belong to $B$ (this definition does not in any way assume that $B$ is contained in $A$).
+
+With this definition understood, we see at once that $x$ is an accumulation point of $A$ if and only if $\rho(x,A-x)=0$. (If $x$ does not belong to $A$, we have $A-x=A$.)
+
+Finally, we would obtain the same definition of accumulation points by proceeding as follows. Call the set of all points of $E$ whose distance from $x$ is less than $\varepsilon$ the \textit{sphere with center $x$ and radius $\varepsilon$}, and denote it by $S(x,\varepsilon)$ ($x$ is any point of the metric space $E$, and $\varepsilon$ is an arbitrary positive number). By a \textit{neighborhood} of a point $x$ we mean any sphere with this point as its center. A point $x$ is then an accumulation point of a set $A$ (situated in $E$) if every neighborhood of this point contains at least one point of $A$ other than $x$ itself [every neighborhood $S(x,\varepsilon)$ then contains infinitely many points of $A$, as is immediately apparent].
+
+Once the notion of an accumulation point has been defined, the notions of a closed set, an open set ($=$ the complement of a closed set), a perfect set, etc., are immediate. Among these elementary notions we mention only that of a set dense
+\srcpage{45}
+in a space: a set $A$ contained in the metric space $E$ is said to be dense in $E$ if $\overline{A}=E$.
+
+\paragraph{3.}
+An infinite set $A$ of points of $E$ is said to \textit{converge}\footnote{F.~Hausdorff, \textit{Grundz\"uge der Mengenlehre}, Leipzig, Veit, 1914, p.~232. This book will henceforth be referred to simply as \textit{Hausdorff}.}
+to the point $x$ if every infinite subset of $A$ (and hence $A$ itself) has $x$ as an accumulation point. It is easily proved that $A$ converges to $x$ if and only if, for every $\varepsilon>0$, $S(x,\varepsilon)$ contains all but possibly finitely many points of $A$. It is also elementary to show that, in a metric space, no set can converge to two points, and that every convergent set is countable; the latter fact allows us to speak of \textit{convergent sequences}
+\begin{equation}\tag{1}\label{u:eq1}
+a_1,a_2,\dots,a_n,\dots
+\end{equation}
+of points of $E$.
+
+An important remark must nevertheless be made to avoid any misunderstanding. When we speak of a convergent set, we always suppose that it consists of pairwise distinct points. If, on the other hand, \textit{a sequence} (1) of points of $E$ is given, we do not in general impose the restriction just mentioned. We must then specify what is meant by saying that the sequence (1) converges to the point $a$.
+
+For the moment, we shall adopt Mr.~Fréchet's definition and say that the sequence (1) converges to $a$ if the sequence of nonnegative numbers $\rho(a,a_n)$ tends to zero. We see at once that a sequence in which each group of mutually coincident points is finite converges if and only if the \textit{set} of its points is itself convergent; if, on the contrary, the sequence (1) contains a subsequence of mutually coincident points, convergence of (1) in Mr.~Fréchet's sense simply means that, from some value of $n$ onward, all the elements $a_n$ represent the same point of $E$, which is then the point $a$ itself (the limit point of the convergent sequence).
+
+On the other hand, if a \textit{set} $A$ converges to the point $x$,
+\srcpage{46}
+we obtain a sequence converging to $x$ by numbering the points of $A$ in any way, subject only to the condition that no single point of $A$ is ever assigned infinitely many different numbers.
+
+\paragraph{4.}
+If a sequence (1) of points of $E$ converges, Cauchy's convergence criterion is necessarily satisfied: for every $\varepsilon>0$ there is an integer $m$ such that $\rho(a_p,a_q)<\varepsilon$ for all integers $p$ and $q$ greater than $m$. Calling any sequence (1) that satisfies Cauchy's convergence criterion a \textit{fundamental sequence}, we can say that every convergent sequence is fundamental. A particularly important class of metric spaces is the class for which the converse of the last proposition holds: this is the class of complete metric spaces. Thus a metric space is said to be \textit{complete} if every fundamental sequence in it converges.\footnote{In this work we consider the form of the notion of a complete space that might be called its metric form, referring to a \textit{space given as such}, that is, with its distances specified. Mr.~Fréchet (to whom the notion of a complete space is due) considers the question from a much more general standpoint, which offers advantages especially in many topological investigations.
+
+Mr.~Fréchet calls a metric space complete if, among all definitions of distance \textit{giving rise to the same accumulation points}, at least one satisfies Cauchy's convergence criterion.
+
+In Mr.~Fréchet's conception, a metric space is considered as a topological object, that is, as a representative of a topological class of spaces (pairwise homeomorphic).
+
+In any \textit{topological theory}, this is indeed the only consistent standpoint; but in the present work, devoted exclusively to metric properties, it is preferable to consider the more specific meaning of ``complete'' that we have adopted here and that is due to Mr.~Hausdorff.}
+
+We owe the following remarkable result to Mr.~Hausdorff:
+
+To any metric space $E$, one can adjoin (and in only one way) a certain set of elements so as to obtain a new space $\widetilde{E}$ satisfying the following conditions:
+
+$1^\circ$ The set of all points of $E$ forms a dense subset of $\widetilde{E}$, and the distance between any two points of $E$ is preserved in $\widetilde{E}$;
+\srcpage{47}
+
+$2^\circ$ The space $\widetilde{E}$ is complete.
+
+\paragraph{5.}
+The space $\widetilde{E}$ is obtained as follows:
+
+Let
+\begin{equation}\tag{1}
+a_1,a_2,\dots,a_n,\dots
+\end{equation}
+and
+\begin{equation}\tag{2}
+b_1,b_2,\dots,b_n,\dots
+\end{equation}
+be two fundamental sequences of points of $E$. Following Mr.~Hausdorff, we shall say that the two sequences (1) and (2) are \textit{confinal} if $\rho(a_n,b_n)$ tends to zero as $\frac{1}{n}$ does.
+
+The following properties of fundamental sequences are immediate:
+
+$1^\circ$ A fundamental sequence is either convergent or divergent ($=$ having no accumulation point);
+
+$2^\circ$ If a fundamental sequence is convergent (respectively, divergent), every confinal sequence has the same property;
+
+$3^\circ$ Two sequences confinal with a third are confinal with each other.
+
+The last property allows us to divide the set of fundamental sequences into bundles, declaring that two sequences belong to the same bundle if they are confinal.
+
+Consider any bundle $\fais$ of fundamental sequences. Only two cases are possible:
+
+\textit{a.} All the sequences forming the bundle $\fais$ converge to the same point $a_{\fais}$ of $E$;
+
+\textit{b.} All the sequences forming the bundle $\fais$ diverge.
+
+In case \textit{b}, we can create a new mathematical object (a point of $\widetilde{E}$ not belonging to $E$), which we denote by $\alpha_{\fais}$.
+
+We shall form the space $\widetilde{E}$ from the $a_{\fais}$ (whose set clearly coincides with $E$) and the $\alpha_{\fais}$ by defining distances as follows:
+\srcpage{48}
+
+$1^\circ$ Between $a_{\fais_1}$ and $a_{\fais_2}$ we retain the distance that these two points had in $E$;
+
+$2^\circ$ Consider a point $a_{\fais}$ of $E$ and ``a point $\alpha_{\fais_1}$ of $\widetilde{E}$ not belonging to $E$.'' Let $c_1,c_2,\dots,c_n,\dots$ be any sequence in the bundle $\fais_1$ (defining $\alpha_{\fais_1}$). Put
+\[
+\underset{\text{(in $\widetilde{E}$)}}{\rho(a_{\fais},\alpha_{\fais_1})}
+=\lim_{n\to\infty}\underset{\text{(in $E$)}}{\rho(a_{\fais},c_n)}
+\]
+(it is immediately apparent that the limit exists and does not depend on the sequence chosen from those forming $\fais_1$);
+
+$3^\circ$ Similarly, given two ``points $\alpha_{\fais_1}$ and $\alpha_{\fais_2}$ of $\widetilde{E}$ not belonging to $E$,'' take any two sequences $c_1,c_2,\dots,c_n,\dots$ and $d_1,d_2,\dots,d_n,\dots$, belonging respectively to $\fais_1$ and $\fais_2$, and put
+\[
+\underset{\text{(in $\widetilde{E}$)}}{\rho(\alpha_{\fais_1},\alpha_{\fais_2})}
+=\lim_{n\to\infty}\underset{\text{(in $E$)}}{\rho(c_n,d_n)}.
+\]
+\textit{It is easy to see} that $\widetilde{E}$ is a metric space satisfying all the conditions mentioned (for the proof, consult Chapter VIII of Mr.~Hausdorff's cited book).
+
+\paragraph{6.}
+Only the uniqueness of the space $\widetilde{E}$ (the space $E$ being given, of course) perhaps requires some explanation.
+
+For this purpose, let us introduce the following notions, which will be used constantly in what follows:
+
+We shall call any one-to-one correspondence between the points of two metric spaces $E_1$ and $E_2$ \textit{isometric} if it preserves distances (that is, we always have $\rho(x_1,y_1)=\rho(x_2,y_2)$ for any two pairs of corresponding points $x_1$ and $y_1$ of $E_1$ and $x_2$ and $y_2$ of $E_2$).
+
+Two metric spaces $E_1$ and $E_2$ will be called \textit{congruent} (or \textit{identical when considered as metric spaces}) if an isometric correspondence can be established between them.
+
+The uniqueness of $\widetilde{E}$ then follows from the following theorem, which is easy to verify:
+
+\textit{If there is an isometric correspondence $\iso_0$ between two
+\srcpage{49}
+sets $D_1$ and $D_2$ situated respectively in the complete metric spaces $E_1$ and $E_2$ and dense in those spaces, then there is an isometric correspondence between $E_1$ and $E_2$ agreeing with $\iso_0$ on $D_1$ and $D_2$.}
+
+First observe that to every bundle of fundamental sequences in $D_1$ there corresponds isometrically a bundle of fundamental sequences in $D_2$. Since $E_1$ and $E_2$ are complete, each bundle corresponds to a point of $E_1$ or $E_2$ (the common limit point of all sequences in the bundle). Thus it suffices to associate with each point $a_{\fais_1}$ of $E_1$ the point $a_{\fais_2}$ of $E_2$ (where $\fais_1$ and $\fais_2$ are two bundles corresponding under the isometric representation of $D_1$ onto $D_2$).
+
+The correspondence $\iso$ thus obtained clearly associates with every point\footnote{It suffices to observe that to every point $x$ of a metric space $E$ there corresponds a bundle $\fais_x(D)$ of sequences converging to that point and consisting of points of any set $D$ dense in $E$.}
+of either space $E_1$ or $E_2$ one and only one point of the other space.
+
+Moreover, this correspondence is isometric. Indeed, let $a^1_{\fais_1}$ and $a^1_{\fais_1^*}$ be two points of $E_1$ (belonging or not belonging to $D_1$), and let $a^2_{\fais_2}$ and $b^2_{\fais_2^*}$ be the corresponding points of $E_2$. Let $a_1^i,a_2^i,\dots,a_n^i,\dots$ and $a_1^{*i},a_2^{*i},\dots,a_n^{*i},\dots$ ($i=1,2$) be sequences selected from $\fais_i$ and $\fais_i^*$ respectively, subject to the condition that $a_n^1$ (or $a_n^{*1}$) corresponds under $\iso_0$, for every $n$, to $a_n^2$ (or $a_n^{*2}$, respectively).
+
+We then have
+\[
+\rho(a_n^1,a_n^{*1})=\rho(a_n^2,a_n^{*2}),
+\]
+\[
+\rho(a^1_{\fais_1},a^1_{\fais_2^*})
+=\lim_{n\to\infty}\rho(a_n^1,a_n^{*1})
+=\lim_{n\to\infty}\rho(a_n^2,a_n^{*2})
+=\rho(a^2_{\fais_2},a^2_{\fais_2^*}).
+\]
+\hfill \mbox{Q. E. D.}\footnote{Further details can be found in Mr.~Hausdorff's book; the argument above simply reproduces the arguments in Section~8 of Chapter VIII of that book.}
+
+We shall make many applications of this elementary proposition in the present work.
+
+\srcpage{50}
+\section*{II. --- Formulation of the problem.}
+\paragraph{7.}
+The result of Mr.~Hausdorff discussed in Sections~4--6 can be stated as follows:
+
+\textit{Every metric space $E$ is contained isometrically in one and only one complete metric space $\widetilde{E}$, subject to the condition that $E$ be dense in $\widetilde{E}$.}
+
+The uniqueness of $\widetilde{E}$ implies that we may regard the passage from any metric space $E$ to the complete space $\widetilde{E}$ as a well-defined operation.
+
+In accordance with the standpoint adopted in this work, we must generalize slightly the notion expressed by saying that one metric space is contained (isometrically) in another. Indeed, since the nature of the elements forming a metric space lies entirely outside our considerations (two congruent metric spaces being considered identical), it is appropriate to say that a metric space $E_1$ is contained in a metric space $E_2$ if $E_2$ contains an isometric image of $E_1$. The words ``isometrically'' are now unnecessary, since we consider no other way in which one space might be contained in another.
+
+We thus arrive naturally at the following general problem:
+
+\textit{Does a \textup{\textsc{universal}} metric space, that is, one containing every other metric space, exist?}
+
+\paragraph{8.}
+We see at once that the answer to this problem, posed in full generality, is negative. Indeed, suppose that a universal metric space $W$ of cardinality $\mu$ exists. It is easy to construct a metric space $E$ (even a connected one) of cardinality at least $\mu^{\mu}$, and hence greater than $\mu$. To do this, it suffices to consider a set of cardinality $\mu^{\mu}$ of copies of a straight line segment $[a,b]$ of length $1$, that is, a set of cardinality $\mu^{\mu}$ of metric spaces $J_\gamma=[a_\gamma,b_\gamma]$ congruent to
+\srcpage{51}
+this segment, with the index $\gamma$ ranging over a set of cardinality $\mu^{\mu}$.
+
+In this set, identify all the ``points'' $a_\gamma$, denote the single point thus obtained by $a$, and put, for two points $x,y$ belonging to different $J_\gamma$,
+\[
+\rho(x,y)=\overline{ax}+\overline{ay}
+\]
+(where $\overline{ax}$ denotes the distance between $x$ and $a$ along the corresponding segment $J_\gamma$). For two points $x,y$ belonging to the same segment $J_\gamma$, retain the distance along that segment as their distance in $E$. The metric space $E$ thus obtained consists of a set of points whose cardinality is clearly at least $\mu^{\mu}$, and hence greater than that of $W$. The latter space therefore cannot contain $E$.
+
+\paragraph{9.}
+Nevertheless, the problem of a universal metric space retains its interest if suitably restricted.
+
+This restriction suggests itself: it is well known that, among metric spaces (complete or not), one class is of incomparably greater importance than any other. This is the class introduced by Mr.~Fréchet under the name of separable metric spaces, namely those possessing an at most countable dense subset.
+
+It is known that for separable metric spaces the problem that concerns us here has an affirmative answer. Indeed, Mr.~Fréchet proved in 1910 (\textit{Math. Annal.}, vol.~68, pp.~161--162) that, in the sense indicated in Section~7, all separable metric spaces are contained in one and the same metric space. The proof takes only a few lines, and this metric space, which he calls $D_\omega$, has a very simple definition. Each point $\xi$ of this space is defined by an infinite sequence of numerical coordinates $x_1,x_2,\dots$ (required only to be bounded as a whole for each point $\xi$), and the distance between two points is the supremum of the absolute differences of coordinates with the same index.
+
+But Mr.~Fréchet's space $D_\omega$ is not separable. Must we therefore leave the family of separable metric spaces to find
+\srcpage{52}
+a metric space containing them all isometrically? The purpose of this memoir is to show that this is unnecessary; more precisely, \textit{there exists a separable metric space $U$ containing every other separable metric space} (in the sense explained in Section~7).
+
+We shall see that this universal space\footnote{From now on we shall use this adjective in the restricted sense: universal $=$ containing every separable metric space.}
+has several remarkable properties and that, under certain additional conditions, it is the only space answering the question.
+
+The present memoir is devoted to these matters. The idea of studying them was suggested to the author by Mr.~Fréchet, who first posed and solved a particular question of the same kind,\footnote{See also Mr.~Fréchet's memoir in \textit{American Journ. of Math.}, 47, 1925, p.~10.}
+which will be formulated in Section~23 of this work.
+
+The results below were briefly presented in a note published in the \textit{Comptes rendus de l'Académie des Sciences de Paris} (vol.~180, p.~803, session of March 16, 1925).
+
+\section*{III. --- The space $U_0$ and its properties.}
+\paragraph{10.}
+The universal space $U$, whose construction and study are the subject of this work, will be obtained as the space $\widetilde{U}_0$, starting from a certain countable metric space $U_0$ that we shall construct.
+
+For this purpose, consider all systems consisting of an arbitrary finite number of positive rational numbers. We shall denote each of these systems by the letter $Q$ followed by a natural-number index (the set of all systems $Q$ being clearly countable).
+
+The rule for enumerating the systems $Q$ is as follows:
+
+First consider all systems $Q$ consisting of a single rational number, arranged in any order. Assign to them successively, as indices, all natural numbers not divisible by $4$.
+\srcpage{53}
+
+Now consider all systems $Q$ consisting of $p>1$ rational numbers, and number them successively using all natural numbers divisible by $2^p$ but not by $2^{p+1}$.
+
+Each system $Q$ thus receives a definite number, so that we obtain the following sequence containing all the systems $Q$:
+\begin{equation}\tag{3}
+Q_1,Q_2,\dots,Q_n,\dots.
+\end{equation}
+Since each $Q_n$ is a system consisting of a finite number $p_n$ of positive rational numbers, we may write
+\begin{equation}\tag{4}
+Q_n=[r_1^{(n)},r_2^{(n)},\dots,r_{p_n}^{(n)}],
+\end{equation}
+where $r_1^{(n)},r_2^{(n)},\dots,r_{p_n}^{(n)}$ are the rational numbers forming $Q_n$.
+
+By the chosen enumeration of the systems $Q$, we always have
+\begin{equation}\tag{5}
+n>p_n,
+\end{equation}
+if $n$ is greater than $1$, whereas
+\begin{equation}\tag{$5_1$}
+p_1=1
+\end{equation}
+($p_n$ always denotes the number of elements forming the system $Q_n$).
+
+This observation will shortly be very useful.
+
+We now denote by $U_0$ the metric space consisting of countably infinitely many elements $a_1,a_2,\dots,a_n,\dots$, with distance defined as follows:
+
+Begin by putting $\rho(a_1,a_1)=0$. Suppose that the nonnegative numbers $\rho(a_i,a_k)$ have been defined for all $i$ and $k$ less than $n+1$.
+
+Put $\rho(a_{n+1},a_{n+1})=0$, and consider the system
+\begin{equation}\tag{4}
+Q_n=(r_1^{(n)},r_2^{(n)},\dots,r_{p_n}^{(n)}).
+\end{equation}
+Writing $p_n=q$ and $r_i^{(n)}=\rho_i$ ($i\leqq q$) to simplify the notation, we have only two cases to consider:
+
+$1^\circ$ At least one of the inequalities
+\begin{equation}\tag{$\Delta$}
+|\rho_i-\rho_k|\leqq\rho(a_i,a_k)\leqq\rho_i+\rho_k
+\qquad(i,k\leqq q)
+\end{equation}
+is not satisfied. We then call $Q_n$ irregular,
+\srcpage{54}
+and define
+\begin{equation}\tag{6}
+\rho(a_{n+1},a_j)=\max_{i,k\leqq n}\rho(a_i,a_k)
+\end{equation}
+for every $j\leqq n$;
+
+$2^\circ$ All the inequalities $(\Delta)$ are satisfied. We then call $Q_n$ regular and put
+\begin{equation}\tag{7}
+\rho(a_{n+1},a_j)=\min_{\lambda\leqq q}\{\rho(a_j,a_\lambda)+\rho_\lambda\},
+\end{equation}
+for every $j\leqq n$. In particular, this last definition gives
+\begin{equation}\tag{8}
+\rho(a_{n+1},a_j)=\rho_j\qquad\text{for every }j\leqq q.
+\end{equation}
+Indeed, let $j$ and $\lambda$ be any two natural numbers not exceeding $q$.
+
+Observing that $q$ is less than $n$ and that $Q_n$ is regular, we obtain from the inequalities $(\Delta)$
+\begin{equation}\tag{9}
+\rho_j\leqq\rho_\lambda+\rho(a_j,a_\lambda).
+\end{equation}
+Since $\rho(a_j,a_j)=0$, we consequently have
+\begin{equation}\tag{9 bis}
+\rho_j+\rho(a_j,a_j)\leqq\rho_\lambda+\rho(a_j,a_\lambda),
+\end{equation}
+Thus, regarding $j\leqq q$ as fixed and letting $\lambda$ take all natural-number values $\leqq q$, the expression $\rho_\lambda+\rho(a_j,a_\lambda)$ attains its minimum at $\lambda=j$, and this minimum is precisely $\rho_j$. Comparing this result with (7), we indeed obtain (8).
+
+This defines $\rho(a_i,a_k)$ for every pair $i,k$ of natural numbers, and we see that $\rho(a_i,a_k)$ is zero only when $i=k$.
+
+Since the two arguments $a_i,a_k$ occur symmetrically in $\rho(a_i,a_k)$, it remains only to prove that we always have
+\begin{equation}\tag{10}
+\rho(a_i,a_j)+\rho(a_j,a_k)\geqq\rho(a_i,a_k),
+\end{equation}
+for all natural numbers $i,j,k$.
+
+This relation is clearly true for $i=j=k=1$. Suppose that it holds when $i,j,k$ are all at most $n$, and let us prove it when each of these positive integers is at most $n+1$. Clearly, only the case in which one of $i,j,k$ equals $n+1$ needs to be considered.
+\srcpage{55}
+It therefore suffices to prove the inequalities
+\begin{align}
+\rho(a_i,a_{n+1})+\rho(a_{n+1},a_k)&\geqq\rho(a_i,a_k),\tag{11}\\
+\rho(a_{n+1},a_i)+\rho(a_i,a_k)&\geqq\rho(a_{n+1},a_k),\tag{11 bis}
+\end{align}
+where $i$ and $k$ are any values less\footnote{If at least one of the indices $i,k$ were equal to $n+1$, the inequalities (11) and (11 bis) would be immediate.} than $n+1$.
+
+If $Q_n$ were irregular, $\rho(a_i,a_{n+1})$ would equal the maximum of the $\rho(a_p,a_q)$, $p,q\leqq n$, and there would be nothing to prove. Suppose that $Q_n$ is regular.
+
+Let $\lambda_0$ and $\lambda'_0$ denote values of $\lambda$ minimizing, respectively, the expression
+\[
+\rho(a_i,a_\lambda)+\rho_\lambda\qquad(\lambda\leqq q)
+\]
+and the expression
+\[
+\rho(a_k,a_\lambda)+\rho_\lambda.
+\]
+It follows from (7) that
+\[
+\rho(a_i,a_{n+1})=\rho(a_i,a_{\lambda_0})+\rho_{\lambda_0}
+\quad\text{and}\quad
+\rho(a_{n+1},a_k)=\rho(a_k,a_{\lambda'_0})+\rho_{\lambda'_0},
+\]
+so that the left-hand side of (11) equals
+{\small
+\begin{equation}\tag{12}
+\begin{aligned}
+\rho(a_i,a_{\lambda_0})+\rho_{\lambda_0}+\rho(a_k,a_{\lambda'_0})+\rho_{\lambda'_0}
+&=\rho(a_i,a_{\lambda_0})+\rho(a_k,a_{\lambda'_0})+(\rho_{\lambda_0}+\rho_{\lambda'_0})\\
+&\geqq\rho(a_i,a_{\lambda_0})+\rho(a_k,a_{\lambda'_0})+\rho(a_{\lambda_0},a_{\lambda'_0})
+\end{aligned}
+\end{equation}
+}
+(the last inequality follows from the inequalities $(\Delta)$, which apply here because $\lambda_0$ and $\lambda'_0$ do not exceed $q$ and $Q_n$ is assumed regular).
+
+Since (10) holds for $i,j,k\leqq n$, and since $i,k,\lambda_0,\lambda'_0$ are all $\leqq n$, we have
+\begin{equation}\tag{13}
+\begin{aligned}
+&\rho(a_i,a_{\lambda_0})+\rho(a_k,a_{\lambda'_0})+\rho(a_{\lambda_0},a_{\lambda'_0})\\
+&\quad=[\rho(a_i,a_{\lambda_0})+\rho(a_{\lambda_0},a_{\lambda'_0})]+\rho(a_k,a_{\lambda'_0})\\
+&\quad\geqq\rho(a_i,a_{\lambda'_0})+\rho(a_k,a_{\lambda'_0})\\
+&\quad\geqq\rho(a_i,a_k),
+\end{aligned}
+\end{equation}
+which proves (11).
+
+As for (11 bis), the same reasoning gives (retaining the
+\srcpage{56}
+meaning of $\lambda_0$)
+\[
+\begin{aligned}
+\rho(a_{n+1},a_i)+\rho(a_i,a_k)
+&=[\rho(a_i,a_{\lambda_0})+\rho_{\lambda_0}]+\rho(a_i,a_k)\\
+&=[\rho(a_i,a_{\lambda_0})+\rho(a_i,a_k)]+\rho_{\lambda_0}\\
+&\geqq\rho(a_k,a_{\lambda_0})+\rho_{\lambda_0}\\
+&\geqq\min_{\lambda\leqq q}\{\rho(a_k,a_\lambda)+\rho_\lambda\}\\
+&=\rho(a_{n+1},a_k).
+\end{aligned}
+\]
+Relation (10) having thus been established inductively, we see that the set of points $a_1,a_2,\dots,a_n,\dots$, with the adopted definition of distance, forms a metric space; we shall denote this space by $U_0$. Moreover, the distance between any two points of $U_0$ is always rational.
+
+\paragraph{11.}
+We now prove the following property of $U_0$, which occupies the central position in the present work:
+
+\textbf{I$_0$.} \textit{Suppose that an arbitrary finite number of points of $U_0$ is given,}
+\[
+a_{n_1},a_{n_2},\dots,a_{n_s}\qquad(n_1<n_2<\dots<n_s);
+\]
+\textit{and, writing $s$ for the number of these points, suppose that $s$ positive rational numbers are also given,}
+\[
+\mu_{n_1},\mu_{n_2},\dots,\mu_{n_s},
+\]
+\textit{satisfying all $s(s-1)$ inequalities}
+\begin{equation}\tag{$\Delta^*$}
+|\mu_{n_i}-\mu_{n_k}|\leqq\rho(a_{n_i},a_{n_k})\leqq\mu_{n_i}+\mu_{n_k}
+\qquad(i,k\leqq s),
+\end{equation}
+\textit{and subject to no other condition.}
+
+\textit{Then there exists a point $a_\sigma$ of $U_0$ such that}
+\[
+\rho(a_{n_i},a_\sigma)=\mu_{n_i}\qquad(i\leqq s).
+\]
+\textit{Proof.} --- It suffices to consider the case
+\begin{equation}\tag{14}
+n_1=1,\quad n_2=2,\quad\dots,\quad n_s=s.
+\end{equation}
+Indeed, otherwise we need only put, for every $n<n_s$, $n\ne n_i$,
+\begin{equation}\tag{15}
+\mu_n=\min_{i\leqq s}\{\rho(a_n,a_{n_i})+\mu_{n_i}\}.
+\end{equation}
+To prove that the points $a_1,a_2,\dots,a_{n_s}$ and the
+\srcpage{57}
+rational numbers $\mu_1,\mu_2,\dots,\mu_{n_s}$ satisfy the conditions of our statement, we must prove the inequalities
+\begin{equation}\tag{$\Delta^*$ bis}
+|\mu_p-\mu_q|\geqq\rho(a_p,a_q)\leqq\mu_p+\mu_q\qquad(p,q\leqq n_s),
+\end{equation}
+analogous to $(\Delta^*)$.
+
+First, as in the preceding section, we show that substituting $n=n_p$ ($p\leqq s$) in (15) reduces that formula to an identity.
+
+Indeed, $(\Delta^*)$ gives
+\[
+\{\rho(a_{n_p},a_{n_i})+\mu_{n_i}\}\geqq|\mu_{n_p}-\mu_{n_i}|+\mu_{n_i}\geqq\mu_{n_p}
+\]
+for every $i\leqq s$. Thus the minimum of the expression $\rho(a_{n_p},a_{n_i})+\mu_{n_i}$, where $i$ takes all natural-number values $\leqq s$, is attained at $i=p$, so that (15) holds for every $n\leqq n_s$.
+
+With this established, let $\kappa$ and $\lambda$ denote the values of $i\leqq s$ minimizing the respective expressions
+\[
+\{\rho(a_p,a_{n_i})+\mu_{n_i}\}\quad\text{resp.}\quad\{\rho(a_q,a_{n_i})+\mu_{n_i}\};
+\]
+We immediately have
+\[
+\begin{aligned}
+\mu_p+\mu_q&=\{\rho(a_p,a_{n_\kappa})+\mu_{n_\kappa}\}+\{\rho(a_q,a_{n_\lambda})+\mu_{n_\lambda}\}\\
+&=\rho(a_p,a_{n_\kappa})+\rho(a_q,a_{n_\lambda})+(\mu_{n_\kappa}+\mu_{n_\lambda}),
+\end{aligned}
+\]
+which gives, by $(\Delta^*)$,
+\begin{equation}\tag{16}
+\begin{aligned}
+\mu_p+\mu_q&\geqq\rho(a_p,a_{n_\kappa})+\rho(a_q,a_{n_\lambda})+\rho(a_{n_\kappa},a_{n_\lambda})\\
+&=\{\rho(a_p,a_{n_\kappa})+\rho(a_{n_\kappa},a_{n_\lambda})\}+\rho(a_q,a_{n_\lambda})\\
+&\geqq\rho(a_p,a_{n_\lambda})+\rho(a_q,a_{n_\lambda})\\
+&\geqq\rho(a_p,a_q).
+\end{aligned}
+\end{equation}
+On the other hand,
+\begin{equation}\tag{$16'$}
+\begin{aligned}
+\rho(a_p,a_q)+\mu_q&=\rho(a_p,a_q)+\{\rho(a_q,a_{n_\lambda})+\mu_{n_\lambda}\}\\
+&=\{\rho(a_p,a_q)+\rho(a_q,a_{n_\lambda})\}+\mu_{n_\lambda}\\
+&\geqq\rho(a_p,a_{n_\lambda})+\mu_{n_\lambda}\\
+&\geqq\min_{i\leqq s}\{\rho(a_p,a_{n_i})+\mu_{n_i}\}=\mu_p.
+\end{aligned}
+\end{equation}
+The inequalities $(\Delta^*\text{ bis})$ are clearly included in the combined inequalities (16) and $(16')$.
+
+Let us therefore prove I$_0$ under assumption (14). Nothing could be easier: it suffices to put $\sigma=\nu+1$, where $\nu$ is determined by
+\[
+Q_\nu=(\mu_1,\mu_2,\dots,\mu_s).
+\]
+\srcpage{58}
+Indeed, by the inequalities $(\Delta^*)$, $Q_\nu$ is a regular system [still taking (14) into account]. Hence, by (8),
+\[
+\rho(a_{\nu+1},a_j)=\mu_j
+\]
+for every $j\leqq s$.\hfill \mbox{Q. E. D.}
+
+We observe in passing that, on the basis of I$_0$, it would be easy to prove that \textit{$U_0$ contains every metric space $E_0$ consisting of an at most countable set of points, provided that the distance between any two points of $E_0$ is always rational.}
+
+(For the proof, the reader need only apply the argument of Section~13 with suitable and evident simplifications.)
+
+\section*{IV. --- The space $U$ and its principal properties.}
+\paragraph{12.}
+The space $U$ is, by definition, the complete metric space $\widetilde{U}_0$; by its very definition it is complete and separable (the space $U_0$ being a countable dense subset of $U$).
+
+The following is the fundamental property of $U$. Despite its auxiliary character, all other properties of this space are more or less immediate consequences of it.
+
+\textbf{I.} \textit{Suppose that an arbitrary finite number of points of $U$ is given,}
+\[
+x_1,x_2,\dots,x_s;
+\]
+\textit{and, writing $s$ for their number, suppose that $s$ arbitrary positive numbers are also given,}
+\[
+\alpha_1,\alpha_2,\dots,\alpha_s,
+\]
+\textit{satisfying the inequalities}
+\begin{equation}\tag{$\widetilde{\Delta}$}
+|\alpha_i-\alpha_k|\leqq\rho(x_i,x_k)\geqq\alpha_i+\alpha_k
+\end{equation}
+% The second inequality is retained from the French TeX; see the notes.
+\textit{and subject to no other condition.}
+
+\textit{Then there exists a point $y$ of $U$ such that}
+\[
+\rho(y,x_i)=\alpha_i\qquad(i\leqq s).
+\]
+\textit{Proof.} --- First suppose, as is clearly
+\srcpage{59}
+always permissible, that the positive numbers $\alpha_1,\alpha_2,\dots,\alpha_s$ and the points $x_1,x_2,\dots,x_s$ have been numbered so that
+\begin{equation}\tag{17}
+\alpha_1\geqq\alpha_2\geqq\dots\geqq\alpha_s.
+\end{equation}
+Let $\varepsilon$ be any positive number, and let $\varepsilon_0$ be a positive number less than $\dfrac{\varepsilon}{6s}$ and small enough that we also have
+\begin{equation}\tag{18}
+3s\cdot\varepsilon_0<\min\rho(x_i,x_k)\qquad(k<i\leqq s).
+\end{equation}
+By the equality $\overline{U}_0=U$, we can find points
+\[
+a_1^\varepsilon,a_2^\varepsilon,\dots,a_s^\varepsilon
+\]
+of $U_0$ and rational numbers
+\[
+\beta_1^\varepsilon,\beta_2^\varepsilon,\dots,\beta_s^\varepsilon,
+\]
+such that
+\begin{equation}\tag{19}
+\left\{\begin{aligned}
+&\rho(a_i^\varepsilon,x_i)<\varepsilon_0\\
+&\alpha_i+(3i-1)\varepsilon_0<\beta_i^\varepsilon<\alpha_i+3i\cdot\varepsilon_0
+\end{aligned}\right.\qquad(i=1,2,\dots,s).
+\end{equation}
+We now prove the inequalities
+\begin{equation}\tag{$\Delta^*_\varepsilon$}
+|\beta_i^\varepsilon-\beta_k^\varepsilon|\leqq\rho(a_i^\varepsilon,a_k^\varepsilon)
+\leqq\beta_i^\varepsilon+\beta_k^\varepsilon\qquad(k<i\leqq s).
+\end{equation}
+Successively, we have: first, by the second inequality in (19),
+\[
+\beta_i^\varepsilon-\beta_k^\varepsilon
+<\alpha_i+3i\cdot\varepsilon_0-\{\alpha_k+(3k-1)\varepsilon_0\}
+\leqq\alpha_i-\alpha_k+(3s-2)\varepsilon_0;
+\]
+and hence, by (17), taking $k<i$ into account,
+\[
+\beta_i^\varepsilon-\beta_k^\varepsilon<(3s-2)\varepsilon_0,
+\]
+which gives, by the first inequality in (19),
+\[
+\beta_i^\varepsilon-\beta_k^\varepsilon<3s\cdot\varepsilon_0
+-\{\rho(a_i^\varepsilon,x_i)+\rho(a_k^\varepsilon,x_k)\};
+\]
+and therefore, by (18),
+\begin{equation}\tag{20}
+\begin{aligned}
+\beta_i^\varepsilon-\beta_k^\varepsilon
+&<\{\rho(x_i,x_k)-\rho(a_i^\varepsilon,x_i)\}-\rho(a_k^\varepsilon,x_k)\\
+&\leqq\rho(x_k,a_i^\varepsilon)-\rho(a_k^\varepsilon,x_k)\\
+&\leqq\rho(a_i^\varepsilon,a_k^\varepsilon);
+\end{aligned}
+\end{equation}
+\srcpage{60}
+Next, by the second inequality in (19),
+\[
+\begin{aligned}
+\beta_k^\varepsilon-\beta_i^\varepsilon
+&<\alpha_k+3k\cdot\varepsilon_0-\{\alpha_i+(3i-1)\varepsilon_0\}\\
+&=(\alpha_k-\alpha_i)-3(i-k)\varepsilon_0+\varepsilon_0\\
+&\leqq(\alpha_k-\alpha_i)-2\varepsilon_0;
+\end{aligned}
+\]
+and hence, by $(\widetilde{\Delta})$ and the first inequality in (19),
+\[
+\begin{aligned}
+\beta_k^\varepsilon-\beta_i^\varepsilon
+&<\rho(x_i,x_k)-\{\rho(a_i^\varepsilon,x_i)+\rho(a_k^\varepsilon,x_k)\}\\
+&=\{\rho(x_i,x_k)-\rho(a_i^\varepsilon,x_i)\}-\rho(a_k^\varepsilon,x_k),
+\end{aligned}
+\]
+which immediately gives
+\begin{equation}\tag{21}
+\beta_k^\varepsilon-\beta_i^\varepsilon
+<\rho(a_i^\varepsilon,x_k)-\rho(a_k^\varepsilon,x_k)
+\leqq\rho(a_i^\varepsilon,a_k^\varepsilon);
+\end{equation}
+Finally, by the first inequality in (19) and the relation $(\widetilde{\Delta})$,
+{\small
+\[
+\rho(a_i^\varepsilon,a_k^\varepsilon)\leqq\rho(x_i,x_k)+2\varepsilon_0
+\leqq\alpha_i+\alpha_k+2\varepsilon_0
+<\alpha_i+(3i-1)\varepsilon_0+\alpha_k+(3k-1)\varepsilon_0,
+\]
+}
+which gives, by the second inequality in (19),
+\begin{equation}\tag{22}
+\rho(a_i^\varepsilon,a_k^\varepsilon)<\beta_i^\varepsilon+\beta_k^\varepsilon.
+\end{equation}
+The inequalities $(\Delta^*_\varepsilon)$ are clearly included in the system of relations (20), (21), and (22).
+
+Finally, observe that we have the following inequalities:
+\begin{align}
+\rho(a_i^\varepsilon,x_i)&<\frac{\varepsilon}{2},\tag{23}\\
+|\beta_i^\varepsilon-\alpha_i|&<\frac{\varepsilon}{2}.\tag{24}
+\end{align}
+Indeed, (23) is an immediate consequence of the first inequality in (19), since $\varepsilon_0<\frac{\varepsilon}{2}$. As for (24), we have, by the second inequality in (19),
+\[
+\alpha_i<\beta_i^\varepsilon<\alpha_i+3i\cdot\varepsilon_0
+\leqq\alpha_i+3s\cdot\varepsilon_0<\alpha_i+\frac{\varepsilon}{2}.
+\]
+The system consisting of the points
+\[
+a_1^\varepsilon,a_2^\varepsilon,\dots,a_s^\varepsilon,
+\]
+of $U_0$ and the rational numbers
+\[
+\beta_1^\varepsilon,\beta_2^\varepsilon,\dots,\beta_s^\varepsilon
+\]
+satisfies, by $\Delta^*_\varepsilon$, all the conditions in the statement of
+\srcpage{61}
+Theorem I$_0$. Consequently, there exists a point $y^\varepsilon$ belonging to $U_0$ (and thus \textit{a fortiori} to $U$) such that
+\begin{equation}\tag{25}
+\rho(y^\varepsilon,a_i^\varepsilon)=\beta_i^\varepsilon\qquad(i=1,2,\dots,s).
+\end{equation}
+We therefore have
+\[
+\begin{aligned}
+|\rho(y^\varepsilon,x_i)-\alpha_i|
+&\leqq|\rho(y^\varepsilon,x_i)-\beta_i^\varepsilon|+|\beta_i^\varepsilon-\alpha_i|\\
+&=|\rho(y^\varepsilon,x_i)-\rho(y^\varepsilon,a_i^\varepsilon)|+|\beta_i^\varepsilon-\alpha_i|\\
+&\leqq\rho(x_i,a_i^\varepsilon)+|\beta_i^\varepsilon-\alpha_i|
+<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+\end{aligned}
+\]
+Observe also that the point $y^\varepsilon$ can be defined entirely effectively, without any arbitrary choice: since it belongs to the set $U_0$, enumerated once and for all, it suffices to take the first point of $U_0$ satisfying the inequalities (25).
+
+We summarize the preceding analysis as follows:
+
+\textsc{Lemma.} --- \textit{For any points and positive numbers $\alpha_i$ $(i=1,2,\dots,s)$ satisfying the conditions of statement I, and for every $\varepsilon>0$, there exists a well-defined point $y^\varepsilon$ of $U$ such that}
+\begin{equation}\tag{26}
+|\rho(y^\varepsilon,x_i)-\alpha_i|<\varepsilon\qquad(i=1,2,\dots,s).
+\end{equation}
+Now put $\varepsilon_1=\dfrac{\alpha_s}{2}$ and denote the point $y^{\varepsilon_1}$ by $y_1$. We consequently have
+\begin{equation}\tag{27, 1}
+|\rho(y_1,x_i)-\alpha_i|<\frac{\alpha_s}{2}\qquad(i=1,2,\dots,s).
+\end{equation}
+Suppose that the points $y_1,y_2,\dots,y_k$ have already been constructed so as to satisfy
+\begin{equation}\tag{27, $k$}
+|\rho(y_k,x_i)-\alpha_i|<\frac{\alpha_s}{2^k}\qquad(i=1,2,\dots,s)
+\end{equation}
+and
+\begin{equation}\tag{28, $k$}
+\rho(y_{k-1},y_k)<\frac{3\alpha_s}{2^k}\qquad\text{(for $k>1$).}
+\end{equation}
+Consider the following system of points of $U$ and
+\srcpage{62}
+positive numbers:
+\begin{equation}\tag{$S_k$}
+\left\{\begin{array}{ccccc}
+x_1,&x_2,&\dots,&x_s,&y_k\\[4pt]
+\alpha_1,&\alpha_2,&\dots,&\alpha_s,&\dfrac{\alpha_s}{2^k}
+\end{array}\right.
+\end{equation}
+(since $s$ is arbitrary, replacing it by $s+1$ is clearly of no importance).
+
+The system $(S_k)$ satisfies inequalities of type $(\widetilde{\Delta})$. To see this, it suffices to prove
+\begin{equation}\tag{29}
+\left|\alpha_i-\frac{\alpha_s}{2^k}\right|\leqq\rho(x_i,y_k)
+\leqq\alpha_i+\frac{\alpha_s}{2^k}\qquad(i=1,2,\dots,s).
+\end{equation}
+Now, by $(27,k)$ and (17), we have
+\[
+\alpha_i-\frac{\alpha_s}{2^k}<\rho(x_i,y_k),
+\]
+\[
+\frac{\alpha_s}{2^k}-\alpha_i\leqq\frac{\alpha_i}{2^k}-\alpha_i<0\leqq\rho(x_i,y_k),
+\]
+\[
+\alpha_i+\frac{\alpha_s}{2^k}>\rho(x_i,y_k),
+\]
+which proves (29).
+
+Apply our lemma to the system $(S_k)$, taking $\varepsilon$ to be $\varepsilon_{k+1}=\dfrac{\alpha_s}{2^{k+1}}$. Denote the resulting point $y^{\varepsilon_{k+1}}$ by $y_{k+1}$.
+
+We immediately have
+\begin{equation}\tag{27, $k+1$}
+|\rho(y_{k+1},x_i)-\alpha_i|<\frac{\alpha_s}{2^{k+1}}\qquad(i=1,2,\dots,s)
+\end{equation}
+and similarly
+\[
+\left|\rho(y_{k+1},y_k)-\frac{\alpha_s}{2^k}\right|<\frac{\alpha_s}{2^{k+1}};
+\]
+hence
+\begin{equation}\tag{28, $k+1$}
+\rho(y_{k+1},y_k)<\frac{3\alpha_s}{2^{k+1}}.
+\end{equation}
+The points $y_1,y_2,\dots,y_k,\dots$ are thus determined inductively, and the inequalities $(27,k)$ and $(28,k)$ hold for every natural number $k$.
+
+By $(28,k)$, the sequence of the $y_k$ is a fundamental sequence;\footnote{See Section~4.}
+\srcpage{63}
+it therefore converges, since $U$ is complete, to a point that we denote by $y$. Clearly, by $(27,k)$,
+\[
+\rho(y,x_i)=\lim_{k\to\infty}\rho(y_k,x_i)=\alpha_i\qquad(i=1,2,\dots,s),
+\]
+which proves Theorem I.
+
+\paragraph{13.}
+It is now easy to prove the \textit{universality} of $U$ (in the sense specified in Section~9, footnote (1) on original page 52).
+
+\textbf{II.} \textit{For every separable metric space $E$, there exists in $U$ a set $M$ congruent to $E$.}
+
+Since every separable metric space is contained in a separable \textit{complete} metric space,\footnote{See Sections~4--5.} it suffices to prove Theorem II for a separable complete space $E$.
+
+Since $E$ is separable, let $D$ be an at most countable dense subset of $E$, consisting of the points $d_1,d_2,\dots,d_n,\dots$.
+
+Let $x_1$ be any point of $U$, and suppose that points $x_1,x_2,\dots,x_n$ of $U$ have already been chosen so that
+\begin{equation}\tag{30}
+\rho(x_i,x_k)=\rho(d_i,d_k),
+\end{equation}
+for all $i$ and $k$ not exceeding $n$ [for $n=1$ this condition is clearly satisfied, since $\rho(x_1,x_1)=\rho(d_1,d_1)=0$]. Consider the system of points and positive numbers
+\[
+\begin{array}{cccc}
+x_1,&x_2,&\dots,&x_n,\\
+\alpha_1,&\alpha_2,&\dots,&\alpha_n,
+\end{array}
+\]
+with
+\[
+\alpha_i=\rho(d_i,d_{n+1})\qquad\text{(where $i=1,2,\dots,n$).}
+\]
+We clearly have
+\[
+|\rho(d_i,d_{n+1})-\rho(d_k,d_{n+1})|\leqq\rho(d_i,d_k)
+\leqq\rho(d_i,d_{n+1})+\rho(d_k,d_{n+1}),
+\]
+that is,
+\[
+|\alpha_i-\alpha_k|\leqq\rho(x_i,x_k)\leqq\alpha_i+\alpha_k\qquad(i,k\leqq n).
+\]
+Thus the conditions of Theorem I hold, and we can effectively determine a point $x_{n+1}$ of $U$ satisfying the inequalities
+\begin{equation}\tag{31}
+\rho(x_{n+1},x_i)=\alpha_i=\rho(d_{n+1},d_n).
+\end{equation}
+\srcpage{64}
+Proceeding inductively in this way, we shall never be stopped (except when $D$, and hence $E$, consists of finitely many points $d_1,d_2,\dots,d_n$, in which case the set of points $x_1,x_2,\dots,x_n$ of $U$ would be congruent to $E$).
+
+This construction gives a countable set $M_0$ consisting of points of $U$,
+\begin{equation}\tag{32}
+d_1,d_2,\dots,d_n,\dots.
+\end{equation}
+This set is congruent to $D$, by (31), which holds for every natural number $n$. Since $U$ is complete, the space $\widetilde{M}_0=M$ is contained in $U$ ($M_0$ being a subset of $U$). The two complete spaces $M$ and $E$ contain respectively the congruent sets $M_0$ and $D$ as dense subsets; it follows from the result proved in Section~6 that $M$ and $E$ are congruent.
+\hfill \mbox{Q. E. D.}
+
+\begin{flushright}\textit{(To be continued.)}\end{flushright}
+\srcpage{74}
+\begin{center}
+\textsc{On a universal metric space;}\\
+\textsc{Posthumous memoir of Paul Urysohn,}\\
+\textsc{edited by Paul Alexandroff (Moscow).}\\
+\textit{(Conclusion.)}
+\end{center}
+\paragraph{14.}
+\textit{Homogeneity of the space $U$.} --- We introduce the following definition:
+
+\textit{A metric space $E$ is metrically homogeneous if, for any finite congruent sets $A$ and $B$ situated in $E$, there exists an isometric representation of $E$ onto itself taking $A$ to $B$.}
+
+We shall prove that
+
+\textbf{III.} \textit{$U$ is a metrically homogeneous space.}
+
+\textit{Proof.} --- Let $A_0$ and $B_0$ be two congruent sets in $U$, consisting of finitely many points $a_1,a_2,\dots,a_n$ and $b_1,b_2,\dots,b_n$, respectively.
+
+Let $D$ be any countable dense subset of $U$. Suppose that its points are arranged once and for all in a countable sequence
+\begin{equation}\tag{33}
+d_1,d_2,\dots,d_n,\dots.
+\end{equation}
+Suppose that congruent sets $A_h$ and $B_h$ have been constructed, consisting respectively of the points
+\[
+a_1,\dots,a_n,\dots,a_{n+h}\quad\text{and}\quad b_1,b_2,\dots,b_{n+h}
+\]
+\srcpage{75}
+with
+\[
+\rho(a_i,a_k)=\rho(b_i,b_k)
+\]
+for all $i$ and $k$ not exceeding $n+h$ (where the integer $h$ is assumed $\geqq0$).
+
+The congruent sets $A_{h+1}$ and $B_{h+1}$ are then determined as follows:
+
+First suppose that $h$ is even. Put
+\[
+a_{n+h+1}=d_i,
+\]
+where $d_i$ is the first term of (32) not among $a_1,a_2,\dots,a_{n+h}$.
+
+Consider the system of points and positive numbers
+\begin{equation}\tag{33 a}
+\left\{\begin{array}{cccc}
+b_1,&b_2,&\dots,&b_{n+h},\\
+\rho(a_1,a_{n+h+1}),&\rho(a_2,a_{n+h+1}),&\dots,&\rho(a_{n+h},a_{n+h+1}).
+\end{array}\right.
+\end{equation}
+The conditions of Theorem I clearly hold. Thus, by definition, let $b_{n+h+1}$ be the point of $U$ satisfying
+\[
+\rho(b_i,b_{n+h+1})=\rho(a_i,a_{n+h+1})\qquad(i=1,2,\dots,n+h+1)
+\]
+that is obtained by the construction in Section~12.
+
+We see at once that the sets $A_{h+1}$ and $B_{h+1}$ formed by adjoining $a_{n+h+1}$ and $b_{n+h+1}$ to $A_h$ and $B_h$, respectively, are again congruent. If $h$ is odd, the construction of $A_{h+1}$ and $B_{h+1}$ is entirely analogous to that just given for odd $h$: the only difference is that the roles of the points $a_1,\dots,a_{n+h}$ and $b_1,\dots,b_{n+h}$ are now interchanged. Begin by constructing $b_{n+h+1}$ as the first point of the sequence (32) not belonging to $B_h$, and then apply Theorem I to the system
+\begin{equation}\tag{33 b}
+\left\{\begin{array}{cccc}
+a_1,&a_2,&\dots,&a_{n+h},\\
+\rho(b_1,b_{n+h+1}),&\rho(b_2,b_{n+h+1}),&\dots,&\rho(b_{n+h},b_{n+h+1}),
+\end{array}\right.
+\end{equation}
+This gives a point $a_{n+h+1}$ satisfying
+\[
+\rho(a_i,a_{n+h+1})=\rho(b_i,b_{n+h+1})\qquad(i=1,2,\dots,n+h+1).
+\]
+The sets $A_{h+1}$ and $B_{h+1}$ are clearly congruent.
+\srcpage{76}
+Proceeding inductively in this way, we obtain, for every $h\geqq0$, congruent sets $A_h$ and $B_h$, each consisting of $n+h$ points. The set $A$ formed by the union of all the $A_h$ is clearly congruent to the set $B$ formed in the same way from the $B_h$. Each of these sets is dense in $U$, since both $A$ and $B$ contain $D$, which was dense in $U$ (this is why we had to arrange our construction so as to interchange the roles of $A_n$ and $B_n$ at each step).
+
+The isometric correspondence
+\begin{equation}\tag{34}
+a_m\sim b_m\qquad(m=1,2,3,\dots)
+\end{equation}
+is therefore a correspondence between two dense subsets of $U$.
+
+The argument of Section~6 allows this correspondence to be extended to an isometric representation of the whole space $U$ onto itself, taking $A_h$ to $B_h$ and, in particular, $A_0$ to $B_0$. Indeed, let $x$ be any point of $U$. Since $A$ is dense in $U$, there is a bundle of fundamental sequences of points of $A$ converging to $x$.
+
+The correspondence between $A$ and $B$ takes these sequences to fundamental sequences. Since $U$ is complete, this bundle determines a point $y$ of $U$, the limit point of all the sequences in the bundle. We associate this point $y$ with $x$. It is immediately apparent that this gives a one-to-one mapping of $U$ onto itself, that this mapping preserves distances, and that it makes $A$ and $B$ correspond to each other.
+
+\textsc{Corollary.} --- \textit{For any points $x$ and $y$ of $U$ and any positive number $\varepsilon$, the spheres $S(x,\varepsilon)$ and $S(y,\varepsilon)$ are congruent.}
+
+Indeed, it suffices to consider an isometric transformation of $U$ onto itself taking $x$ to $y$. This transformation takes $S(x,\varepsilon)$ to $S(y,\varepsilon)$.\hfill \mbox{Q. E. D.}
+
+\paragraph{15.}
+We now prove the following:
+
+\textsc{Uniqueness theorem.} --- \textbf{IV.} \textit{Every complete, separable, universal, homogeneous metric space is congruent to $U$.}
+
+We divide the proof into two steps:
+\srcpage{77}
+
+$1^\circ$ \textit{Theorem I holds in every space $V$ satisfying the conditions of statement IV.}
+
+Indeed, let
+\begin{equation}\tag{35}
+x_1,x_2,\dots,x_s
+\end{equation}
+be any system of points of $V$, and let
+\begin{equation}\tag{36}
+\alpha_1,\alpha_2,\dots,\alpha_s
+\end{equation}
+be a system of real numbers such that
+\begin{equation}\tag{$\Delta$}
+|\alpha_i-\alpha_k|\leqq\rho(x_i,x_k)\leqq\alpha_i+\alpha_k\qquad(i,k\leqq s).
+\end{equation}
+It follows from the inequalities $(\Delta)$ that a metric space $E$ is obtained by taking arbitrary elements
+\[
+z_1,z_2,\dots,z_{s+1}
+\]
+and putting
+\begin{equation}\tag{37}
+\rho(z_i,z_k)=\rho(x_i,x_k)\qquad\text{(if $i$ and $k$ are $\leqq s$)}
+\end{equation}
+and
+\begin{equation}\tag{38}
+\rho(z_i,z_{s+1})=\alpha_i\qquad(i=1,2,\dots,s).
+\end{equation}
+Since $V$ is universal, there exists a set $E^*$ in $V$, congruent to $E$, consisting of the points
+\begin{equation}\tag{39}
+\left\{\begin{aligned}
+&y_1,y_2,\dots,y_s,y_{s+1},\\
+&\rho(y_i,y_k)=\rho(z_i,z_k)
+\end{aligned}\right.\qquad(i,k\leqq s+1).
+\end{equation}
+Since $V$ is homogeneous, and since the set of points (35) is clearly congruent to the set of points $y_1,y_2,\dots,y_s$, there is an isometric mapping of $V$ onto itself taking $y_1,y_2,\dots,y_s$ to $x_1,x_2,\dots,x_s$, respectively. Denoting the image of $y_{s+1}$ under this mapping by $x_{s+1}$, we obtain
+\[
+\rho(x_{s+1},x_i)=\rho(y_{s+1},y_i)=\rho(z_{s+1},z_i)=\alpha_i\qquad(i=1,2,\dots,s).
+\]
+This establishes Theorem I for $V$.
+
+$2^\circ$ We now prove that \textit{every complete separable metric space satisfying Theorem I is congruent to $U$}.
+
+Let $V$ be a complete separable metric space satisfying Theorem
+\srcpage{78}
+I. Let $P$ and $Q$ denote countable dense subsets of $U$ and $V$, respectively. Again suppose that the points of $P$ and $Q$ have each been arranged once and for all in a countable sequence. Let $a_1$ be any point of $U$, and $b_1$ any point of $V$.
+
+Suppose that the congruent sets
+\[
+A_n=\{a_1,a_2,\dots,a_n\}\quad\text{and}\quad B_n=\{b_1,b_2,\dots,b_n\}
+\]
+have already been constructed in $U$ and $V$, respectively.
+
+If $n$ is even, let $a_{n+1}$ denote the first point of $P$ not belonging to $A_n$.
+
+The system
+\[
+\begin{array}{cccc}
+b_1,&b_2,&\dots,&b_n,\\
+\rho(a_{n+1},a_1),&\rho(a_{n+1},a_2),&\dots,&\rho(a_{n+1},a_n)
+\end{array}
+\]
+satisfies the conditions of Theorem I; hence there exists a point $b_{n+1}$ of $V$ such that
+\[
+\rho(b_{n+1},b_i)=\rho(a_{n+1},a_i).
+\]
+If $n$ is odd, the roles of $A$ and $B$, $P$ and $Q$, and $U$ and $V$ are interchanged (\textit{see} the preceding section).
+
+We thus obtain congruent sets $A_n$ and $B_n$ for every $n$.
+
+Denoting the unions of all the $A_n$ and all the $B_n$ by $A$ and $B$, respectively, we obtain two congruent countable sets, with $A$ dense in $U$ and $B$ dense in $V$ ($A$ containing $P$ and $B$ containing $Q$).
+
+Since $U$ and $V$ are complete, the result proved in Section~6 implies that $U$ and $V$ are congruent.\hfill \mbox{Q. E. D.}
+
+\paragraph{16.}
+\textit{Remark.} --- In our last statement $2^\circ$, the assumption that $V$ is complete and homogeneous is essential.
+
+Indeed, there exist separable universal metric spaces that are neither complete nor homogeneous; on the other hand, there exist separable metric spaces that are universal and complete without being homogeneous. We shall immediately give examples, but first we wish to mention the only question of this kind that remains open:
+\srcpage{79}
+
+\textit{Does a universal homogeneous space exist that is not complete?}
+
+\paragraph{17.}
+We turn to the construction of the examples just mentioned. Construct a space $U+p$ as follows. Let $a$ be any point of $U$. Take a new element, a point $p$, and form the metric space $U+p$ from all points of $U$ together with $p$, putting
+\[
+\rho(x,p)=\rho(x,a)+1,
+\]
+for every point $x$ of $U$. Clearly, $U+p$ satisfies all three axioms of a metric space. Moreover,
+\[
+\rho(x,p)\geqq1
+\]
+for every point $x$ of $U+p$ other than $p$. Thus $U+p$ contains an isolated point $p$. This space therefore cannot be homogeneous (for then all its points would be isolated, which is absurd, since $U+p$ is universal because it contains the universal space $U$). Since $U+p$ is not homogeneous, it is not congruent to $U$ either. Finally, $U+p$ is complete, because every metric space obtained by adjoining an isolated point to a complete metric space is itself complete.
+
+\paragraph{18.}
+Similarly, let us construct a separable metric space that is neither complete nor homogeneous, but is nevertheless universal and also satisfies Theorem I.
+
+Return to the space $U+p$ constructed in the preceding section. Since $U$ is universal and $U+p$ is separable, there exists an isometric representation of $U+p$ onto a set $M$ in $U$. Denote by $q$ the point of $M$ corresponding under this representation to the point $p$ of $U+p$. Thus $M-q$ is congruent to $U$. Since this set is contained in the metric space $V=U-q$, the latter space is universal. But $V$ is not complete, since all sequences converging in $U$ to $q$ become divergent fundamental sequences in $V$. Nor is $V$ homogeneous: indeed, suppose it were homogeneous. The point $q$ is not isolated in $U$ (since $U$ contains no isolated point), so there are two points $a$ and $b$ of $U$ whose distances from
+\srcpage{80}
+$q$ are unequal. Thus, in $U$,
+\[
+\rho(a,q)\ne\rho(b,q).
+\]
+Denote the positive number $\rho(a,q)$ by $\rho$ and the positive number $\rho(b,q)$ by $\sigma$. Since $V$ is assumed homogeneous, there is an isometric transformation $\mathfrak{T}$ of $V$ onto itself taking $a$ to $b$. Now every divergent fundamental sequence in $V$ necessarily converges in $U$ to $q$. Consequently, $\mathfrak{T}$ takes every divergent fundamental sequence in $V$,
+\begin{equation}\tag{40}
+u_1,u_2,\dots,u_n,\dots
+\end{equation}
+to a confinal sequence
+\begin{equation}\tag{41}
+v_1,v_2,\dots,v_n,\dots.
+\end{equation}
+Since $\mathfrak{T}$ is isometric, we have
+\begin{equation}\tag{41}
+\rho(u_n,a)=\rho(v_n,b).
+\end{equation}
+On the other hand, both sequences (40) and (41) converge in $U$ to the same point $q$, which gives, contrary to the definition of $\rho$ and $\sigma$,
+\begin{equation}\tag{42}
+\lim_{n\to\infty}\rho(u_n,a)=\rho=\lim_{n\to\infty}\rho(v_n,b)=\sigma.
+\end{equation}
+Finally, let us show that Theorem I still holds in $V$.
+
+Take again a system of points of $V$ and positive numbers
+\[
+\begin{array}{cccc}
+x_1,&x_2,&\dots,&x_s,\\
+\alpha_1,&\alpha_2,&\dots,&\alpha_s,
+\end{array}
+\]
+satisfying the frequently cited inequalities $(\Delta)$.
+
+Let $\alpha$ be the smallest of the numbers
+\begin{equation}\tag{43}
+\alpha_i+\rho(q,x_i)\qquad(i=1,2,\dots,s).
+\end{equation}
+The system of points of $U$ and positive numbers
+\[
+\begin{array}{ccccc}
+x_1,&x_2,&\dots,&x_s,&q,\\
+\alpha_1,&\alpha_2,&\dots,&\alpha_s,&\alpha
+\end{array}
+\]
+still satisfies the inequalities $(\Delta)$, since we have (where $i_0$ denotes
+\srcpage{81}
+the value of $i$ at which (43) attains its minimum)
+\[
+\begin{aligned}
+\alpha-\alpha_k&\leqq\{\alpha_k+\rho(q,x_k)\}-\alpha_k=\rho(q,x_k),\\
+\alpha_k-\alpha&=\alpha_k-\{\rho(q,x_{i_0})+\alpha_{i_0}\}=(\alpha_k-\alpha_{i_0})\\
+&\quad-\rho(q,x_{i_0})\leqq\rho(x_k,x_{i_0})-\rho(q,x_{i_0})\leqq\rho(x_k,q),\\
+\alpha_k+\alpha&=\alpha_k+\alpha_{i_0}+\rho(q,x_{i_0})\geqq\rho(x_k,x_{i_0})+\rho(q,x_{i_0})\geqq\rho(x_k,q).
+\end{aligned}
+\]
+There is therefore a point $y$ of $U$ such that
+\begin{equation}\tag{44}
+\rho(y,x_k)=\alpha_k,\qquad\rho(y,q)=\alpha,
+\end{equation}
+for every $k\leqq s$. Since $\alpha$ is positive, $y$ is necessarily distinct from $q$, and hence belongs to $V$. Thus the equalities (44), for $k=1,2,\dots,s$, establish Theorem I for $V$ itself.
+
+\section*{V. --- Further properties of the space $U$.}
+\paragraph{19.}
+\textit{For any two points $a$ and $b$ of $U$, there exists in $U$ a straight line segment $\overline{ab}$ of length $\rho(a,b)$ containing both $a$ and $b$.} That is, there exists a set $\overline{ab}$ of points of $U$, containing $a$ and $b$, that can be mapped isometrically onto a straight line segment $\overline{pq}$ in ordinary Euclidean space, with this mapping also taking $a$ to $p$ and $b$ to $q$. [It follows that the length of $\overline{pq}$ must equal precisely $\rho(a,b)$.]
+
+Indeed, since a straight line segment $\overline{pq}$ of length $\rho(a,b)$ is a separable metric space, there exists in $U$ an isometric image of $\overline{pq}$, which we denote by $\overline{a^*b^*}$ ($a^*$ being the image of $p$, and $b^*$ the image of $q$). Since $U$ is homogeneous, there is an isometric transformation of $U$ onto itself taking the pair $(a^*,b^*)$ to the pair $(a,b)$, these two pairs being congruent by the equality
+\[
+\rho(p,q)=\rho(a^*,b^*)=\rho(a,b).
+\]
+This transformation takes $\overline{a^*b^*}$ to a set $\overline{ab}$ (also congruent to $\overline{pq}$), which is the desired set.
+
+\textit{Remark.} --- There are even several straight line segments in $U$ joining the two given points $a$ and $b$.
+
+\srcpage{82}
+Indeed, on the segment $\overline{ab}$ just constructed, let $c$ be the point satisfying
+\begin{equation}\rho(a,c)=\rho(c,b)=\frac12\rho(a,b)\tag{45}\end{equation}
+(that is, the midpoint of $\overline{ab}$).
+
+Consider the metric space consisting of four points $u,v,r,t$ with the following distances between them:
+\[
+\begin{gathered}
+\rho(u,v)=\rho(a,b),\\
+\rho(u,r)=\rho(v,r)=\rho(u,t)=\rho(v,t)=\frac12\rho(a,b),\\
+\rho(r,t)=\rho(a,b).
+\end{gathered}
+\]
+Let $\{a^*,b^*,c^*,d^*\}$ be an isometric image in $U$ of $\{u,v,r,t\}$. Since $\{a^*,b^*,c^*\}$ is congruent to $\{a,b,c\}$, there is an isometric transformation of $U$ onto itself making these sets correspond. Let $d$ be the image of $d^*$ under this transformation. We have
+\[
+\rho(a,d)=\rho(b,d)=\frac12\rho(a,b),\qquad \rho(d,c)=\rho(a,b)\ne0.
+\]
+Since no point of $\overline{ab}$ other than $c$ satisfies (45), the point $d$ does not belong to $\overline{ab}$. The sets $\{a,c,b\}$ and $\{a,d,b\}$ are clearly congruent. There is therefore an isometric transformation of $U$ onto itself taking $\{a,c,b\}$ to $\{a,d,b\}$. This transformation takes the straight line segment $\overline{ab}=\overline{acb}$ to a straight line segment $\overline{ab}=\overline{adb}$ passing through $d$, and hence necessarily different from the first segment. \hfill \mbox{Q. E. D.}
+
+The following corollaries follow immediately from Theorem V:
+
+\textsc{Corollary I.} --- \textit{The space $U$ is connected.}\footnote{In the generally accepted sense of Messrs.~Lennes and Hausdorff. See \textsc{Lennes}, \textit{Amer. Journ. of Math.}, \textbf{33}, 1911, p.~303; \textsc{Hausdorff}, p.~244.}
+
+\textsc{Corollary II.} --- \textit{The space $U$ is locally connected.}\footnote{In the sense of Messrs.~Hahn and Mazurkiewicz. See \textsc{Hahn}, \textit{Sitzungsberichte Kaisrl. Kgl. Akademie Wien, math. naturw. Kl.}, Bd \textbf{123}, 1914, pp.~2433--2489; \textsc{Mazurkiewicz}, \textit{Fund. Math.}, \textbf{I}, 1920, pp.~166--209.}
+
+\srcpage{83}
+\paragraph{20.}
+Denote by $F(x,\varepsilon)$ the set of points $y$ of $U$ such that
+\[\rho(x,y)=\varepsilon.\]
+It follows at once from the fundamental properties of $U$ that, for any fixed $\varepsilon$, all the $F(x,\varepsilon)$ are congruent. (The proof is entirely analogous to that of the corollary to Theorem II in Section~14.)
+
+None of the sets $F(x,\varepsilon)$ is empty (it suffices to take the metric space consisting of two points $p,q$ with $\rho(p,q)=\varepsilon$, and consider its isometric image in $U$). We shall prove the following theorem:
+
+\textbf{VI.} \textit{$F(x,\varepsilon)$ is a metric space of diameter\footnote{The diameter of a metric space $E$ is the supremum $\delta(E)$ of all nonnegative numbers $\rho(x,y)$, where $x$ and $y$ are points of $E$. If this bound does not exist, $E$ is said to have infinite diameter.} $2\varepsilon$ containing an isometric image of every separable metric space of diameter $\le2\varepsilon$.}
+
+Let $E$ be any separable metric space of diameter $\le2\varepsilon$. Let $E^*$ be the space $E+p$, with $\rho(p,y)=\varepsilon$ for every point $y$ of $E$.
+
+Let $M^*$ be an isometric image of $E^*$ in $U$. The point $x$ of $U$ is fixed by the statement of Theorem VI. If the image $p^*$ of $p$ in $M^*$ were different from $x$, we could apply an isometric mapping of $U$ onto itself taking $p^*$ to $x$. We may therefore suppose that $M^*$ contains $x$ as the image of $p$. Thus
+\[M^*=M+x,\]
+where $M$ is the image of $E$ and $\rho(x,z)=\varepsilon$ for every point $z$ of $M$. Consequently, $M$ is a subset of $F(x,\varepsilon)$, as required.
+
+It remains to prove that $\delta[F(x,\varepsilon)]=2\varepsilon$. By what we have just proved, $\delta[F(x,\varepsilon)]$ is certainly at least $2\varepsilon$. On the other hand, it is immediately apparent that in every metric space one necessarily has $\delta[F(x,\varepsilon)]\le2\varepsilon$. Thus, in our case, $\delta[F(x,\varepsilon)]$ equals precisely $2\varepsilon$.
+\srcpage{84}
+This completes the proof of Theorem VI.
+
+\textbf{VII.} \textit{$F(x,\varepsilon)$ is a homogeneous metric space.}
+
+Let $A$ and $B$ be two congruent subsets of $F(x,\varepsilon)$ consisting of finitely many points. Then $A+x$ and $B+x$ are also congruent. The mapping of $U$ onto itself taking $A+x$ to $B+x$ fixes $x$ and consequently takes $F(x,\varepsilon)$ onto itself. \hfill \mbox{Q. E. D.}
+
+\textbf{VIII.} \textit{$F(x,\varepsilon)$ is the only complete separable homogeneous metric space of diameter at most $2\varepsilon$ that contains an isometric image of every separable metric space of diameter $\le2\varepsilon$.}
+
+The proof is entirely analogous to that of Theorem IV. First one shows that every space $W$ satisfying the conditions of statement VIII satisfies an analogue of Theorem I, namely:
+
+\textbf{I$_\varepsilon$.} For any points
+\[x_1,x_2,\ldots,x_s\]
+of $W$ and any positive numbers not exceeding $2\varepsilon$,
+\[\alpha_1,\alpha_2,\ldots,\alpha_s,\]
+such that
+\[|\alpha_2-\alpha_k|\le\rho(x_i,x_k)\le\alpha_i+\alpha_k\qquad(i,k\le s),\]
+there exists a point $y$ of $W$ whose distance from $x_i$ equals $\alpha_i$ ($i=1,2,\ldots,s$). The proof follows word for word that of the analogous theorem in part~1 of Section~15 [observe that the space consisting of $z_1,z_2,\ldots,z_{s+1}$, related by (37) and (38), has diameter $\le2\varepsilon$].
+
+Similarly, the second step consists in proving the following property:
+
+Every complete separable metric space $W$ of diameter at most $2\varepsilon$ is congruent to $F(x,\varepsilon)$ if it satisfies I$_\varepsilon$. This proof again reproduces exactly the argument in part~2 of Section~15. One need only observe, to ensure that the procedure is always applicable, that the sets $A_n$ and $B_n$ successively constructed all have diameter at most $2\varepsilon$.
+
+\srcpage{85}
+\textbf{IX.} \textit{$F(x,\varepsilon)$ has property V.}
+
+Starting from VI and VII, the proof proceeds by a method entirely analogous to that used in Section~19.
+
+We likewise have the following analogues of the corollaries in Section~19:
+
+\textsc{Corollary I.} --- \textit{$F(x,\varepsilon)$ is connected.}
+
+\textsc{Corollary II.} --- \textit{$F(x,\varepsilon)$ is locally connected.}
+
+\paragraph{21.}
+As usual, let $S(x,\varepsilon)$ denote the set of points of $U$ whose distance from $x$ is less than $\varepsilon$, and let $\mathfrak{E}(x,\varepsilon)$ denote the complement of $S(x,\varepsilon)+F(x,\varepsilon)$ (that is, the set of points whose distance from $x$ exceeds $\varepsilon$). We have the following result:
+
+\textbf{X.} \textit{In the decomposition of $U$ into three pairwise disjoint sets,}
+\[U=S(x,\varepsilon)+F(x,\varepsilon)+\mathfrak{E}(x,\varepsilon),\]
+\textit{the open sets $S(x,\varepsilon)$ and $\mathfrak{E}(x,\varepsilon)$ are connected, and the closed set $F(x,\varepsilon)$ is their common boundary.}
+
+Indeed, $S(x,\varepsilon)$ is connected, since for any point $t$ of $S(x,\varepsilon)$ there is in $U$ a straight line segment $\overline{xt}$ of length $\rho(x,t)<\varepsilon$; this segment is therefore contained in $S(x,\varepsilon)$. As for $\mathfrak{E}(x,\varepsilon)$, it is the union of all sets $F(x,\eta)$ corresponding to values of $\eta$ greater than $\varepsilon$. Each $F(x,\eta)$ is connected by Corollary I of IX. It therefore suffices to show\footnote{\textit{Loc. cit.}, p.~246.} that any point $w$ of $F(x,\eta_2)$ can be joined to some point $t$ of $F(x,\eta_1)$ by a straight line segment $\overline{tw}$ contained in $\mathfrak{E}(x,\varepsilon)$, for any positive numbers $\eta_1$ and $\eta_2$ satisfying $\eta_1>\eta_2>\varepsilon$.
+
+To prove this, consider a segment $\overline{xw}$. Since it is congruent to an ordinary straight line segment of length $\rho(x,w)=\eta_2$,
+\srcpage{86}
+for every $\eta<\eta_2$ there is one and only one point $t_\eta$ belonging both to $\overline{xw}$ and to $S(x,\eta)$. The straight line segment $\overline{tw}$ is therefore simply the segment $\overline{t_{\eta_1}w}$ lying on $\overline{xw}$.
+
+Clearly,
+\[
+\overline{S(x,\varepsilon)}-S(x,\varepsilon)\subset F(x,\varepsilon)
+\quad\text{and}\quad
+\overline{\mathfrak{E}(x,\varepsilon)}-\mathfrak{E}(x,\varepsilon)\subset F(x,\varepsilon)
+\]
+(where, as usual, $\subset$ denotes inclusion: the set to the left of $\subset$ is contained in the set to its right).
+
+To see that $F(x,\varepsilon)$ is the common boundary of $S(x,\varepsilon)$ and $\mathfrak{E}(x,\varepsilon)$, it therefore remains to prove the inclusions
+\[
+F(x,\varepsilon)\subset\overline{S(x,\varepsilon)}\quad\text{and}\quad F(x,\varepsilon)\subset\overline{\mathfrak{E}(x,\varepsilon)}.
+\]
+Let $u$ be any point of $F(x,\varepsilon)$ and $\delta$ any positive number less than $\varepsilon$.
+
+Consider the two systems of points and positive numbers:
+\[
+\left\{\begin{array}{cc}x,&u,\\\varepsilon-\delta,&\delta\end{array}\right.
+\qquad\Big|\qquad
+\left\{\begin{array}{cc}x,&u,\\\varepsilon+\delta,&\delta\end{array}\right.
+\]
+We have
+\[|(\varepsilon-\delta)-\varepsilon|=|\delta-2\delta|<\varepsilon=\rho(x,u)=|(\varepsilon-\delta)+\delta|\]
+and
+\[|(\varepsilon+\delta)-\delta|=\varepsilon=\rho(x,u)<(\varepsilon+\delta)+\delta.\]
+The inequalities $(\Delta)$ hold, so by Theorem I there exist points $v_1$ and $v_2$ such that
+\[
+\rho(x,v_1)=\varepsilon-\delta;\quad\rho(x,u)=\delta
+\qquad\Big|\qquad
+\rho(x,v_2)=\varepsilon+\delta;\quad\rho(u,v_2)=\delta.
+\]
+Thus $v_1$ belongs to $S(x,\varepsilon)$ and its distance from $u$ equals $\delta$; similarly, $v_2$ belongs to $\mathfrak{E}(x,\varepsilon)$ and its distance from $u$ again equals $\delta$. Hence $\rho[u,S(x,\varepsilon)]=0=\rho[u,\mathfrak{E}(x,\varepsilon)]$, which proves our proposition.
+
+\textbf{XI.} \textit{For every subset $L$ of $F(x,\varepsilon)$, the set $U-L$ is connected} [it is assumed that $L$ does not coincide with $F(x,\varepsilon)$]. --- We have the evident inclusions
+\begin{equation}S(x,\varepsilon)\subset S(x,\varepsilon)+[F(x,\varepsilon)-L]\subset\overline{S(x,\varepsilon)},\tag{46}\end{equation}
+\begin{equation}\mathfrak{E}(x,\varepsilon)\subset\mathfrak{E}(x,\varepsilon)+[F(x,\varepsilon)-L]\subset\overline{\mathfrak{E}(x,\varepsilon)}.\tag{47}\end{equation}
+The leftmost sets in (46) and (47) are connected
+\srcpage{87}
+by IX. It follows from well-known results of Mr.~Hausdorff\footnote{\textsc{Hausdorff}, \textit{loc. cit.}, p.~245.} that the middle set in each of (46) and (47) is also connected. These two connected sets have the common part $F(x,\varepsilon)-L$, which is nonempty by hypothesis. It follows\footnotemark[\value{footnote}] that their union, namely the set
+\[S(x,\varepsilon)+\mathfrak{E}(x,\varepsilon)+[F(x,\varepsilon)-L]=U-L\]
+is also connected. \hfill \mbox{Q. E. D.}
+
+\paragraph{22.}
+One may ask whether $U$ has a more precise homogeneity property than the one stated in Section~14. The following result may be of some interest in this respect.
+
+\textbf{XII.} \textit{One can exhibit two congruent sets $A$ and $B$ in $U$} (necessarily infinite) \textit{such that no isometric mapping of $U$ onto itself takes $A$ to $B$.}
+
+Every isometric mapping of $U$ onto itself is \textit{a fortiori} a topological transformation (that is, one-to-one and continuous in both directions) of $U$ onto itself. Thus it suffices to construct two congruent sets having different topological properties relative to $U$. We shall do this by constructing two congruent sets $A$ and $B$ such that $U-A$ is not connected whereas $U-B$ is connected.
+
+Put $A=F(x,\varepsilon)$, where the point $x$ of $U$ and the positive number $\varepsilon$ are entirely arbitrary.
+
+By VI, there exists a subset $M$ of $F(x,\varepsilon)$ congruent to $x+F(x,\varepsilon)$ (whose diameter is clearly $2\varepsilon$). Let $q$ be the point of $M$ corresponding to $x$ under the isometric mapping of $M$ onto $x+F(x,\varepsilon)$. The image of $F(x,\varepsilon)$ is then precisely $M-x$. Putting $B=M-x$ and observing that $B\subset M-x\subset F(x,\varepsilon)-x$, and hence that $F(x,\varepsilon)-B$ is nonempty, we obtain from XI that $U-B$ is connected, whereas by X, $U-A$ is not connected. \hfill \mbox{Q. E. D.}
+
+Observe that the two sets $A$ and $B$ just constructed are both nondense in $U$.
+
+\srcpage{88}
+\paragraph{23.}
+Finally, let us return to Mr.~Fréchet's problem. Mr.~Fréchet writes: ``\ldots I seek the most general expression for `distance' on a straight line compatible with the ordinary definition of a limit. I find that this most general expression is obtained by making the line correspond to a Jordan curve without multiple points in the space $D_\omega$, and taking as the distance on the line the distance between the corresponding points\ldots\ in $D_\omega$. Clearly, $D_\omega$ cannot be replaced by an $n$-dimensional space. \textit{My question} is then: could $D_\omega$ (which is not separable) be replaced by a simpler space such as $E_\omega$ or Hilbert space?''
+
+Mr.~Fréchet's problem is precisely that of finding a separable metric space containing isometric images of all simple open Jordan arcs, given abstractly as metric spaces. Since every simple arc is a separable metric space, $U$ does indeed answer Mr.~Fréchet's question.
+
+On the other hand, neither $E_\omega$ nor Hilbert space can provide such a solution.
+
+Indeed, $E_\omega$ is the space in which each point $x$ is defined by infinitely many ``coordinates'' $x_1,x_2,\ldots,x_n,\ldots$, and in which the distance between $x=(x_1,x_2,\ldots,x_n,\ldots)$ and $y=(y_1,y_2,\ldots,y_n,\ldots)$ is given by
+\[\rho(x,y)=\sum_{n=1}^{\infty}\frac1{n!}\frac{|x_n-y_n|}{1+|x_n-y_n|}.\]
+Thus we always have
+\[\rho(x,y)\le\sum_{n=1}^{\infty}\frac1{n!}=e-1<2,\]
+so that the diameter of $E_\omega$ is less than $2$; hence $E_\omega$ cannot contain an isometric image of a straight line segment of length, for example, $2$.
+
+Nor does Hilbert space solve the problem, as can be seen as follows:
+
+In the ordinary plane, let $\Phi$ be the figure formed by the horizontal axis and the straight line segments $[x=0,\ 0\le y\le1]$, $[x=1,\ 0\le y\le1]$, and $[0\le x\le1,\ y=1]$. Denote by $L$ the simple open
+\srcpage{89}
+arc consisting of the ray $[-\infty,0]$ of the horizontal axis, the three segments just defined, and the ray $(1,+\infty)$ of the horizontal axis. Without altering the topological properties of $L$, we can turn this figure into a metric space $M$ by putting, for any two points $\xi$ and $\eta$ of $L$,
+\[
+\begin{aligned}
+\rho(\xi,\eta)={}&\text{the length of the shortest polygonal line lying on $\Phi$}\\
+&\text{and joining the two points $\xi$ and $\eta$.}
+\end{aligned}
+\]
+This definition of distance, which gives the same convergence properties as the ordinary distance on $L$, clearly satisfies all the axioms defining metric spaces.
+
+To see that $M$ is not contained isometrically in Hilbert space, consider the four points $a,b,c,d$ of $L$ defined by their coordinates as follows:
+\[a=(0,0),\qquad b=(-1,0),\qquad c=(0,1),\qquad d=(1,0).\]
+In $M$, we obtain the following distances:
+\begin{equation}
+\left\{\begin{aligned}\rho(a,b)=\rho(a,c)=\rho(a,d)&=1,\\\rho(b,c)=\rho(b,d)=\rho(c,d)&=2.\end{aligned}\right.\tag{48}
+\end{equation}
+We shall show not only that $M$ is congruent to no subset of Hilbert space, but that even the metric space contained in $M$ consisting of the four points $a,b,c,d$ with distances (48) admits no isometric representation onto any subset of Hilbert space.
+
+Indeed, otherwise we could suppose that $a$ corresponds to the origin of the Hilbert-space coordinates, that is, to the point
+\[a^*=(0,0,\ldots,0,\ldots).\]
+Suppose that the images of $b,c,d$ are, respectively, the points
+\[b^*=(x_1,x_2,\ldots,x_n,\ldots),\qquad c^*=(y_1,y_2,\ldots,y_n,\ldots)\]
+and
+\[d^*=(z_1,z_2,\ldots,z_n,\ldots)\]
+of Hilbert space.
+
+Since the representation is assumed isometric, we would have,
+\srcpage{90}
+in the latter space,
+\[
+\begin{gathered}
+\rho(a^*,b^*)=\rho(a^*,c^*)=\rho(a^*,d^*)=1,\\
+\rho(b^*,c^*)=\rho(b^*,d^*)=\rho(c^*,d^*)=2,
+\end{gathered}
+\]
+that is,
+\[
+\sum_{n=1}^{\infty}x_n^2=\sum_{n=1}^{\infty}y_n^2=\sum_{n=1}^{\infty}z_n^2=1,
+\]
+\[
+\sum_{n=1}^{\infty}(x_n-y_n)^2=\sum_{n=1}^{\infty}(y_n-z_n)^2=\sum_{n=1}^{\infty}(z_n-x_n)^2=4,
+\]
+hence
+\begin{equation}\sum_{n=1}^{\infty}(x_n^2+y_n^2+z_n^2)=3\tag{49}\end{equation}
+and
+\begin{equation}\sum_{n=1}^{\infty}\{(x_n-y_n)^2+(y_n-z_n)^2+(z_n-x_n)^2\}=12.\tag{50}\end{equation}
+\begin{samepage}
+On the other hand,
+\begin{equation}\sum_{n=1}^{\infty}\{(x_n+y_n)^2+(y_n+z_n)^2+(z_n+x_n)^2\}>0,\tag{51}\end{equation}
+for otherwise we would have, for every $n$,
+\[x_n+y_n=y_n+z_n=z_n+x_n=0,\]
+and hence
+\[x_n=y_n=z_n=0,\]
+contrary to (49).
+
+Adding (50) and (51), we obtain
+\[4\sum_{n=1}^{\infty}(x_n^2+y_n^2+z_n^2)>12,\]
+which is incompatible with (49).
+\end{samepage}
+\end{document}

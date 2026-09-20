@@ -1,0 +1,69 @@
+% Original-language transcription. See TRANSCRIPTION-NOTES.md.
+\documentclass[11pt,a4paper,twoside]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,enumitem}
+\usepackage[margin=25mm,headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[CE]{H. Toruńczyk}
+\fancyhead[CO]{\small\itshape A short proof of Hausdorff's theorem on extending metrics}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{1.5em}\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{1em}
+\renewcommand{\thefootnote}{(\arabic{footnote})}
+\newcommand{\onto}{\xrightarrow{\mathrm{onto}}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\begin{document}
+\setcounter{page}{191}\thispagestyle{plain}
+\begin{center}
+{\Large\bfseries A short proof of Hausdorff's theorem\\on extending metrics}\par\bigskip
+by\par\medskip
+\textbf{H. Toruńczyk} (Warszawa)
+\end{center}
+\medskip
+The aim of this paper is to give a short proof of the following theorem:
+
+\textsc{Theorem.} \textit{Let $X$ be a metrizable topological space and let $A\subset X$ be a closed set. Then, for every metric $\varrho$ on $A$ which induces the relative topology on $A$, there is a metric $\bar\varrho$ on $X$ which is an extension of $\varrho$ and is compatible with the topology of $X$. If moreover $X$ is complete-metrizable and $\varrho$ is a complete metric on $A$, then the extension $\bar\varrho$ above can be obtained to be a complete metric on $X$.}
+
+The first part of the theorem was proved by F. Hausdorff [5] in 1930 (cf.\ also [6]) and independently by R. H. Bing ([3], Theorem 5) in 1947, whereas the remark concerning the ``complete'' case was made by P. Bacon [2] in 1968. Let us note that R. Arens ([1], Theorem 3.3) gave in 1952 a relatively simple proof of Hausdorff's theorem; his arguments were based on a close examination of ``Dugundji's retraction''.
+
+The proof we are going to present involves (besides other well-known facts) the use of the following lemma of V. L. Klee ([7], pp.\ 36).
+
+\textsc{Lemma.} \textit{Let $E$ and $F$ be normed linear spaces and let $K\subset E\times\{0\}$ and $L\subset\{0\}\times F$ be closed subsets of $E\times F$. Then, for every homeomorphism $f\colon K\onto L$, there is an extension of $f$ to a homeomorphism $\bar f\colon E\times F\onto E\times F$.}
+
+\textbf{Proof.} Denote by $p_E$ and $p_F$ the natural projections of $E\times F$ onto $E$ and $F$, respectively. Since $F$ is an $\operatorname{ANR}(\mathfrak M)$ ([4], Theorem 4.1), the function $p_F\circ f\colon K\to F$ can be extended to $\lambda\colon E\times\{0\}\to F$. We put $f_1(\alpha,\beta)=(\alpha,\beta+\lambda(\alpha,0))$, $(\alpha,\beta)\in E\times F$; $f_1$ is then a homeomorphism of $E\times F$ onto itself satisfying $f_1(\alpha,\beta)=(\alpha,p_F\circ f(\alpha,\beta))$ for $(\alpha,\beta)\in K$. Similarly, there is a homeomorphism $f_2\colon E\times F\onto E\times F$ such that $f_2(\alpha,\beta)=(p_E\circ f^{-1}(\alpha,\beta),\beta)$ for $(\alpha,\beta)\in L$. We then have $f_2\circ f(\alpha,\beta)=f_1(\alpha,\beta)$ for $(\alpha,\beta)\in K$, whence $\bar f=f_2^{-1}\circ f_1$ is the desired extension of $f$.
+
+Now we pass to the proof of the theorem; Bacon's remark will be considered in brackets.
+\newpage
+\textbf{Proof of the theorem.} By [8], $(A,\varrho)$ can be isometrically imbedded as a closed subset of a [complete] normed linear space $(F,\norm{\ }_F)$; let $h_0\colon A\to F$ be the embedding.\footnote{\textbf{Added in proof.} For the sake of completeness we insert here a construction of $h_0$ (it seems to be somewhat simpler than that given by E. Michael [8]). Fix $p\in A$, denote by $Z$ the set of all finite subsets of $A$, and let $E$ be the Banach space of bounded real functions on $Z$ (with the supremum norm). Define $h_0\colon A\to E$ by
+\[
+h_0(x)=f_x\in E,\quad\text{where}\quad f_x(S)=\operatorname{dist}_{\varrho}(x,S)-\operatorname{dist}_{\varrho}(p,S)\ \text{for }S\in Z.
+\]
+Given $a,b\in A$ and $S\in Z$ we have $|(f_a-f_b)(S)|\leq\varrho(a,b)=|(f_a-f_b)(\{b\})|$, what implies $\norm{f_a}\leq\varrho(p,a)$ and $\norm{f_a-f_b}=\varrho(a,b)$. Therefore it remains to show that $h_0$ is closed when considered as a map into $F=\text{the linear span of }h_0(A)$. This is because if $(x_n)\in A^{\infty}$ is a sequence such that $\lim_n h_0(x_n)=\sum_{i=1}^m\lambda_i f_{a_i}$ for some $\lambda_1,\ldots,\lambda_m\in R$ and $a_1,\ldots,a_m\in A$, then setting $S=\{a_1,\ldots,a_m,p\}$ we get $\lim_n\operatorname{dist}_{\varrho}(x_n,S)=\lim_n f_{x_n}(S)=(\sum_{i=1}^m\lambda_i f_{a_i})(S)=0$; thus $(x_n)$ must contain a subsequence converging to a point of $\{a_1,\ldots,a_m,p\}$. Our argument shows also that $h_0(A\setminus\{p\})$ is a linearly independent set (observe that $h_0(x)\in\operatorname{span}\{h_0(a_i):i\leq m\}$ implies $x\in\{a_1,\ldots,a_m,p\}$). The embedding constructed is very similar to the classical embedding of Kuratowski-Kunugui, see Fund.\ Math.\ 25 (1935), p.\ 543, and Proc.\ Imp.\ Acad.\ Japan 11 (1935), p.\ 351.}
+Similarly, there is a topological embedding $g_0\colon X\to E$ of $X$ onto a closed subset of a [complete] normed linear space $(E,\norm{\ }_E)$. We put $\norm{(\alpha,\beta)}=\norm{\alpha}_E+\norm{\beta}_F$ for $(\alpha,\beta)\in E\times F$ and we set $g=g_0\times0\colon X\to E\times\{0\}$, $h=0\times h_0\colon A\to\{0\}\times F$, $K=g(A)$ and $L=h(A)$. By the Lemma, the homeomorphism $f=h\circ g^{-1}\colon K\onto L$ can be extended to a homeomorphism $\bar f\colon E\times F\onto E\times F$. Obviously, $u=\bar f\circ g$ is a topological embedding of $X$ onto a closed subset of $E\times F$ and, since $h(A)\subset\{0\}\times F$, the restriction $u|_A=h$ is an isometric embedding of $(A,\varrho)$ into the [complete] normed linear space $(E\times F,\norm{\ })$. The metric
+\[
+\bar\varrho(x_1,x_2)=\norm{u(x_1)-u(x_2)},\quad x_1,x_2\in X,
+\]
+is the extension of $\varrho$ we have been looking for.
+
+\bigskip\begin{center}\textbf{References}\end{center}
+\begin{enumerate}[label={[\arabic*]},leftmargin=2em,itemsep=3pt]
+\item R. Arens, \textit{Extension of functions on fully normal spaces}, Pacific Journ.\ of Math.\ 2 (1952), pp.\ 11--22.
+\item P. Bacon, \textit{Extending a complete metric}, Amer.\ Math.\ Monthly 75 (1968), pp.\ 642--643.
+\item R. H. Bing, \textit{Extending a metric}, Duke Math.\ J.\ 14 (1947), pp.\ 511--519.
+\item J. Dugundji, \textit{An extension of Tietze's theorem}, Pacific Journ.\ of Math.\ 1 (1951), pp.\ 353--367.
+\end{enumerate}
+\newpage
+\begin{enumerate}[label={[\arabic*]},leftmargin=2em,itemsep=3pt,start=5]
+\item F. Hausdorff, \textit{Erweiterung einer Homöomorphie}, Fund.\ Math.\ 16 (1930), pp.\ 353--360.
+\item --- \textit{Erweiterung einer stetigen Abbildung}, Fund.\ Math.\ 30 (1938), pp.\ 40--47.
+\item V. L. Klee, \textit{Some topological properties of convex sets}, Trans.\ Amer.\ Math.\ Soc.\ 78 (1955), pp.\ 30--45.
+\item E. Michael, \textit{A short proof of the Arens-Eells embedding theorem}, Proc.\ Amer.\ Math.\ Soc.\ 15 (1964), pp.\ 415--416.
+\end{enumerate}
+\bigskip
+\noindent\textsc{Institute of Mathematics\\of Polish Academy of Sciences}
+\bigskip
+\begin{center}\textit{Reçu par la Rédaction le 8. 11. 1971}\end{center}
+\end{document}

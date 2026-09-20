@@ -1,0 +1,187 @@
+% Faithful transcription of M. Katetov, On universal metric spaces (1988), pp. 323--330.
+% Source and suspected original misprints are recorded in TRANSCRIPTION-NOTES.md.
+\documentclass[12pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,accents}
+\usepackage[margin=27mm,headheight=18pt]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\small M. Kat\v{e}tov: On universal metric spaces}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\linespread{1.08}
+\setlength{\parindent}{1.4em}
+\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{1em}
+\newcommand{\M}{\mathcal{M}}
+\newcommand{\E}{\mathcal{E}}
+\newcommand{\card}{\operatorname{card}}
+\newcommand{\Ord}{\mathrm{Ord}}
+\newcommand{\Card}{\mathrm{Card}}
+\newcommand{\Is}{\operatorname{Is}}
+\newcommand{\dom}{\operatorname{dom}}
+\newcommand{\wt}{\mathrm{w}}
+% The source uses a curved underaccent for the supremum exponent (1.1 D).
+\newcommand{\suprexp}[1]{\underaccent{\smile}{#1}}
+\newcommand{\res}{\mathbin{\upharpoonright}}
+\newcommand{\itemhead}[2]{\par\noindent\textbf{#1.}\enspace\underline{#2.}\enspace}
+\newcommand{\prooftext}{\par\textit{Proof.}\enspace}
+\newcommand{\sectionnumber}[1]{\par\medskip\begin{center}\textbf{#1}\end{center}}
+\begin{document}
+\setcounter{page}{323}
+\thispagestyle{fancy}
+\fancyhead[C]{}
+\fancyhead[R]{\thepage}
+\noindent{\footnotesize General Topology and its Relations\\
+to Modern Analysis and Algebra VI\\
+Proc. Sixth Prague Topological Symposium 1986\\
+Z. Frol\'ik (ed.)\\
+Copyright Heldermann Verlag Berlin 1988\\
+323--330}
+\vspace{12mm}
+\begin{center}
+{\large\bfseries On universal metric spaces}\par
+\vspace{7mm}
+\textit{M. Kat\v{e}tov}
+\end{center}
+\vspace{10mm}
+We present the following theorems (for the terms involved, see 1.1 and 1.2 below).
+
+\par\noindent\underline{Theorem I.}\enspace There is exactly one (up to isometry) complete $\omega$-homogeneous $\omega$-universal metric space of weight $\omega$.
+
+\par\noindent\underline{Theorem II.}\enspace If $\alpha>\omega$ is a cardinal and $\alpha^{\suprexp{\alpha}}=\alpha$, then there exists exactly one (up to isometry) Urysohn universal space of weight $\alpha$. Every Urysohn universal space of uncountable weight is complete.
+
+\par\noindent\underline{Theorem III.}\enspace If $\alpha$ is a cardinal, $\alpha^{\suprexp{\alpha}}>\alpha$, then there is no $\alpha$-homogeneous $\alpha$-universal space of weight $\alpha$.
+
+\par\noindent\underline{Theorem IV.}\enspace There exists a meager Urysohn universal space of weight $\omega$.
+
+Theorem I has been proved by P. Urysohn, see [2] and [3]. In [3], P. Urysohn posed the question whether there exist non-complete $\omega$-homogeneous strongly $\omega$-universal spaces; this question is answered by Theorem IV. Theorem II can be easily deduced from J\'onsson's theorems concerning relational systems (for the pertinent theorem and references to J\'onsson's articles, see [1],\S4).
+
+Theorems II--IV are immediate consequences of propositions proved below: Theorem II follows from 2.8, 2.9, 2.7 and 2.10, Theorem III from 2.9 and 2.11, Theorem IV from 3.2.
+\vfill
+\noindent\rule{30mm}{0.4pt}\par
+\noindent\footnotesize This paper is in final form and will not be submitted for publication elsewhere.\normalsize
+
+\newpage % Original page 324
+\fancyhead[C]{\small M. Kat\v{e}tov: On universal metric spaces}
+\sectionnumber{1}
+\itemhead{1.1}{Notation and conventions}A) As a rule, the same symbol denotes a metric space and its underlying set, or a mapping $f:A\longrightarrow B$ and the set $\{(a,b):a\in A,\ b=f(a)\}$, etc. -- B) If $f:A\longrightarrow B$ is a mapping, we often write $fa$ instead of $f(a)$. -- C) The class of all ordinals (all cardinals) will be denoted by $\Ord$ (respectively, by $\Card$). The letters $x$, $y$ and $z$ (respectively, $\alpha$, $\beta$ and $\gamma$) will stand for ordinals (for cardinals). The cardinality of a set $A$ is denoted by $\card A$. We have $\Card\subset\Ord$, and $x=\{y:y<x\}$ for all $x\in\Ord$. -- D) If $x\in\Ord$, $\alpha\in\Card$, we put $\alpha^{\suprexp{x}}=\sup(\alpha^\beta:\beta<x)$. -- E) ``Space'' always means a metric space. The class of all non-void spaces is denoted by $\M$. The weight of a space $S$ is denoted by $\wt S$. -- F) If $S$ and $T$ are spaces, then $[S,T]$ denotes the set of all isometric mappings $f:S\longrightarrow T$, and $\Is(S,T)$ denotes the set of isometries $g:S\longrightarrow T$, i.e.\ of bijective mappings $g\in[S,T]$. A mapping $h\in\Is(S,S)$ will be called an isometry of $S$. If $\Is(S,T)\ne\varnothing$, we write $S\cong T$.
+
+\itemhead{1.2}{Basic definitions}Let $\alpha\geq\omega$ be a cardinal. A space $S$ will be called (1) $\alpha$-homogeneous if, for any $f\in\Is(A,B)$, where $A\subset S$, $B\subset S$, $\card A<\alpha$, there is a $g\in\Is(S,S)$ such that $g\res A=f$, (2) $\alpha$-universal (strongly $\alpha$-universal) if $[T,S]\ne\varnothing$ whenever $T\in\M$ and $\card T\leq\alpha$ (respectively, $\wt T\leq\alpha$). A space of weight $\alpha$ will be called Urysohn universal if it is $\alpha$-homogeneous strongly $\alpha$-universal.
+
+\itemhead{1.3}{Fact and notation}Let $(S,\varrho)\in\M$. If $p\in S$, let $\hat p$ (or merely $p$) denote the function $s\longmapsto\varrho(p,s)$. Let $E'(S)$ denote the set of all $f:S\longrightarrow R$ satisfying $|fp-fq|\leq\varrho(p,q)\leq fp+fq$ for all $p,q\in S$ and distinct from all $\hat s$, $s\in S$. Put $E(S)=S\cup E'(S)$. If $p,q\in E(S)$, put $\varrho^E(p,q)=\sup\{|p(s)-q(s)|:s\in S\}$. Then $\varrho^E$ is a metric on $E(S)$. The space $(E(S),\varrho^E)$ will be denoted by $E(S,\varrho)$ or by $E(S)$.
+
+\itemhead{1.4}{Fact and notation}Let $S\in\M$, $\varnothing\ne T\subset S$. If $f\in E'(T)$, let $f^*$ denote the function $s\longmapsto\inf\{\varrho(s,t)+ft:t\in T\}$ defined on $S$. If $f^*=\hat p$ for some $p\in S$, put $f_S=p$; if not, put $f_S=f^*$. If $t\in T$, put $t_S=t$. Then the mapping $r\longmapsto r_S$, defined on $E(T)$, is in $[E(T),E(S)]$.
+
+\prooftext It is easy to see that either $f^*\in E'(S)$ or $f^*=\hat p$ for some $p\in S$. We are going to show that if $f,g\in E'(T)$ and $f^*,g^*\in$
+\newpage % Original page 325; continuation of 1.4
+\noindent $E'(S)$, then $\sup\{|f^*s-{}^*g^*s|:s\in S\}\leq\varrho^E(f,g)$; the remaining assertions are easy to prove. Suppose there are $s\in S$ and $\varepsilon>0$ such that $|f^*s-g^*s|>\varrho^E(f,g)+\varepsilon$. We can assume $f^*s>g^*s$. Choose $t\in T$ such that $gt+\varrho(s,t)<g^*s+\varepsilon$. Since $ft+\varrho(s,t)\geq f^*s$, we get $ft-gt\geq f^*s+g^*s-\varepsilon>\varrho^E(f,g)$, which is a contradiction.
+
+\itemhead{1.5}{Notation}Let $S\in\M$ and let $\alpha>1$. The subspace of $E(S)$ consisting of all $t_S$, where $t\in\bigcup(E(T):T\subset S,\ 0<\card T<\alpha)$, will be denoted by $E(S,\alpha)$.
+
+\itemhead{1.6}{Fact and notation}Let $S\in\M$ and let $\varphi\in\Is(S,S)$. Then there is exactly one $\Phi\in\Is(E(S),E(S))$ such that $\Phi\res S=\varphi$. The isometry $\Phi$ will be denoted by $E(\varphi)$. For any $\alpha>1$, $E(S,\alpha)$ is invariant under $\Phi$.
+
+\prooftext If $s\in S$, put $\Phi(s)=\varphi s$. If $f\in E'(S)$, put $\Phi(f)=f\circ\varphi^{-1}$. It is easy to see that $\Phi$ is an isometry of $E(S)$. -- Let $\Psi$ be an isometry of $E(S)$ and let $\Psi\res S=\varphi$. Let $f\in E'(S)$, $g=\Psi(f)$. It is easy to see that, for any $h\in E'(S)$ and any $p\in S$, $\varrho^E(h,p)=h(p)$. For any $s\in S$, we have $\varrho^E(g,\varphi s)=\varrho^E(f,s)$, hence $g(\varphi s)=f(s)$, $(g\circ\varphi)(s)=f(s)$. This implies $g\circ\varphi=f$, $g=f\circ\varphi^{-1}$.
+
+\itemhead{1.7}{Fact}Let $(S,\varrho)\in\M$, $A\subset S$, $0<\card A<\omega$, $B\subset S$. Let $\varphi:A\longrightarrow B$ be a bijection. Let $\varepsilon>0$ and let $\varrho(a,\varphi a)\leq\varepsilon$ for each $a\in A$. If $f\in E'(A)$, $g\in E'(B)$ and $f=g\circ\varphi$, then $\varrho^E(f_S,g_S)\leq\varepsilon$.
+
+\prooftext Let $s\in S$. We have $f_S(s)=\inf\{ft+\varrho(s,t):t\in A\}$, $g_S(s)=\inf\{g(\varphi t)+\varrho(s,\varphi t):t\in A\}=\inf\{ft+\varrho(s,\varphi t):t\in A\}$. Since $|\varrho(s,t)-\varrho(s,\varphi t)|\leq\varrho(t,\varphi t)\leq\varepsilon$ for each $t\in A$, we get $|f_S(s)-g_S(s)|\leq\varepsilon$.
+
+\itemhead{1.8}{Lemma}Let $1<\alpha\leq\omega$. Let $S\in\M$. Then $\wt(E(S,\alpha))=\omega\cdot\wt S$, $\card E(S,\alpha)=2^\omega\cdot\card S$.
+
+\prooftext Since $E(S,\omega)=\bigcup(E(S,n):1<n<\omega)$, we can assume that $\alpha=n<\omega$. If $A\subset S$, $0<\card A<n$, put $P(A)=\{u_S:u\in E(A)\}$. Since $\wt(E(A))=\omega$, $\card E(A)=2^\omega$, we get, by 1.4, $\wt(P(A))=\omega$, $\card P(A)=2^\omega$. Let $T\subset S$, $\card T=\wt S$. By 1.7, the union of $P(A)$, where $A\subset T$, $0<\card A<n$, is dense in $E(S,n)$. This proves $\wt E(S,n)\leq\omega\cdot\wt S$; evidently, $\wt E(S,n)\geq\omega\cdot\wt S$. Finally, we have $E(S,n)=\bigcup(E(T):T\subset S,\ 0<\card T<n)$, hence $\card E(S,n)\leq2^\omega\cdot\card S$.
+
+\newpage % Original page 326
+\itemhead{1.9}{Fact and notation}Let $S\in\M$. There exists exactly one indexed class $(S_x:x\in\Ord)$ such that (1) $S_0=S$, (2) if $x\in\Ord$, then $S_{x+1}=E(S_x,\omega\cdot(\card x)^+)$, (3) if $x$ is a limit ordinal, then $S_x=\bigcup(S_y:y<x)$. -- The spaces $S_x$ will be denoted by $U_x(S)$.
+
+\itemhead{1.10}{Lemma}Let $S\in\M$, $\card S\leq2^\omega$. Then, for any ordinal $x>\omega$, $\card U_x(S)\leq2^{\suprexp{x}}$.
+
+\prooftext By 1.8, $\card U_\omega(S)=2^\omega$. Put $V=\{x:x>\omega,\ \card U_x(S)>2^{\suprexp{x}}\}$. Suppose $V\ne\varnothing$ and put $y=\min V$. Put $\beta=\card y$. If $y$ is a limit ordinal, then $U_y(S)=\bigcup(U_x(S):x<y)$, hence $\card U_y(S)\leq\beta\cdot2^{\suprexp{y}}$, which contradicts $y\in V$. If $y=z+1$, then $U_y=E(U_z(S),\beta^+)$, hence $\card U_y(S)=\alpha^\beta$, where $\alpha=2^{\suprexp{z}}$. If $z\in\Card$, then, clearly, $\alpha^\beta=\alpha^z=2^z=2^{\suprexp{y}}$. If $z\notin\Card$, then $\alpha=2^\beta$, $\alpha^\beta=2^\beta=2^{\suprexp{y}}$. Hence $\card U_y(S)\leq2^{\suprexp{y}}$, which contradicts the supposition.
+
+\sectionnumber{2}
+\itemhead{2.1}{Notation}If $\alpha$ and $\beta$ are cardinals, then $\E(\alpha,\beta)$ will denote the class of all $(T,S)\in\M\times\M$ such that $T\subset S$ and if $M\in\M$, $A\subset M$, $\card A<\alpha$, $\card(M\setminus A)<\beta$, $f\in[A,T]$, then $g\res A=f$ for some $g\in[M,S]$.
+
+\itemhead{2.2}{Lemma}Let $\alpha\geq\omega$ be a cardinal. Let $S\in\M$. Let $S_x$, $x<\alpha$, be subspaces of $S$. Assume that (1) $\bigcup S_x=S$, (2) if $x<\alpha$, then $(S_x,S_y)\in\E(\alpha,2)$ for some $y<\alpha$, (3) if $K\subset S$, $\card K<\alpha$, then $K\subset S_z$ for some $z<\alpha$. Then $(S,S)\in\E(\alpha,\alpha^+)$.
+
+\prooftext Put $\beta=\alpha^+$. Let $M,A$ and $f$ be as in 2.1. Put $\gamma=\card(M\setminus A)$. Choose a bijection $h:\gamma\longrightarrow M\setminus A$. For $x\leq\gamma$ let $G_x$ consist of all $g\in[A\cup h\{y:y<x\},S]$ such that $g\res A=f$. Put $G=\bigcup G_x$. It is easy to see that $G$, ordered by inclusion (cf.\ 1.1 A), contains a maximal element, say $k$. Suppose that $k\in G_x$, where $x<\gamma$. Then $\dom k=A\cup h\{y:y<x\}$, hence $\card(\dom k)<\alpha$ and therefore $\dom k\subset S_y$ for some $y<\alpha$. Choose a $z<\alpha$ such that $(S_y,S_z)\in\E(\alpha,2)$. Then there exists a $k^*\in[(\dom k)\cup\{hx\},S]$ such that $k^*\res\dom g=g$. This is a contradiction, for $k^*\in G_{x+1}\subset G$. We have shown that $k\in G_\gamma$, which proves the lemma.
+
+\itemhead{2.3}{Corollary}For any cardinal $\alpha\geq\omega$, $\E(\alpha,2)=\E(\alpha,\alpha^+)$.
+
+\itemhead{2.4}{Notation}If $\alpha\geq\omega$, we put $\E(\alpha)=\{S:(S,S)\in\E(\alpha,2)\}$.
+
+\newpage % Original page 327
+\itemhead{2.5}{Lemma}Let $\alpha\geq\omega$. Let $S_i\in\E(\alpha)$, $i=1,2$. Let $A_i\subset S_i$, $\card A_i<\alpha$ and let $f\in\Is(A_1,A_2)$. Let $K_i\subset S_i$, $\card K_i\leq\alpha$. Then there exist subspaces $T_i\subset S_i$, and an isometry $g:T_1\longrightarrow T_2$ such that $A_i\cup K_i\subset T_i$ and $g\res A_1=f$.
+
+\prooftext Clearly, we can assume that $K_i\cap A_i=\varnothing$, $\card K_1=\card K_2\geq\omega$. Put $\beta=\card K_1$ and choose bijections $u:\{x:x<\beta\}\longrightarrow K_1$, $v:\{x:x<\beta\}\longrightarrow K_2$. For $x\leq\beta$ put $U_x=u\{z:z<x\}$, $V_x=v\{z:z<x\}$. If $x,y\leq\beta$, let $G(x,y)$ consist of all $g:[M,P_2]$ such that $A_1\subset M\subset S$, $g\res A_1=f$, $\dom g\setminus A_1=U_x\cup g^{-1}(V_y)$. Put $G=\bigcup(G(x,y):x\leq\beta,\ y\leq\beta)$. It is easy to see that $G$, ordered by inclusion (cf.\ 1.1 A), contains a maximal element, say $h$. Put $x_0=\sup\{x\leq\beta:h\in G(x,y)\text{ for some }y\}$, $y_0=\sup\{y\leq\beta:h\in G(x,y)\text{ for some }x\}$. It is easy to show that $h\in G(x_0,y_0)$. -- Suppose that $x_0<\beta$. Then $u(x_0)\notin\dom h$. Hence, due to $(S_2,S_2)\in\E(\alpha,2)$ and $\card(\dom h)<\alpha$, there is an isometric mapping $h':(\dom h\cup\{u(x_0)\})\longrightarrow S_2$ such that $h'\res\dom h=h$. We have $h'\in G(x_0+1,y_0)\subset G$. This contradicts the fact that $h$ is maximal, and proves that $x_0=\beta$. The proof of $y_0=\beta$ is analogous. Hence, $\dom h\supset K_1$, $\dom h^{-1}\supset K_2$, which proves the lemma.
+
+\itemhead{2.6}{Proposition}Let $\alpha\geq\omega$. If $S\in\E(\alpha)$ is complete and $\wt S\leq\alpha$, then $S$ is Urysohn universal.
+
+\prooftext By 2.3, $S$ is $\alpha$-universal, hence, being complete, strongly $\alpha$-universal. Let $A_1\subset S$, $A_2\subset S$, let $f:A_1\longrightarrow A_2$ be an isometry and let $\card A_i<\alpha$. By 2.5, there are dense sets $T_1\subset S$, $T_2\subset S$ and an isometry $g:T_1\longrightarrow T_2$ such that $A_i\subset T_i$ and $g\res A_1=f$. Since $T_i$ are dense and $S$ is complete, there is an isometry $h:S\longrightarrow S$ such that $h\res\dom g=g$, hence $h\res A_1=f$.
+
+\itemhead{2.7}{Lemma}If $\alpha>\omega$ and $S\in\E(\alpha)$, then $S$ is complete.
+
+\prooftext Let $(x_n:n\in N)$ be a Cauchy sequence in $S$; assume that $x_m\ne x_n$ if $m\ne n$. Let $M=N\cup\{\omega\}$; put $\sigma(i,j)=\varrho(x_i,y_j)$, $\sigma(\omega,i)=\sigma(i,\omega)=\lim_{m\to\infty}\varrho(x_i,x_n)$. Then $(M,\sigma)$ is a metric space. Due to $(S,S)\in\E(\alpha,2)$, there exists a $g\in[M,S]$ such that $g(i)=x_i$ for $i\in N$. Clearly, $x_n\longrightarrow g(\omega)$.
+
+\itemhead{2.8}{Proposition}Let $\alpha>\omega$ be a regular cardinal and let $\alpha^{\suprexp{\alpha}}=\alpha$. Let $T\in\M$, $\card T\leq2^\omega$. Then $U_\alpha(T)$ is a complete Urysohn universal space of weight $\alpha$.
+
+\prooftext Put $S=U_\alpha(T)$. By 2.2, $(S,S)\in\E(\alpha,\alpha^+)$, hence $S$ is $\alpha$-universal. By 2.7, $S$ is complete. By 1.10, $\card S\leq2^{\suprexp{\alpha}}$, hence $\wt S\leq\alpha$. By 2.6, this proves the proposition.
+
+\newpage % Original page 328
+\itemhead{2.9}{Lemma}Let $\alpha\geq\omega$. If $S$ is $\alpha$-homogeneous $\alpha$-universal, then $S\in\E(\alpha)$.
+
+\prooftext Let $M\in\M$, $A\subset M$, $M\setminus A=\{q\}$, $\card A<\alpha$. Let $f\in[A,S]$. Since $S$ is $\alpha$-universal, there exists a $g\in[M,S]$. For $p\in g(A)$ put $h(p)=f(g^{-1}p)$. Then $h:g(A)\longrightarrow f(A)$ is an isometry. Since $S$ is $\alpha$-homogeneous, there exists an isometry $v:S\longrightarrow S$ such that $v\res g(A)=h$. Clearly, $v\circ g\in[M,S]$, $(v\circ g)\res A=f$. We have shown that $(S,S)\in\E(\alpha,2)$.
+
+\itemhead{2.10}{Proposition}Let $\alpha\geq\omega$. Let both $S_1$ and $S_2$ be complete Urysohn universal spaces of weight $\alpha$. Then $S_1\cong S_2$.
+
+\prooftext Since $\wt S_i=\alpha$, there exist, by 2.5, dense sets $T_i\subset S_i$ and an isometry $g:T_1\longrightarrow T_2$. Since $S_i$ are complete, there is an isometry $h:S_1\longrightarrow S_2$.
+
+\itemhead{2.11}{Lemma}If $\alpha\geq\omega$ and $(S,\varrho)\in\E(\alpha)$, then $\wt S\geq\alpha^{\suprexp{\alpha}}$.
+
+\prooftext I. Let $\beta<\alpha$. Let $A$ be a set of cardinality $\alpha$. Put $T=\bigcup(B^x:x<\beta)$. If $\xi\in A^x$, $\eta\in A^y$, $x<y\leq\beta$, and $\eta\res x=\xi$, put $\xi<\eta$. Let $G$ consist of all $g:M\longrightarrow S$ such that (1) $M\subset T$, (2) if $\xi<\eta$, $\eta\in M$, then $\xi\in M$, $\varrho(g\xi,g\eta)=1$, (3) if $x<\beta$, $\xi\in A^{x+1}\cap M$, $\eta\in A^{x+1}$, $\eta\res x=\xi\res x$, $\eta\ne\xi$, then $\eta\in M$, $\varrho(g\xi,g\eta)=2$.
+
+II. It is easy to see that $G$ contains a maximal element, say $h$. We will suppose that $\dom h\ne T$ and derive a contradiction. Let $x$ be the least ordinal such that $A^x\setminus\dom h\ne\varnothing$. Choose a $\xi\in A^x\setminus\dom h$. Clearly, each $\eta<\xi$ is in $\dom h$. -- If $x$ is a limit ordinal, then, due to $(S,S)\in\E(\alpha,2)$, there is a point $q\in S$ such that $\varrho(q,h\eta)=1$ for all $\eta<\xi$. Put $h'(\zeta)=h(\zeta)$ if $\zeta\in\dom h$, and put $h(\xi)=q$. It is easy to see that $h'\in G$, which contradicts the maximality of $h$. -- Consider the case $x=z+1$. Since, by 2.3, $(S,S)\in\E(\alpha,\alpha^+)$, there exists a set $K\subset S$ of cardinality $\alpha$ such that $\varrho(p,q)=2$ whenever $p,q\in K$, $p\ne q$, and $\varrho(p,h\eta)=1$ whenever $\eta<\xi$. Let $f:A\longrightarrow K$ be a bijection, put $h'(\zeta)=h(\zeta)$ if $\zeta\in\dom h$, and $h'(\zeta)=f(\zeta(z))$ whenever $\zeta\in A^x$, $\zeta\res z=\xi\res z$. It is easy to prove that $h'\in G$, which contradicts the fact that $h$ is maximal. Thus, we have shown that $\dom h=T$.
+
+III. If $\xi\in A^\beta$, choose a point $p(\xi)\in S$ such that $\varrho(p(\xi),h\eta)=1/2$ for all $\eta<\xi$ (this is possible, due to $(S,S)\in\E(\alpha,2)$). Put $P=\{p(\xi):\xi\in A^\beta\}$. If $\xi,\zeta\in A^\beta$, $\xi\ne\zeta$, let $x$ be the least ordinal such that $\xi(x)\ne\zeta(x)$. Put $z=x+1$,
+
+\newpage % Original page 329; continuation of 2.11
+\noindent $\xi'=\xi\res z$, $\zeta'=\zeta\res z$. By (3), we have $\varrho(h\xi',h\zeta')=2$. Since $\xi'<\xi$, $\zeta'<\zeta$, we have $\varrho(p(\xi),h\xi')=1/2$, $\varrho(p(\zeta),h\zeta')=1/2$, and therefore $\varrho(p(\xi),p(\zeta))\geq1$. This proves that $P$ is a discrete subspace of cardinality $\alpha^\beta$. Hence, $\beta<\alpha$ being arbitrary, we have $\wt S\geq\alpha^{\suprexp{\alpha}}$.
+
+\itemhead{2.12}{Proposition}Let $\alpha\geq\omega$. If $S$ is an $\alpha$-homogeneous $\alpha$-universal space, then $\wt S\geq\alpha^{\suprexp{\alpha}}$.
+
+This follows at once from 2.9 and 2.11.
+
+\sectionnumber{3}
+\itemhead{3.1}{Fact}Let $T\in\M$ and let $\varphi\in\Is(T,T)$. Then there is an isometry $\Phi$ of $U_\omega(T)$ such that $\Phi\res T=\varphi$ and all $U_n(T)$ and $E(U_n(T),m)$, where $n\in N$, $m>1$, are invariant under $\Phi$.
+
+\prooftext Put $T_n=U_n(T)$. Define $\varphi_n$ as follows: $\varphi_0=\varphi$; if $n\in N$, then $\varphi_{n+1}=E(\varphi_n)\res T_{n+1}$. For $p\in U_\omega(T)$, let $\Phi(p)=\varphi_n(p)$, where $n$ satisfies $p\in T_n$. It is easy to see that we obtain a mapping $\Phi$ which has the properties stated above.
+
+\itemhead{3.2}{Proposition}Let $T\in\M$, $\wt T\leq\omega$. Let $T_0=T$; for $n\in N$, let $T_{n+1}$ be a completion of $U_\omega(T_n)$. Put $P=\bigcup T_n$. Then (1) $P$ is Urysohn universal, $\wt P=\omega$, (2) if $n\in N$ and $\varphi\in\Is(T_n,T_n)$, then $\Phi\res T_n=\varphi$ for some isometry $\Phi$ of $P$.
+
+\prooftext I. Put $S_n=U_\omega(T_n)$. From 1.8, it follows, by induction, that $\wt T_n=\omega$ for all $n\in N$, hence $\wt P=\omega$. For each $n\in N$, by 2.2, $S_n\in\E(\omega)$, hence $S_n$ is $\omega$-universal. This implies that each $T_{n+1}$, hence also $P$, is strongly $\omega$-universal. -- II. We are going to prove the assertion (2). Put $\varphi_n=\varphi$. For $k\leq n$, put $\Psi_{k+1}=E(\varphi_k)\res S_{k+1}$ and let $\varphi_{k+1}$ be the isometry of $T_{k+1}$ such that $\varphi_{k+1}\res S_k=\Psi_{k+1}$. In this way, we get isometries $\varphi_k\in\Is(T_k,T_k)$, where $k\geq n$, such that $\varphi_{k+1}\res T_k=\varphi_k$. For any $p\in P$, put $\Phi(p)=\varphi_m(p)$, where $m\geq n$, $p\in T_m$. Clearly, $\Phi$ is an isometry of $P$, $\Phi\res T_n=\varphi$. -- III. It remains to show that $P$ is $\omega$-homogeneous. Let $A\subset P$, $B\subset P$, $0<\card A<\omega$, and let $f\in\Is(A,B)$. Choose $n\in N$ such that $A\cup B\subset S_n$. Since $S_n\in\E(\omega)$, there are, by 2.5, dense subsets $K$ and $M$ of $S_n$ and $g\in\Is(K,M)$ such that $g\res A=f$. Hence, there is an isometry $\varphi$ of $T_{n+1}$ such that $\varphi\res A=f$. By II, there is an isometry $\Phi$ of $P$ such that $\Phi\res T_{n+1}=\varphi$.
+
+\itemhead{3.3}{Lemma}If $S$ is a complete space, $\wt S=\omega$, $T$ is dense in $S$ and $T\in\E(\omega)$, then $S\in\E(\omega)$.
+
+We omit the proof, since its main idea is that of P. Ury-\newpage % Original page 330
+\noindent sohn's proof of Theorem I in [3].
+
+\itemhead{3.4}{Proposition}Let $S$ be a complete space, let $\wt S=\omega$ and let $T\subset S$ be dense in $S$. If $T$ is Urysohn universal, then so is $S$.
+
+\prooftext By 2.9, $T\in\E(\omega)$. By 3.3, $S\in\E(\omega)$. By 2.6, $S$ is Urysohn universal.
+
+\par\noindent\textbf{3.5.}\enspace Theorem I is an immediate consequence of 3.2 and 3.4.
+
+\begin{center}References\end{center}
+\begin{list}{[\arabic{enumi}]}{\usecounter{enumi}\setlength{\leftmargin}{2.5em}\setlength{\labelwidth}{2em}\setlength{\itemsep}{5pt}}
+\item W. W. Comfort, S. Negrepontis: The theory of ultrafilters. Springer-Verlag, 1974.
+\item P. Urysohn: Sur un espace m\'etrique universel, C. R. Acad. Sci. Paris 180 (1925), 803--806.
+\item P. Urysohn: Sur un espace m\'etrique universel, Bull. Sci. Math. (2)51 (1927), 43--64.
+\end{list}
+\medskip
+\noindent\hspace*{2.5em}\begin{tabular}{@{}l@{}}
+Math. Institute, Charles University\\
+Sokolovsk\'a 83, 18600 Praha 8\\
+Czechoslovakia
+\end{tabular}
+\end{document}

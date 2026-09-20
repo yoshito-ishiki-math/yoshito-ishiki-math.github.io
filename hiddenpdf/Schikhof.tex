@@ -1,0 +1,98 @@
+% Original-language transcription. See TRANSCRIPTION-NOTES.md.
+\documentclass[11pt,a4paper,twoside]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,enumitem}
+\usepackage[margin=24mm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyfoot[LE,RO]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{1.5em}\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{1em}
+\newcommand{\thm}[2]{\par\medskip\noindent\textsc{Theorem #1.}\quad\textit{#2}\par}
+\newcommand{\proofhead}[1]{\par\medskip\noindent\textsc{#1}\quad}
+\setlength{\emergencystretch}{2em}
+\begin{document}
+\setcounter{page}{51}
+\noindent\textbf{MATHEMATICS}\hfill Proceedings A 87 (1), March 26, 1984
+\par\smallskip\hrule\bigskip
+\noindent{\Large\sffamily\bfseries Isometrical embeddings of ultrametric spaces into\\non-archi\-medean valued fields}
+\vspace{1.5cm}
+\par\noindent{\large\sffamily by W.H. Schikhof}
+\bigskip
+\par\noindent\textit{Mathematical Institute, Catholic University, Nijmegen, the Netherlands}
+\vspace{1.3cm}
+\par\hrule\medskip
+\noindent Communicated by Prof. T.A. Springer at the meeting of September 26, 1983
+\vspace{1.5cm}
+
+In this paper we present a technique yielding the following theorems.
+
+\thm{1}{For each ultrametric space $X$ there exists a non-archi\-medean valued field $K$ such that $X$ can isometrically be embedded into $K$.}
+
+\thm{2}{The following conditions for a non-archi\-medean non-trivially valued complete field $K$ are equivalent.}
+\begin{enumerate}[label={($\alph*$)},leftmargin=2em,itemsep=1pt]
+\renewcommand{\labelenumi}{($\alpha$)}
+\item \textit{$K$ is spherically $(=\text{maximally})$ complete. Its residue class field is finite.}
+\renewcommand{\labelenumi}{($\beta$)}
+\item \textit{Each $K$-valued isometry defined on a subset of $K$ can be extended to an isometry $K\to K$.}
+\renewcommand{\labelenumi}{($\gamma$)}
+\item \textit{Each isometry $K\to K$ is surjective.}
+\end{enumerate}
+
+For definitions, terminology, notations we refer to [1]. The next lemma contains the essentials.
+
+\medskip\noindent\textsc{Key Lemma.}\quad\textit{Let $(X,d)$ be an ultrametric space and let $(K,|\ |)$ be a spherically complete non-archi\-medean valued field such that}
+\begin{enumerate}[label=(\roman*),leftmargin=2em,itemsep=1pt]
+\item \textit{$\{d(x,y):x,y\in X\}\subset\{|\lambda|:\lambda\in K\}$,}
+\item \textit{if $A\subset X$ is a set of equidistant points, $a\in A$, then the cardinality of $A\setminus\{a\}$ is strictly less than the cardinality of the residue class field $k$ of $K$.}
+\end{enumerate}
+\noindent\textit{Let $Y$ be a subset of $X$. Then each isometry $Y\to K$ can be extended to an isometry $X\to K$.}
+\newpage
+\proofhead{Proof.} It suffices (Zorn's lemma) to show that an isometry $f\colon Y\to K$ can be extended to an isometry $\bar f\colon Y\cup\{a\}\to K$ where $a\in X$. Further we may suppose that $Y$ is closed and that $d(a,Y):=\inf\{d(a,y):y\in Y\}>0$. We distinguish two cases.
+
+(1) $a$ has no best approximation in $Y$. Then choose $x_1,x_2,\ldots$ in $Y$ such that $d(a,x_1),\allowbreak d(a,x_2),\allowbreak\ldots$ is a strictly decreasing sequence converging to $d(a,Y)$. For each $n\in\mathbb N$ define the ball $B_n$ in $K$ by $B_n:=\{\lambda\in K:|\lambda-f(x_n)|\leq d(a,x_n)\}$. Then $B_1\supset B_2\supset\cdots$. (Indeed, if $z\in B_{n+1}$ then $|z-f(x_{n+1})|\leq d(a,x_{n+1})$, so
+\[
+\begin{aligned}
+&|z-f(x_n)|\leq\max\bigl(|z-f(x_{n+1})|,|f(x_{n+1})-f(x_n)|\bigr)\leq\\
+&\max\bigl(d(a,x_{n+1}),d(x_{n+1},x_n)\bigr)\leq\max\bigl(d(a,x_{n+1}),d(x_{n+1},a),d(a,x_n)\bigr)=d(a,x_n)
+\end{aligned}
+\]
+which proves that $z\in B_n$.) By spherical completeness the intersection is not empty; define $\bar f(a)$ to be arbitrary element of $\bigcap_n B_n$. To prove that $\bar f$ is an isometry it suffices to show that $|\bar f(a)-f(x)|=d(a,x)$ for each $x\in Y$. Since $x$ is not a best approximation of $a$ in $Y$ there is an $n\in\mathbb N$ such that $d(a,x_n)<d(a,x)$ so that $d(a,x)=d(x,x_n)=|f(x)-f(x_n)|$. As $\bar f(a)\in B_n$ we have $|\bar f(a)-f(x_n)|\leq d(a,x_n)<d(a,x)=|f(x)-f(x_n)|$. Hence,
+\[
+|\bar f(a)-f(x)|=\max\bigl(|\bar f(a)-f(x_n)|,|f(x_n)-f(x)|\bigr)=|f(x_n)-f(x)|=d(a,x)
+\]
+and we are done.
+
+(2) $a$ has best approximations in $Y$. Let $A_1$ be the set of these approximations i.e.\ $A_1=\{x\in Y:d(a,x)=d(a,Y)\}$. Observe that $x,y\in A_1$ implies $d(x,y)\leq d(a,Y)$. Let $A_2$ be a maximal subset of $A_1$ with the property: ``if $x,y\in A_2$, $x\ne y$, then $d(x,y)=d(a,Y)$''. The points of $A_2\cup\{a\}$ are equidistant so by (ii) the cardinality of $A_2$ is strictly less than the cardinality of $k$. On the other hand, the points of $f(A_2)$ are contained in a ball in $K$ of the form $B:=\{\beta\in K:|\beta-\alpha|\leq d(a,Y)\}$. The equivalence relation $\sim$ defined on $B$ by `$\beta\sim\beta'$ if $|\beta-\beta'|<d(a,Y)$' yields a quotient $B/{\sim}$ that has the cardinality of $k$ (by (i)). Thus the map $A_2\xrightarrow{f}B\to B/{\sim}$ is injective but not surjective. It follows that we can find a $\gamma\in B$ such that $d(\gamma,f(m))=d(a,m)$ for all $m\in A_2$. Set $\bar f(a):=\gamma$. Then $|\bar f(a)-f(x)|=d(a,x)$ for all $x\in A_2$. Now let $x\in A_1$. By maximality there is an $m\in A_2$ such that $d(x,m)<d(a,m)=|\bar f(a)-f(m)|$ whence $|\bar f(a)-f(x)|=\max\bigl(|\bar f(a)-f(m)|,|f(m)-f(x)|\bigr)=d(a,m)=d(a,x)$. Finally, let $x\in Y\setminus A_1$. Choose any $y\in A_1$. Then $d(a,x)>d(a,y)$ so that $|f(x)-f(y)|=d(x,y)=d(a,x)$ and $|\bar f(a)-f(y)|=d(a,y)<d(a,x)$. It follows that $|\bar f(a)-f(x)|=\max\bigl(|\bar f(a)-f(x)|,|f(y)-f(x)|\bigr)=d(a,x)$. So we have arrived at $|\bar f(a)-f(x)|=d(a,x)$ for all $x\in Y$, which finishes the proof.
+
+\proofhead{Proof of Theorem 1.} Choose ([1], Theorem 1.3, Exercise 1.J, Example 4.Y) a spherically complete field $K$ whose value group is $(0,\infty)$ and whose residue class field has a large cardinality (for example, strictly larger than the cardinality of $X$). Choose $a\in X$, set $Y:=\{a\}$. By the Key Lemma we can extend the map $a\mapsto0$ to an isometry $X\to K$.
+
+\proofhead{Proof of Theorem 2.} $(\alpha)\Rightarrow(\beta)$. Let $k$ have $n$ elements. Then each subset $A$
+\newpage
+\noindent of $K$ consisting of equidistant points has at most $n$ elements. Thus, $X:=K$ satisfies conditions (i) \& (ii) of the Key Lemma. $(\beta)\Rightarrow(\gamma)$. Let $f\colon K\to K$ be an isometry. Apply $(\beta)$ to $f^{-1}\colon f(K)\to K$. $(\gamma)$ follows. Finally, we prove $\neg(\alpha)\Rightarrow\neg(\gamma)$. Let $k$ be infinite. Then let $j\leftrightarrow B_j$ $(j\in k)$ be the correspondence between the elements of $k$ and the additive cosets of $\{x\in K:|x|<1\}$ in $\{x\in K:|x|\leq1\}$. There is bijection $\tau\colon k\to k^{\times}$ $(=\{x\in k,\ x\ne0\})$. For each $j\in k$ let $\sigma_j$ be an isometry (translation) of $B_j$ onto $B_{\tau(j)}$. Define $\sigma\colon K\to K$ as follows
+\[
+\sigma(x):=\begin{cases}
+x&\text{if }x\in K,\ |x|>1\\[8pt]
+\sigma_j(x)&\text{if }j\in k,\ x\in B_j.
+\end{cases}
+\]
+It is easy to see that $\sigma$ is an isometry $K\to\{x\in K:|x|\geq1\}$. Let $K$ be not spherically complete. Then there is a nested sequence $B_1\supsetneq B_2\supsetneq\cdots$ of balls whose intersection is empty. For each $n\in\mathbb N$ choose $a_n\in B_n\setminus B_{n+1}$ and define $\sigma\colon K\to K$ by
+\[
+\sigma(x):=\begin{cases}
+x-a_1&\text{if }x\in K\setminus B_1\\[8pt]
+x-a_{n+1}&\text{if }n\in\mathbb N,\ x\in B_n\setminus B_{n+1}
+\end{cases}
+\]
+One verifies easily that $\sigma$ is an isometry $K\to K$ that does not attain the value 0.
+
+\proofhead{Remark.} The following statements follow without much effort from the preceding theory.
+\begin{enumerate}[label=\arabic*.,leftmargin=1.5em,itemsep=3pt]
+\item A separable ultrametric space can isometrically be embedded into a separable non-archi\-medean complete field.
+\item For each ultrametric space $X$ there exists a discretely valued field $K$, a real number $c>1$, and a map $\sigma\colon X\to K$ satisfying $d(x,y)\leq|\sigma(x)-\sigma(y)|\leq cd(x,y)$ $(x,y\in X)$.
+\end{enumerate}
+\bigskip\noindent\textsc{Reference}
+\begin{enumerate}[label=\arabic*.,leftmargin=1.5em]
+\item Van Rooij, A.C.M. --- Non-Archimedean Functional Analysis. Marcel Dekker, New York (1978).
+\end{enumerate}
+\end{document}

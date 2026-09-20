@@ -1,0 +1,280 @@
+\documentclass[11pt,a4paper,leqno]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,enumitem}
+\usepackage[margin=24mm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyfoot[C]{---\quad\thepage\quad---}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{1.5em}\setlength{\parskip}{3pt}
+\setlength{\emergencystretch}{1em}
+\newcommand{\g}{\mathfrak g}
+\newcommand{\f}{\mathfrak F}
+\newcommand{\thm}[2]{\par\medskip\textbf{Theorem #1.}\quad\textit{#2}\par}
+\newcommand{\lem}[2]{\par\medskip\textbf{Lemma #1.}\quad\textit{#2}\par}
+\newcommand{\proof}{\textit{Proof.}\quad}
+\renewcommand{\thefootnote}{\arabic{footnote})}
+\newcommand{\sect}[2]{\par\medskip\begin{center}\bfseries\S\,#1.\quad #2\end{center}}
+\begin{document}
+\setcounter{page}{60}
+\begin{center}
+{\Large\bfseries Star-Finite Coverings and the Star-Finite Property.}\par\bigskip
+By Kiiti \textsc{Morita}.
+\end{center}
+\begingroup\renewcommand{\thefootnote}{}\footnotetext{The cost of this research has been defrayed from the Scientific Research Expenditure of the Educational Ministry.}\endgroup
+A covering $\mathfrak U$ of a $T_1$-space is called to be star-finite, if each set of $\mathfrak U$ intersects a finite number of other sets of $\mathfrak U$. In case every open covering of a $T_1$-space $R$ admits a star-finite open refinement we shall say that $R$ possesses \textit{the star-finite property}. Then it will be shown that for a regular space $R$ the star-finite property is implied by the Lindelöf property, and conversely, if $R$ is connected, the former implies the latter. Hence a theorem that a regular space with the star-finite property is fully normal may be regarded as a generalization of the well-known Tychonoff's theorem.\footnote{A. Tychonoff, Ueber einen Metrisationssatz von P. Urysohn, Math. Ann.\ 95 (1925), pp.\ 139--142.} I believe that the star-finite property is more useful than the Lindelöf property in some cases.\footnote{In particular, the star-finite property finds its applications in dimension theory. Cf.\ K. Morita, On the dimension theory of normal spaces, to appear in Jap.\ Jour.\ of Math.}
+
+In \S\,1 we shall establish a few fundamental theorems concerning star-finite coverings and then these theorems will be applied in \S\S\,2 and 3. \S\,3 is devoted to the proofs of the facts described above. Finally, in \S\,4 some theorems will be given concerning locally bicompact spaces.
+
+\sect{1}{Star-finite coverings.}
+Let $\mathfrak h$ be an open covering of a $T_1$-space $R$. For a subset $A$ of $R$ we denote by $S(A,\mathfrak h)$ the sum of all the sets of $\mathfrak h$ which intersect $A$. If the covering $\{S(p,\mathfrak h);p\in R\}$ ($p$ ranging over all points of $R$) is a refinement of another covering $\g$, we shall say, after J. W. Tukey,\footnote{J. W. Tukey, Convergence and uniformity in topology, Princeton, 1940. This book will be cited as \textbf{T.} in the following.} that $\mathfrak h$ is a $\Delta$-refinement of $\g$.
+
+\thm{1}{Let $\g=\{G_\alpha;\alpha\in\Omega\}$ be a star-finite open covering of a $T_1$-space $R$. Then $\g$ admits a star-finite open $\Delta$-refinement $\g'$ such that the union of $\g$ and $\g'$ is also star-finite, if and only if there exists a closed covering $\f=\{F_\alpha;\alpha\in\Omega\}$ such that $F_\alpha<G_\alpha$, $\alpha\in\Omega$.}
+
+Theorem 1 follows immediately from the following lemmas 1 and 2.
+
+\lem{1}{Let $\g=\{G_\alpha;\alpha\in\Omega\}$ be a star-finite open covering of a $T_1$-space $R$, and $\f=\{F_\alpha;\alpha\in\Omega\}$ a closed covering of $R$ such that $F_\alpha<G_\alpha$, $\alpha\in\Omega$. If we denote by $\g'$ the intersection of all the binary coverings}
+\newpage
+\[
+\{G_\alpha,R-F_\alpha\},\ \alpha\in\Omega,
+\]
+\textit{then the covering $\g'$ is an open $\Delta$-refinement of $\g$ and the union of $\g$ and $\g'$ is star-finite.}
+
+\proof A non-empty set $G'$ of $\g'$ is written in the form
+\begin{equation}\tag{1}
+G'=\prod_{\alpha\in\Gamma}G_\alpha\cdot\prod_{\beta\notin\Gamma}(R-F_\beta)
+\end{equation}
+where $\Gamma$ is a subset of $\Omega$. Since $\g$ is star-finite, $\Gamma$ is a finite set. $\Gamma$ is not empty, for $\f$ is a covering of $R$. If we denote by $\Gamma'$ the set of all indices $\beta$ such that $(\prod_{\alpha\in\Gamma}G_\alpha)\cdot G_\beta\ne0$, then $\Gamma'$ is also a finite set. If $\beta\notin\Gamma'$, then $(\prod_{\alpha\in\Gamma}G_\alpha)\cdot F_\beta=0$.
+
+Hence we have
+\[
+\prod_{\alpha\in\Gamma}G_\alpha<R-F_\beta,\quad\text{for }\beta\notin\Gamma',
+\]
+and consequently
+\[
+G'=\prod_{\alpha\in\Gamma}G_\alpha\cdot\prod_{\beta\in\Gamma'-\Gamma}(R-F_\beta).
+\]
+Since $\Gamma$ and $\Gamma'$ are finite sets, this shows that $G'$ is an open set.
+
+Let $G$ be a set of $\g$ and $G'$ a set of $\g'$. We shall write $G'$ in the form (1), and denote by $\Delta$ the set of all indices $\alpha$ such that $G\cdot G_\alpha\ne0$, $G_\alpha\in\g$. If $G\cdot G'\ne0$, then we have $\Gamma<\Delta$. Since $\Delta$ is a finite set, the number of the sets $G'$ of $\g'$ which intersect $G$ is also finite. Hence the union of $\g$ and $\g'$ is star-finite, since $\g'$ is clearly a refinement of $\g$.
+
+It remains to be proved that $\g'$ is a $\Delta$-refinement of $\g$. Since $\g'$ is a refinement of the binary covering $\{G_\alpha,R-F_\alpha\}$, a set of $\g'$ is contained either in $G_\alpha$ or in $R-F_\alpha$. Hence a set $G'$ of $\g'$ intersecting $F_\alpha$ must be contained in $G_\alpha$, and consequently we have
+\[
+S(F_\alpha,\g')<G_\alpha,\ \alpha\in\Omega.
+\]
+$\{F_\alpha;\alpha\in\Omega\}$ being a covering of $R$ there exists for each point $p$ of $R$ some $F_\alpha$ such that $p\in F_\alpha$. Therefore the covering $\g'$ is a $\Delta$-refinement of $\g$.
+
+\lem{2}{If an open covering $\g'$ is a $\Delta$-refinement of another open covering $\g=\{G_\alpha;\alpha\in\Omega\}$, then the closed sets}
+\[
+F_\alpha=R-S(R-G_\alpha,\g'),\ \alpha\in\Omega
+\]
+\textit{form a closed covering of $R$ such that $F_\alpha<G_\alpha$, $\alpha\in\Omega$.}
+
+\proof If a point $p$ does not belong to any $F_\alpha$, then we have $p\in S(R-G_\alpha,\g')$ for all $\alpha\in\Omega$. This shows that $S(p,\g')\cdot(R-G_\alpha)\ne0$ for all $\alpha$, which contradicts with the assumption of the lemma.
+\newpage
+\thm{2}{Let $\g=\{G_\alpha;\alpha\in\Omega\}$ be a star-finite open covering of a $T_1$-space $R$. Let us divide $\Omega$ into the classes $\Gamma_c$ $(c\in C)$ such that two indices $\alpha$, $\beta$ belong to the same class if and only if there exists a positive integer $n$ for which $G_\alpha<S^n(G_\beta,\g)$ holds, and denote by $R_c$ the sum of all the sets $G_\alpha$ with $\alpha\in\Gamma_c$. Then we have}
+\[
+R=\sum R_c;\ R_c\cdot R_{c'}=0,\quad\text{for }c\ne c',\ c,c'\in C,
+\]
+\textit{and the sets $R_c$ are open as well as closed, and $\{G_\alpha;\alpha\in\Gamma_c\}$ is a countable open covering of the space $R_c$.}
+
+Proof is obvious.
+
+\thm{3}{Let $\g=\{G_1,G_2,\ldots\}$ be a countable open covering of a $T_1$-space $R$ and $\f=\{F_1,F_2,\ldots\}$ a closed covering of $R$ such that $F_i<G_i$, $i=1,2,\ldots$. If there exists for each $i$ a real-valued continuous function $f_i(x)$ defined in $R$ such that}
+\[
+f_i(x)=\begin{cases}0,&x\in F_i\\1,&x\in R-G_i,\end{cases}
+\]
+\textit{then $\g$ admits a countable, star-finite, open $\Delta$-refinement.}
+
+\proof By the assumption of the theorem we can construct the open sets $G_i^n$ $(i=1,2,\ldots;n=i,i+1,\ldots)$ such that
+\begin{equation}\tag{2}
+F_i<G_i^n<G_i,\ \overline{G_i^n}<G_i^{n+1},\ n=i,i+1,\ldots.
+\end{equation}
+Then, if we put
+\[
+X_n=\sum_{i=1}^n G_i^n,
+\]
+we have
+\[
+R=\sum_{n=1}^{\infty}X_n;\ \overline X_n<X_{n+1},\ n=1,2,\ldots.
+\]
+Let us put further
+\[
+H_n=X_n-\overline X_{n-3},\ K_n=\overline X_n-X_{n-1},\ n=1,2,\ldots,
+\]
+where $X_0=X_{-1}=X_{-2}=0$. Then $H_n$ is open and $K_n$ is closed. Moreover we have
+\begin{equation}\tag{3}
+K_n<H_{n+1},\quad\sum_{n=1}^{\infty}K_n=R
+\end{equation}
+\begin{equation}\tag{4}
+H_n\cdot H_m=0,\quad\text{for }|n-m|\geq3.
+\end{equation}
+Since $K_n=K_n\cdot\overline{G_1^n}+\cdots+K_n\cdot\overline{G_n^n}$, the system of closed sets $\{K_n\cdot\overline{G_i^n};i=1,2,\ldots,n;n=1,2,\ldots\}$ forms a closed covering of $R$, and hence $\{H_{n+1}\cdot{}$
+\newpage
+\noindent $G_i^{n+1};i=1,2,\ldots,n;n=1,2,\ldots\}$ is also an open covering (by (2), (3)). From (4) we see that the latter covering is star-finite. Hence, if we construct the intersection $\mathfrak u$ of all the binary coverings
+\[
+\{H_{n+1}\cdot G_i^{n+1},R-K_n\cdot\overline{G_i^n}\},\ i=1,2,\ldots,n;\ n=1,2,\ldots,
+\]
+then $\mathfrak u$ is, by Lemma 1, a star-finite, countable, open $\Delta$-refinement of $\g$.
+
+\sect{2}{Normal spaces and normal coverings.}
+In case an open covering $\g$ admits a sequence of open coverings $\{\g_n\}$ $(n=1,2,\ldots)$ such that $\g_n$ is a $\Delta$-refinement of $\g_{n-1}$ and $\g_1$ is a refinement of $\g$, we shall say, after J. W. Tukey,\footnote{Theorems 4 and 7 are due to J. W. Tukey, but there is a mistake in his proofs. Cf.\ \textbf{T.}\ p.\ 49. The theorem 2.5 in \textbf{T.}\ p.\ 44 does not hold in general (even for a covering consisting of three sets).} that $\g$ is normal.
+
+\thm{4}{A $T_1$-space $R$ is normal if and only if every star-finite open covering of $R$ is normal.}
+
+\lem{3}{Let $\g=\{G_1,G_2,\ldots\}$ be a countable open covering of a normal space $R$ such that each point of $R$ is contained in only a finite number of sets of $\g$. Then there exists a closed covering $\{F_1,F_2,\ldots\}$ such that $F_i<G_i$, $i=1,2,\ldots$.}
+
+\textit{Proof of Lemma 3.} From the relation $R-\sum_{i=2}^{\infty}G_i<G_1$, it follows that there exists an open set $H_1$ such that $R-\sum_{i=2}^{\infty}G_i<H_1$, $\overline H_1<G_1$. Then $\{H_1,G_2,G_3,\ldots\}$ is an open covering. By an inductive process we can construct open sets $H_1,H_2,\ldots$ such that
+\[
+R-(H_1+\cdots+H_{n-1}+\sum_{i=n+1}^{\infty}G_i)<H_n,\ \overline H_n<G_n.
+\]
+Then $\{H_1,H_2,H_3,\ldots\}$ forms an open covering of $R$, because, if we take, for each point $p$ of $R$, an integer $n$ so large that $p\in R-\sum_{i=n+1}^{\infty}G_i$, we have $p\in H_1+\cdots+H_n$. Hence $\{\overline H_1,\overline H_2,\ldots\}$ is a closed covering satisfying the condition of the lemma.
+
+\lem{4}{Let $\g=\{G_\alpha;\alpha\in\Omega\}$ be a star-finite open covering of a normal space $R$. Then there exists a closed covering $\{F_\alpha;\alpha\in\Omega\}$ such that $F_\alpha<G_\alpha$, $\alpha\in\Omega$.}
+
+Lemma 4 follows readily from Lemma 3 and Theorem 2. Hence every star-finite open covering of a normal space admits a star-finite $\Delta$-refinement by Lemma 1. This proves the ``only if'' part of Theorem 4. Since the ``if'' part is obvious, the proof of Theorem 4 is completed.
+\newpage
+\thm{5}{A countable open covering $\g=\{G_1,G_2,\ldots\}$ of a normal space $R$ is normal if and only if there exists a closed covering $\{F_1,F_2,\ldots\}$ such that $F_i<G_i$, $i=1,2,\ldots$.}
+
+\proof The ``only if'' part is obvious from Lemma 2. The ``if'' part follows from Theorems 3 and 4 and the normality of $R$.
+
+\textbf{Corollary.}\quad\textit{A countable open covering $\g$ of a normal space $R$ is normal, if each point of $R$ is contained in only a finite number of sets of $\g$.}
+
+\thm{6}{A countable open covering of a normal space is normal, if and only if it admits a countable star-finite open refinement.}
+
+\proof The ``only if'' part is proved by virtue of Lemma 2 and Theorem 3. The ``if'' part follows directly from Theorem 4.
+
+Now we shall proceed to the case of normal coverings of a $T_1$-space.
+
+\thm{7}{If $\g$ is a star-finite normal (open) covering of a $T_1$-space $R$, then $\g$ has a star-finite $\Delta$-refinement $\g'$ such that $\g'$ is a normal covering and the union of $\g$ and $\g'$ is star-finite.}
+
+For the proof of Theorem 7, it is sufficient, in view of Lemmas 1 and 2, to prove the following two lemmas.
+
+\lem{5}{If $\g$ is a normal covering of a $T_1$-space $R$, then the binary covering $\{G,S(R-G,\g)\}$ is normal for any open set $G$ of $R$.}
+
+\lem{6}{(Supplement to Lemma 1) Besides the assumption of Lemma 1 let us assume further that the binary coverings $\{G_\alpha,R-F_\alpha\}$ $(\alpha\in\Omega)$ are all normal. Then the covering $\g'$ defined there is also normal.}
+
+\textit{Proof of Lemma 5.} According to the theorem 9.3 in \textbf{T.}\ p.\ 53, a binary open covering $\{U_1,U_2\}$ of a $T_1$-space $R$ is normal if and only if there exists a real-valued continuous function $f(x)$ such that
+\[
+f(x)=\begin{cases}0,&x\in R-U_1,\\1,&x\in R-U_2.\end{cases}
+\]
+The existence of such a function for the covering $\{G,S(R-G,\g)\}$ is assured by the theorem 9.2 in \textbf{T.}\ p.\ 53. Hence we have Lemma 5.
+
+Lemma 6 is proved by virtue of the lemma 5.2 in \textbf{T.}\ p.\ 49, since
+\[
+G_\alpha\circ\{G_\alpha,R-F_\alpha\}=\{G^{\alpha},R-F_\alpha\}.
+\]
+Theorem 3 and Lemmas 2,5 lead us to the following theorem (Cf.\ also the beginning of the proof of Lemma 5).
+
+\thm{8}{If a countable open covering $\g$ of a $T_1$-space $R$ is normal, then $\g$ admits a countable star-finite open $\Delta$-refinement.}
+\newpage
+\sect{3}{The star-finite property.}
+A $T_1$-space $R$ is called fully normal, if every open covering of $R$ is normal, or every open covering admits a $\Delta$-refinement. (J. W. Tukey). A fully normal space is always normal.
+
+\thm{9}{A regular space with the star-finite property is fully normal.}
+
+\proof We shall first prove that $R$ is normal. Let $A$ and $B$ be disjoint closed sets of $R$. For each point $p$ of $A$ we construct a neighbourhood $U(p)$ such that $\overline{U(p)}\cdot B=0$. For a point $p$ of $B$ we construct $U(p)$ so that $\overline{U(p)}\cdot A=0$. Then these neighbourhoods $U(p)$ $(p\in A+B)$ and the set $R-(A+B)$ constitute an open covering $\mathfrak U$ of $R$. From the star-finite property there exists a star-finite open covering $\g$ which is a refinement of $\mathfrak U$. By Theorem 2 we see that by means of the covering $\g$ the space $R$ decomposes into the sum of mutually disjoint sets $R_c$ $(c\in C)$ each of which is closed and open simultaneously, and the sets of $\g$ intersecting $R_c$ form a countable covering of $R_c$.
+
+Let us put
+\[
+A_c=A\cdot R_c,\ B_c=B\cdot R_c
+\]
+and consider $A_c,B_c$ in the space $R_c$. If we denote the sets of $\g$ intersecting $A_c$ by $X_1,X_2,\ldots$ and the sets of $\g$ intersecting $B_c$ by $Y_1,Y_2,\ldots$, then we have
+\[
+\begin{aligned}
+A_c&<X_1+X_2+\cdots,\quad\overline X_n\cdot B=0\\
+B_c&<Y_1+Y_2+\cdots,\quad\overline Y_n\cdot A=0
+\end{aligned}
+\]
+If we put
+\[
+\begin{aligned}
+U_1&=X_1,\qquad V_1=Y_1-\overline X_1,\\
+U_n&=X_n-(\overline V_1+\cdots+\overline V_{n-1}),\quad
+V_n=Y_n-(\overline U_1+\cdots+\overline U_n),\quad n=2,3,\ldots
+\end{aligned}
+\]
+and
+\[
+G_c=\sum_{n=1}^{\infty}U_n,\quad H_c=\sum_{n=1}^{\infty}V_n,
+\]
+we have
+\[
+A_c<G_c<R_c,\ B_c<H_c<R_c,\ G_c\cdot H_c=0.\text{\begingroup\renewcommand{\thefootnote}{4a)}\footnotemark\endgroup}
+\]
+\addtocounter{footnote}{-1}
+\begingroup\renewcommand{\thefootnote}{4a)}\footnotetext{Cf.\ A. Tychonoff, loc.\ cit.}\endgroup
+Hence, if we put
+\[
+G=\sum_{c\in C}G_c,\quad H=\sum_{c\in C}H_c,
+\]
+we have
+\[
+A<G,\quad B<H,\quad G\cdot H=0.
+\]
+Since $G$ and $H$ are clearly open, this proves that $R$ is normal.
+
+Now that the normality of $R$ is proved, Theorem 9 follows readily from the star-finite property and Theorem 4.
+\newpage
+\thm{10}{A regular space $R$ with the Lindelöf property (i.e., every open covering of $R$ is reducible to a countable covering) possesses the star-finite property.}
+
+\proof Let $\g$ be an open covering of $R$. We shall show that $\g$ admits a star-finite open refinement. For this purpose we proceed as follows. Let us construct for each point $p$ of $R$ a neighbourhood $U(p)$ such that $\overline{U(p)}$ is contained in some set of $\g$. By the Lindelöf property we can find a countable number of points $p_1,p_2,\ldots$ such that $\sum_{i=1}^{\infty}U(p_i)=R$. From the construction of $U(p)$ there exists for each point $p_i$ a set $G_i$ of $\g$ such that $\overline{U(p_i)}<G_i$.
+
+Since $R$ is normal by Tychonoff's theorem (Cf.\ the proof of Theorem 9), we can apply Theorem 3 to the coverings $\{G_i;i=1,2,\ldots\}$ and $\{\overline{U(p_i)};i=1,2,\ldots\}$. Thus $\g$ has a star-finite refinement. This completes the proof.
+
+As an immediate consequence of Theorem 10 and 2 we have
+
+\textbf{Corollary.}\quad\textit{For a connected regular space the star-finite property is equivalent to the Lindelöf property.}
+
+\textit{Remark.} There is a space which has the star-finite property, but not the Lindelöf property. A fully normal space does not necessarily possess the star-finite property, since a connected non-separable metric space has not the star-finite property by the above corollary. However, it is to be noted that every countable open covering of a fully normal space admits a countable star-finite refinement, that is, a fully normal space has, so to speak, the star-finite property in the weak sense (Cf.\ Theorem 6).
+
+\thm{11}{Let $R$ be a regular space. If there exists an open covering $\g$ of $R$ such that each set of $\g$ has the Lindelöf property and $\g$ admits an open star-refinement $\mathfrak h$ (i.e., for each set $H$ of $\mathfrak h$, $S(H,\mathfrak h)$ is contained in some set of $\g$),\footnote{\textbf{T.}\ pp.\ 44--45.} then $R$ decomposes into the sum of mutually disjoint open sets each of which has the Lindelöf property, and $R$ is a fully normal space with the star-finite property.}
+
+\proof In case there exists an integer $n$ such that $y\in S^n(x,\mathfrak h)$ we shall write $x\sim y$ ($x$, $y$ being points of $R$). By this relation we can decompose $R$ into the sum of mutually disjoint sets $R_\alpha$ $(\alpha\in\Omega)$ such that $x$, $y$ belong to the same set $R_\alpha$ if and only if $x\sim y$.
+
+Then $R_\alpha$ is the sum of the sets $S^n(x,\mathfrak h)$, $n=1,2,\ldots$ for each point $x$ of $R_\alpha$. Since $R_\alpha\cdot R_\beta=0$ for $\alpha\ne\beta$, $R_\alpha$ is both open and closed.
+
+Now we shall prove that $R_\alpha$ has the Lindelöf property. For the sake of brevity we shall say that a subset $A$ of $R$ has the \textit{Lindelöf property with respect to $R$}, if from any open covering $\mathfrak U$ of $R$ we can always select a countable number
+\newpage
+\noindent of sets $M_1,M_2,\ldots$ of $\mathfrak U$ such that $A<M_1+M_2+\cdots$. Then, if $A$ has the Lindelöf property with respect to $R$, $S(A,\mathfrak h)$ has also the same property. Because, by the assumption, there exist a countable number of sets $H_1,H_2,\ldots$ of $\mathfrak h$ such that $A<H_1+H_2+\cdots$; hence we have $S(A,\mathfrak h)<S(H_1,\mathfrak h)+S(H_2,\mathfrak h)+\cdots<G_1+G_2+\cdots$, where $G_i$ are suitable sets of $\g$, and consequently $S(A,\mathfrak h)$ has the Lindelöf property with respect to $R$. Therefore $S^n(x,\mathfrak h)$ has the Lindelöf property with respect to $R$ for each $n$, and hence $R_\alpha$ has also the same property. Since $R_\alpha$ is a closed set of $R$, $R_\alpha$ has the Lindelöf property in the usual sense.
+
+Thus the first part of Theorem 11 is proved. The second part follows readily from Theorem 9 and 10. Therefore the proof of the theorem is completed.
+
+\textbf{Corollary 1.}\quad\textit{In the hypothesis and the conclusion of Theorem 11 we can replace ``has the Lindelöf property'' by ``is perfectly separable''.}
+
+Since metrizable spaces are fully normal\footnote{\textbf{T.}\ p.\ 53.}, we have at once
+
+\textbf{Corollary 2.}\quad\textit{If a metrizable space $R$ is locally separable, then $R$ decomposes into the sum of mutually disjoint open sets each of which is separable.}\footnote{This is a theorem due to P. Alexandroff and W. Sierpiński. Cf.\ P. Alexandroff, Über die Metrisation der im Kleinen bikompakten topologischen Räume, Math.\ Ann.\ 92 (1924), pp.\ 294--301. W. Sierpiński, Sur les espaces métriques localement séparables, Fund.\ Math.\ 21 (1933), pp.\ 107--113.}
+
+\sect{4}{Locally bicompact spaces.}
+\thm{12}{If, for a Hausdorff space $R$, there exists an open covering $\g$ such that the closure of each set of $\g$ is bicompact and $\g$ admits a star-refinement $\mathfrak h$, then $R$ is a fully normal space with the star-finite property.}
+
+\proof Any set of $\g$ has the Lindelöf property with respect to $R$ and in the proof of Theorem 11 we have used only the fact that each set of $\g$ has the Lindelöf property with respect to $R$. Hence we have Theorem 12 by Theorem 11.
+
+A locally bicompact Hausdorff space is completely regular, but not necessarily normal. In this connection the following theorem is of some interest.
+
+\thm{13}{In order that a locally bicompact Hausdorff space $R$ be fully normal it is necessary and sufficient that $R$ possess the star-finite property.}
+
+This theorem follows from Theorems 9 and 12.
+
+\thm{14}{A locally bicompact, fully normal space is uniformly locally bicompact (with respect to some uniform structure) in the sense of A. Weil\footnotemark, and conversely.}
+
+\proof Let $R$ be a locally bicompact, fully normal space, and $\g$ an open covering of $R$ such that the closure of each set of $\g$ is bicompact. If $\mathfrak h$ is a $\Delta$-refinement of $\g$, then the closure of $S(p,\mathfrak h)$ is bicompact for every point $p$
+\newpage
+\footnotetext{A. Weil, Sur les espaces à structure uniforme et sur la topologie générale, Actualités Sci.\ Ind.\ No.\ 551, Paris 1937, p.\ 27. In pp.\ 35--36 of this book A. Weil says, ``Il semble que sur un espace connexe, localement compact, dénombrable à l'infini, la class de tous les recouvrements ouverts compacts localement finis soit régulière''. This proposition follows readily from our theorems.}
+\noindent of $R$. This proves the first part of the theorem. The other part follows readily from Theorem 12.
+
+\textbf{Corollary.}\quad\textit{A locally bicompact metrizable space $R$ admits a metric $\rho(x,y)$ $(x,y\in R)$ such that the closure of the $\epsilon$-neighbourhood $U(x;\epsilon)$ of a point $x$ with respect to the metric $\rho$ is bicompact for every point $x$ and for some positive number $\epsilon$ (independent of $x$).}
+
+\proof Let $\rho_0$ be a metric of $R$ and $\g_n$ an open covering of $R$ which consists of $2^{-n}$-neighbourhoods $U_0(x;2^{-n})$ of $x$ with respect to $\rho_0$ ($x$ ranging over all points of $R$). Let $\mathfrak U_1$ be an open covering such that the closure of each set of $\mathfrak U_1$ is bicompact. Then we construct successively open coverings $\mathfrak U_2,\mathfrak U_3,\ldots$ such that $\mathfrak U_n$ is a star-refinement of $\mathfrak U_{n-1}$ as well as a refinement of $\g_{n-1}$. This is possible, since metric spaces are fully normal.\footnotemark[6] From the sequence $\{\mathfrak U_1,\mathfrak U_2,\ldots\}$ we can construct, by a well-known process,\footnote{A. Weil, loc.\ cit., p.\ 14; or \textbf{T.}\ p.\ 51.} a new metric $\rho$ of $R$ such that $\rho(x,y)<2^{-n-1}$ implies $y\in S(x,\mathfrak U_n)$. The metric $\rho$ thus obtained clearly satisfies the condition of the corollary.
+
+We shall remark here that a locally bicompact topological group, when considered as a space, is a fully normal space with the star-finite property.
+
+\thm{15}{In order that a fully normal space be locally bicompact and of dimension at most $n$ it is necessary and sufficient that there exist a system of star-finite open coverings of order at most $n+1$ such that the union of each pair of these coverings be star-finite and every open covering admit some covering of this system as a refinement.}
+
+\proof \textit{The necessity.} Let $\Gamma=\{\mathfrak U_\alpha;\alpha\in\Omega\}$ be the totality of all star-finite open coverings $\mathfrak U_\alpha$ of order at most $n+1$ such that the closure of each set of $\mathfrak U_\alpha$ is bicompact. Then it is easily shown, by a theorem proved in our previous paper\footnote{K. Morita, loc.\ cit., 2).}, that $\Gamma$ satifies the conditions of the theorem.
+
+\textit{The sufficiency.} Let $\Gamma=\{\mathfrak U_\alpha;\alpha\in\Omega\}$ be a system of open coverings $\mathfrak U_\alpha$ with the mentioned property. Then it follows easily that the dimension of $R$ is at most $n$ and the closure of each set of $\mathfrak U_\alpha$ is bicompact.
+
+\textit{Remark.} On the basis of this theorem a new homology theory of locally bicompact fully normal spaces may be developed.
+\end{document}

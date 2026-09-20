@@ -1,0 +1,301 @@
+% Transcription of Nguyen Van Khue and Nguyen To Nhu (1981), pp. 285--291.
+% Source provenance and original misprints: TRANSCRIPTION-NOTES.md.
+\documentclass[11pt,a4paper,leqno,twoside]{article}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[russian,english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=22mm,headheight=15pt]{geometry}
+\usepackage{fancyhdr,enumitem}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[CE]{Nguyen Van Khue, Nguyen To Nhu}
+\fancyhead[CO]{\textit{Two Extensors of Metrics}}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\parindent}{1.5em}
+\setlength{\parskip}{2pt}
+\setlength{\emergencystretch}{1em}
+\newcommand{\Metr}{\operatorname{Metr}}
+\newcommand{\Pm}{\operatorname{Pm}}
+\newcommand{\Lip}{\operatorname{Lip}}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\restr}{\vert}
+\newcommand{\proofpart}[1]{\par\medskip\noindent Proof of (#1).\enspace}
+\newenvironment{conditions}[1]{\begin{enumerate}[label=(#1-\roman*),leftmargin=4.3em,itemsep=1pt,topsep=3pt,parsep=0pt]}{\end{enumerate}}
+\begin{document}
+\setcounter{page}{285}
+\thispagestyle{plain}
+\noindent\begin{tabular}{@{}c@{}}
+\textsc{Bulletin de l'Acad\'emie}\\
+\textsc{Polonaise des Sciences}\\
+S\'erie des sciences math\'ematiques\\
+Vol. XXIX, No. 5--6, 1981
+\end{tabular}
+\vspace{7mm}
+\begin{flushright}\textit{GENERAL TOPOLOGY}\end{flushright}
+\begin{center}
+{\Large Two Extensors of Metrics}\par\medskip
+by\par\medskip
+NGUYEN VAN KHUE and NGUYEN TO NHU\par\medskip
+\textit{Presented by K. BORSUK on November 13, 1979}
+\end{center}
+\medskip
+\begingroup\small
+\noindent\textbf{Summary.} By $\Metr(Z)$ (resp.\ $\Metr_c(Z)$) we denote the family of all compatible metrics (resp.\ complete compatible metrics) on a given metrizable space $Z$. Let $A$ be a closed subset of a metrizable space $X$. In this note we construct two extensors of metrics $\Phi_1,\Phi_2:\Metr(A)\to\Metr(X)$ satisfying the conditions
+\begin{enumerate}[label=(\roman*),leftmargin=3.5em,itemsep=0pt,topsep=2pt]
+\item $\Phi_i(d)\restr A=d$ for $d\in\Metr(A)$ and $i=1,2$.
+\item If $X$ is complete-metrizable, then
+\[\Phi_i(\Metr_c(A))\subset\Metr_c(X)\quad\text{for }i=1,2.\]
+\item $\Phi_1$ is a Lipschitz map.
+\item If $d_1\leq d_2$ then $\Phi_2(d_1)\leq\Phi_2(d_2)$ for $d_1,d_2\in\Metr(A)$.
+\item If $d_n(x,y)\to d_0(x,y)$ for $x,y\in A$, then
+\[\Phi_2(d_n)(x,y)\to\Phi_2(d_0)(x,y)\quad\text{for }x,y\in X.\]
+\end{enumerate}
+\endgroup
+In 1930 Hausdorff [4] proved that if $A$ is a closed subset of a metrizable space $X$ then any compatible metric $d$ on $A$ can be extended to a compatible metric $\tilde d$ on $X$. Since then the problem of extending metrics has been investigated by several authors [2, 8, 6, 5]. Bacon [1] observed that if $X$ is complete-metrizable and $d$ is complete then $\tilde d$ can be taken to be complete. The aim of this note is to construct two ``canonical'' extensors of metrics preserving, e.g.\ the inequalities of metrics, their point-wise convergence and other properties. The methods used extend those of [7].
+
+Given a metrizable space $X$. By $\Metr(X)$ (resp.\ $\Metr_b(X)$, $\Metr_{tb}(X)$, $\Metr_c(X)$, $\Pm(X)$) we denote the set of all compatible metrics (resp.\ bounded compatible metrics, totally bounded compatible metrics, complete compatible metrics, continuous pseudometrics) on $X$.
+
+If $d_1,d_2\in\Pm(X)$ then
+\[\norm{d_1-d_2}=\sup\{|d_1(x,y)-d_2(x,y)|:x,y\in X\}\]
+defines a metric (which may take the value $+\infty$) on $\Pm(X)$, moreover $\norm d$ is finite for $d\in\Metr_b(X)$ and $\norm{d_1-d_2}$ may be finite for non-bounded pseudometrics $d_1,d_2\in\Pm(X)$.
+
+A map $\Phi:\Pm(X)\to\Pm(Y)$ is Lipschitz iff there exists $C>0$ such that
+\[\norm{\Phi(d_1)-\Phi(d_2)}\leq C\norm{d_1-d_2}\quad\text{for }d_1,d_2\in\Pm(X).\]
+
+\newpage % Original page 286
+Let $X$ be a metrizable space and $A$ be a closed subset of $X$. In this note we prove the following two theorems
+
+\par\medskip\noindent\textsc{Theorem 1.} \textit{There exists an extensor $\Phi:\Pm(A)\to\Pm(X)$ satisfying the conditions}
+\begin{conditions}{1}
+\item $\Phi(d)\restr A=d$ for $d\in\Pm(A)$.
+\item $\Phi(\Metr(A))\subset\Metr(X)$.
+\item \textit{$\Phi$ is a Lipschitz map.}
+\item $\Phi(\Metr_b(A))\subset\Metr_b(X)$.
+\item \textit{If $X$ is separable then $\Phi(\Metr_{tb}(A))=\Metr_{tb}(X)$.}
+\item \textit{If $X$ is complete-metrizable then $\Phi(\Metr_c(A))-\Metr_c(X)$.}
+\end{conditions}
+
+\par\medskip\noindent\textsc{Theorem 2.} \textit{There exists an extensor $\Phi:\Pm(A)\to\Pm(X)$ satisfying the conditions}
+\begin{conditions}{2}
+\item $\Phi(d)\restr A=d$ for $d\in\Pm(A)$.
+\item $\Phi(\Metr(A))\subset\Metr(X)$.
+\item \textit{If $d_1\leq d_2$ then $\Phi(d_1)\leq\Phi(d_2)$ for $d_1,d_2\in\Pm(A)$.}
+\item $\Phi(\Metr_b(A))\subset\Metr_b(X)$.
+\item \textit{If $X$ is separable then $\Phi(\Metr_{tb}(A))\subset\Metr_{tb}(X)$.}
+\item \textit{If $X$ is complete-metrizable then $\Phi(\Metr_c(A))\subset\Metr_c(X)$}
+\item \textit{If $d_n(x,y)\to d_0(x,y)$ for $x,y\in A$ then}
+\[\Phi(d_n)(x,y)\to\Phi(d_0)(x,y)\quad\text{for }x,y\in X.\]
+\end{conditions}
+
+\par\medskip\noindent\textbf{1. Proof of Theorem 1.} Consider the locally convex space $E=m(\Pm(A),l^\infty(A))$ of all maps from $\Pm(A)$ into $l^\infty(A)$ equipped with the topology of point-wise convergence. Fix a base point $x_0\in A$ and define a map $g:A\to E$ by
+\begin{equation}\tag{1-1}
+g_x(d)(a)=d(x,a)-d(x_0,a)\quad\text{for }d\in\Pm(A)\text{ and }a\in A.
+\end{equation}
+Obviously $g$ is continuous. By Dugundji's theorem [3] there exists a continuous map $\tilde g:X\to E$ such that $\tilde g\restr A=g$ and $\tilde g(X)\subset\conv g(A)$ (the convex hull of $g(A)$ in $E$).
+
+Fix a compatible metric $\rho$ on $X$ which is complete if $X$ is complete-metrizable and totally bounded if $X$ is separable and define $\Phi_1,\Phi_2,\Phi:\Pm(A)\to\Pm(X)$ by
+\begin{equation}\tag{1-2}
+\Phi_1(d)(x,y)=\norm{g_x(d)-g_y(d)}
+\end{equation}
+\begin{equation}\tag{1-3}
+\Phi_2(d)(x,y)=\sup\{|\theta(d)(x,z)\,\theta(d)(x,A)-\theta(d)(y,z)\,\theta(d)(y,A)|:z\in X\},
+\end{equation}
+where
+\begin{equation}\tag{1-4}
+\theta(d)=\min\{1,\Phi_1(d)+\rho\}
+\end{equation}
+\begin{equation}\tag{1-5}
+\Phi(d)=\Phi_1(d)+\Phi_2(d).
+\end{equation}
+Obviously $\Phi$ satisfies (1-i).
+
+\proofpart{1-ii}Since $\theta(\Pm(A))\subset\Metr(X)$, it suffices to show that $\Phi(d)$ is equivalent to $\theta(d)$ for every $d\in\Metr(A)$.
+
+Suppose that $\theta(d)(x_n,x)\to0$. By (1-4) and (1-3) we have $\Phi_i(d)(x_n,x)\to0$ for $i=1,2$. Thus $\Phi(d)(x_n,x)\to0$ by (1-5).
+
+\newpage % Original page 287
+Conversely, assume to the contrary that for some sequence $(x_n)\subset X$ we have $\Phi(d)(x_n,x)\to0$ and
+\begin{equation}\tag{1-6}
+\theta(d)(x_n,x)\geq\delta>0\quad\text{for every }n\in N.
+\end{equation}
+Since by (1-3)
+\[
+\theta(d)(x_n,x)\max\{\theta(d)(x,A),\theta(d)(x_n,A)\}\leq\Phi_2(d)(x_n,x)\leq\Phi(d)(x_n,x)\to0
+\]
+we infer that $x\in A$ and $\theta(d)(x_n,A)\to0$.
+
+Select a sequence of points $(x'_n)\subset A$ such that
+\begin{equation}\tag{1-7}
+\theta(d)(x_n,x'_n)\to0
+\end{equation}
+then $\Phi_1(d)(x_n,x'_n)\to0$, by (1-4).
+
+Since $\Phi(d)(x_n,x)\to0$, from (1-5) we get $\Phi_1(d)(x_n,x)\to0$ and
+\begin{equation}\tag{1-8}
+d(x'_n,x)=\Phi_1(d)(x'_n,x)\to0.
+\end{equation}
+Note that $x\in A$, $(x_n)\subset A$ and $d,\theta(d)\restr A\in\Metr(A)$, from (1-4) and (1-8) it follows that $\theta(d)(x'_n,x)\to0$. Combining this with (1-7) we obtain $\theta(d)(x_n,x)\to0$, which contradicts (1-6).
+
+\proofpart{1-iii}From (1-1) we get
+\begin{equation}\tag{1-9}
+\norm{g_x(d_1)-g_x(d_2)}\leq2\norm{d_1-d_2}\quad\text{for every }x\in A.
+\end{equation}
+Since $\tilde g(X)\subset\conv g(A)$, for every $x,y\in X$ we have
+\[
+\begin{aligned}
+g_x&=\sum_{i=1}^n\lambda_i g_{x_i},\quad x_i\in A,\quad\lambda_i\geq0\text{ for }i=1,\ldots,n\text{ and }\sum_{i=1}^n\lambda_i=1,\\[5pt]
+g_y&=\sum_{j=1}^m\mu_j g_{y_j},\quad y_j\in A,\quad\mu_j\geq0\text{ for }j=1,\ldots,m\text{ and }\sum_{j=1}^m\mu_j=1.
+\end{aligned}
+\]
+Thus from (1-9) and (1-2) we obtain
+\[\norm{\Phi_1(d_1)-\Phi_1(d_2)}\leq4\norm{d_1-d_2}.\]
+On the other hand, from (1-3) and (1-4) we get
+\[
+\norm{\Phi_2(d_1)-\Phi_2(d_2)}\leq4\norm{\theta(d_1)-\theta(d_2)}\leq4\norm{\Phi_1(d_1)-\Phi_1(d_2)}\leq16\norm{d_1-d_2}.
+\]
+Thus by (1-5)
+\[\norm{\Phi(d_1)-\Phi(d_2)}\leq20\norm{d_1-d_2}\quad\text{for }d_1,d_2\in\Pm(A)\]
+(1-iv) follows from the relation $\tilde g(X)\subset\conv g(A)$.
+
+\proofpart{1-v}Assume that $\rho$ and $d$ are totally bounded. Since
+\[\norm{g_x(d)-g_y(d)}=d(x,y)\]
+the set
+\[g(A)d=\{g(d):a\in A\}\subset l^\infty(A)\]
+
+\newpage % Original page 288
+\noindent is totally bounded. Thus $\tilde g(X)d\subset\conv g(A)d$ is also totally bounded. Hence by (1-2) $\Phi_1(d)$ is totally bounded. Consequently by (1-4) $\theta(d)$ is totally bounded. Since $\Phi_2(d)\leq2\theta(d)$ we infer that
+\[\Phi(d)=\Phi_1(d)+\Phi_2(d)\]
+is totally bounded.
+
+\proofpart{1-vi}By (1-4) if $\rho$ is complete then $\theta(d)$ is also a complete metric for every $d\in\Pm(A)$. Thus from the equivalence of $\Phi(d)$ and $\theta(d)$ it suffices to show that if $\Phi(d)(x_n,x_m)\to0$ then $\theta(d)(x_n,x_m)\to0$ for every $d\in\Metr_c(A)$.
+
+If it is not the case then there exist two subsequences $(a_n)\subset(x_n)$ and $(b_n)\subset(x_n)$ such that
+\begin{equation}\tag{1-10}
+\theta(d)(a_n,b_n)\geq\delta>0\quad\text{for every }n\in N.
+\end{equation}
+Since by (1-3)
+\[\theta(d)(a_n,b_n)\,\theta(d)(a_n,A)\leq\Phi_2(d)(a_n,b_n)\leq\Phi(d)(a_n,b_n)\to0\]
+we infer that there exists a sequence $(y_n)$ of points in $A$ such that
+\begin{equation}\tag{1-11}
+\theta(d)(a_n,y_n)\to0.
+\end{equation}
+Thus from (1-4) $\Phi_1(d)(a_n,y_n)\to0$. Since $\Phi_1(d)\restr A=d$ is complete and since
+\[
+\begin{aligned}
+\Phi_1(d)(y_n,y_m)&\leq\Phi_1(d)(y_n,a_n)+\Phi_1(d)(a_n,a_m)+\Phi_1(d)(a_m,y_m)\\
+&\leq\Phi_1(d)(y_n,a_n)+\Phi(d)(a_n,a_m)+\Phi_1(d)(a_m,y_m)\to0
+\end{aligned}
+\]
+we infer that there exists a point $x_0\in A$ such that
+\[\Phi(d)(y_n,x_0)=\Phi_1(d)(y_n,x_0)=d(y_n,x_0)\to0.\]
+Thus $\theta(d)(y_n,x_0)\to0$. Hence from (1-11) we get $\theta(d)(a_n,x_0)\to0$. Consequently $\Phi(d)(a_n,x_0)\to0$. Since $(x_n)$ is a $\Phi(d)$-Cauchy sequence and $(a_n)\subset(x_n)$ we infer that $\Phi(d)(x_n,x_0)\to0$. Thus $\theta(d)(x_n,x_0)\to0$. This contradicts (1-10) and concludes the proof of Theorem 1.
+
+\par\medskip\noindent\textbf{2. Proof of Theorem 2.} For every $d\in\Pm(A)$ let $\Lip(A,d)$ denote the set of all Lipschitz maps $f:(A,d)\to R^1$ vanishing at $a_0\in A$ equipped with the norm
+\[\norm f_d=\inf\{C:f\text{ is a }C\text{-Lipschitz map}\}.\]
+Let $L(A)$ denote the liner space spanned formally by $A$. For every $d\in\Pm(A)$ and $x=\sum_{i=1}^n\lambda_i a_i\in L(A)$, put
+\[
+\norm x_d=\sup\left\{\left|\sum_{i=1}^n\lambda_i f(a_i)\right|:f\in\Lip(A,d),\ \norm f_d\leq1\right\}.
+\]
+Then $L(A)$ becomes a locally convex space. By Dugundji's theorem [3] there exists a continuous map $\varphi:X\to L(A)$ such that $\varphi(a)=a$ for every $a\in A$ and $\varphi(X)\subset\conv(A)\subset L(A)$.
+
+\newpage % Original page 289
+Fix a compatible metric $\rho$ on $X$ which is complete if $X$ is complete-metrizable and totally bounded if $X$ is separable and define $\Phi_1,\Phi_2,\Phi:\Pm(A)\to\Pm(X)$ by
+\begin{equation}\tag{2-1}
+\Phi_1(d)(x,y)=\norm{\varphi(x)-\varphi(y)}_d
+\end{equation}
+\begin{equation}\tag{2-2}
+\Phi_2(d)(x,y)=\sup\{|f(x)-f(y)|:f\in\Lip(X,e),\ f\restr A=0\text{ and }\norm f_e\leq1\},
+\end{equation}
+where $e=\min\{1,\rho+\Phi_1(d)\}$
+\begin{equation}\tag{2-3}
+\Phi(d)=\Phi_1(d)+\Phi_2(d).
+\end{equation}
+It is easy to see that $\Phi$ satisfies conditions (2-i) and (2-iii). The proofs of (2-ii), (2-iv), (2-v) and (2-vi) are similar to the proofs of (1-ii), (1-iv), (1-v) and (1-vi), respectively. Let us check (2-vii).
+
+Assume that $d_n(x,y)\to d_0(x,y)$ for $x,y\in A$. We have to show that $\Phi_i(d_n)(x,y)\to\Phi_i(d_0)(x,y)$ for $x,y\in X$ and $i=1,2$.
+
+Take $x_0,y_0\in X$. Then we have
+\[\varphi(x_0)-\varphi(y_0)=\sum_{i=1}^k\lambda_i a_i,\]
+where $a_1,a_2,\ldots,a_k\in A$.
+
+\textit{The case $i=1$.} For every $\varepsilon>0$, take $p>\Phi_1(d_0)(x_0,y_0)$ and let $n_0\in N$ be such that
+\begin{equation}\tag{2-4}
+\left(1-\frac\varepsilon p\right)d_0(a,b)\leq d_n(a,b)\leq\left(1+\frac\varepsilon p\right)d_0(a,b)
+\end{equation}
+for every $n\geq n_0$ and $a,b\in A_0=\{a_1,\ldots,a_k\}$.
+
+From (2-4) we get for $n\geq n_0$
+\[
+\begin{aligned}
+\Phi_1(d_n)(x_0,y_0)
+&=\sup\left\{\left|\sum_{i=1}^k\lambda_i f(a_i)\right|:f\in\Lip(A,d_n):\norm f_{d_n}\leq1\right\}\\[5pt]
+&=\sup\left\{\left|\sum_{i=1}^k\lambda_i f(a_i)\right|:f\in\Lip(A_0,d_n),\ \norm f_{d_n}\leq1\right\}\\[5pt]
+&\leq\sup\left\{\left|\sum_{i=1}^k\lambda_i f(a_i)\right|:f\in\Lip(A_0,d_0),\ \norm f_{d_0}\leq1+\frac\varepsilon p\right\}\\[5pt]
+&=\left(1+\frac\varepsilon p\right)\sup\left\{\left|\sum_{i=1}^k\lambda_i f(a_i)\right|:f\in\Lip(A_0,d_0),\ \norm f_{d_0}\leq1\right\}\\[5pt]
+&=\left(1+\frac\varepsilon p\right)\sup\left\{\left|\sum_{i=1}^k\lambda_i f(a_i)\right|:f\in\Lip(A,d_0),\ \norm f_{d_0}\leq1\right\}\\[5pt]
+&=\left(1+\frac\varepsilon p\right)\Phi_1(d_0)(x_0,y_0)<\Phi_1(d_0)(x_0,y_0)+\varepsilon.
+\end{aligned}
+\]
+Similarly,
+\[\Phi_1(d_n)(x_0,y_0)>\Phi_1(d_0)(x_0,y_0)-\varepsilon\quad\text{for every }n\geq n_0.\]
+
+\newpage % Original page 290
+\textit{The case $i=2$.} Let $e_n(x,y)=\rho(x,y)+\Phi_1(d_n)(x,y)$. By the case $i=1$ we get
+\[e_n(x,y)\to e_0(x,y)\quad\text{for every }x,y\in X.\]
+For every $\varepsilon>0$, take an $n_0\in N$ such that
+\begin{equation}\tag{2-5}
+\left(1-\frac\varepsilon p\right)e_0(x,y)\leq e_n(x,y)\leq\left(1+\frac\varepsilon p\right)e_0(x_0,y_0)\quad\text{for every }n\geq n_0,
+\end{equation}
+where $p>\Phi_2(d_0)(x_0,y_0)$.
+
+Thus for every $n\geq n_0$ we have
+\[
+\begin{aligned}
+\Phi_2(d_n)(x_0,y_0)
+&=\sup\{|f(x_0)-f(y_0)|:f\in\Lip(X,e_n),\ f\restr A=0\text{ and }\norm f_{e_n}\leq1\}\\[6pt]
+&\leq\sup\left\{|f(x_0)-f(y_0)|:f\in\Lip(X,e_0),\ f\restr A=0\text{ and }\norm f_{e_0}\leq1+\frac\varepsilon p\right\}\\[6pt]
+&=\left(1+\frac\varepsilon p\right)\sup\{|f(x_0)-f(y_0)|:f\in\Lip(X,e_0),\ f\restr A=0\text{ and }\norm f_{e_0}\leq1\}\\[6pt]
+&=\left(1+\frac\varepsilon p\right)\Phi_2(d_0)(x_0,y_0)<\Phi_2(d_0)(x_0,y_0)+\varepsilon.
+\end{aligned}
+\]
+Similarly,
+\[\Phi_2(d_n)(x_0,y_0)>\Phi_2(d_0)(x_0,y_0)-\varepsilon\quad\text{for every }n\geq n_0.\]
+This completes the proof of Theorem 2.
+
+\medskip
+The authors wish to express their deep gratitude to H. Toru\'nczyk for his kind interest during the preparation of this note.
+
+Their thanks are due also to J. Luukkainen for many valuable remarks.
+
+\medskip
+{\footnotesize\noindent INSTITUTE OF MATHEMATICS, POLISH ACADEMY OF SCIENCES, \'SNIADECKICH 8, 00-656 WARSAW (INSTYTUT MATEMATYCZNY, PAN).\par}
+
+\medskip\noindent REFERENCES
+\begin{enumerate}[label={[\arabic*]},leftmargin=2em,itemsep=3pt,topsep=7pt,parsep=0pt]
+\item P. Bacon, \textit{Extending a complete metric}, Amer. Math. Monthly, \textbf{75} (1968), 642--643.
+\item R. H. Bing, \textit{Extending a metric}, Duke Math. J., \textbf{14} (1947), 511--519.
+\item J. Dugundji, \textit{An extension of Tietze's theorem}, Pacific J. Math., \textbf{1} (1951), 353--367.
+\item F. Hausdorff, \textit{Erweiterung einer Homomorphie}, Fund. Math., \textbf{16} (1930), 353--360.
+\item J. Luukkainen, \textit{Extension of spaces, maps and metrics in Lipschitz topology}, Ann. Acad. Sci. Fenn. Ser. A1 Math. Dissertations, \textbf{17} (1978), 1--62.
+\item Nguyen To Nhu, \textit{Extending metrics uniformly}, Coll. Math., \textbf{42} (1) [to appear].
+\item ---\,, \textit{$P^\lambda$-spaces and $L^\lambda$-spaces}, ibid., \textbf{41} (1979), 67--71.
+\item H. Toru\'nczyk, \textit{A short proof of Hausdorff's theorem on extending metrics}, Fund. Math., \textbf{77} (1972), 191--193.
+\end{enumerate}
+
+\newpage % Original page 291
+\begin{otherlanguage}{russian}
+\noindent\textbf{Нгуен Ван \foreignlanguage{english}{Khue}, Нгуен То Ну, О двух экстенсорах метрик.}
+
+Через $\Metr(Z)$ (соответственно, $\Metr_c(Z)$) мы обозначаем семейство всех компактизуемы метрик (соответственно, вполне компактизуемых метрик) на данном метризуемом пространстве $Z$. Пусть $A$ замкнутое подмножество метризуемого пространства $X$. В данной работе строятся два экстенсора метрик $\Phi_1,\Phi:\Metr(A)\to\Metr(X)$, удовлетворяющих условиям:
+\begin{enumerate}[label=(\roman*),leftmargin=3.5em,itemsep=3pt,topsep=4pt]
+\item $\Phi_i(d)\restr A=d$, где $d\in\Metr(A)$, $i=1,2$;
+\item если $X$ вполне метризуемо, то $\Phi_i(\Metr_c(A))\subset\Metr_c(X)$ $i=1,2$;
+\item $\Phi_1$ есть Липшицово отображение;
+\item если $d_1\leq d$, то $\Phi(d_1)\leq\Phi(d)$ где $d_1,d\in\Metr(A)$;
+\item если $d_n(x,y)$, где $x,y\in A$, то $\Phi(d_n)(x,y)\quad\Phi(d)(x,y)$, где $x,y\in X$.
+\end{enumerate}
+\end{otherlanguage}
+\end{document}

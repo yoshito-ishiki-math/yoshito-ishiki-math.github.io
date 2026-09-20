@@ -1,0 +1,251 @@
+% R. H. Bing, Extending a metric (1947), pp. 511--519.
+\documentclass[11pt,a4paper,leqno,twoside]{article}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,enumitem}
+\usepackage[margin=23mm,headheight=15pt]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}\fancyhf{}\fancyhead[LE,RO]{\thepage}
+\fancyhead[CE]{R. H. BING}\fancyhead[CO]{EXTENDING A METRIC}
+\renewcommand{\headrulewidth}{0pt}
+\setlength{\parindent}{1.5em}\setlength{\parskip}{3pt}\setlength{\emergencystretch}{1em}
+\newcommand{\heading}[1]{\par\medskip\noindent\textbf{#1}\enspace}
+\newcommand{\thm}[2]{\par\medskip\noindent\textsc{Theorem #1.}\enspace\textit{#2}\par}
+\newcommand{\proof}{\par\noindent\textit{Proof.}\enspace}
+\begin{document}\setcounter{page}{511}\thispagestyle{plain}
+\begin{center}\textbf{EXTENDING A METRIC}\par\medskip By \textsc{R. H. Bing}\end{center}
+In this paper we shall prove a covering theorem (Theorem 1) and apply it to get three metrization theorems (Theorems 2, 3, 5).
+
+A topological space is metric provided that for each point $P$ and each point $Q$, there exists a number $d(P,Q)$ such that
+\begin{enumerate}[label=(\alph*),nosep,leftmargin=2.5em]
+\item $d(P,Q)=0$ if and only if $P=Q$,
+\item $d(P,Q)=d(Q,P)$ (symmetry),
+\item $d(P,Q)\leq d(P,R)+d(R,Q)$ for each point $R$ (triangle condition), and
+\item the function $d(x,y)$ preserves limit points.
+\end{enumerate}
+By (d) we mean that $P$ is a limit point of the set $M$ if and only if for each positive number $\epsilon$, there is a point $Q$ of $M-M\cdot P$ such that $d(P,Q)$ is less than $\epsilon$. The number $d(P,Q)$ is called the distance between $P$ and $Q$. The distance function $d(x,y)$ of a space is called the metric of the space.
+
+The distance between two points is a positive number. This may be seen by letting $P$ equal $Q$ in (c) and applying (a) and (b). Lindenbaum [7] has shown that we may omit (b) and substitute
+\par\noindent\hspace*{1.5em}(c$'$) $d(P,Q)\leq d(P,R)+d(Q,R)$
+\par\noindent for (c). Then (b) and (c) follow from (a) and (c$'$). Birkhoff [3; 466] uses the inequality
+\par\noindent\hspace*{1.5em}(c$''$) $d(P,Q)\leq d(Q,R)+d(R,P)$
+\par\noindent in place of (c$'$) and shows that (b) follows from (a) and (c$''$).
+
+\heading{A covering theorem.} The theorem in this section may be useful in studying a topological space some of whose properties are defined by means of a sequence of collections of sets covering the space. A space satisfying R. L. Moore's Axiom 1 [8] is such a space. In particular, we shall show that the theorem may be used in solving three metrization problems.
+
+A collection $G$ of point sets is \textit{coherent} provided that each proper subcollection $G'$ of $G$ contains an element which intersects an element of $G-G'$.
+
+\thm{1}{Suppose that $r$ is a positive integer and $H_1,H_2,\ldots$ are collections of sets such that each pair of points that can be covered by a coherent collection of $r$ or fewer elements of $H_{i+1}$ can be covered by an element of $H_i$. If $P$ and $Q$ are two points whose sum cannot be covered by any element of $H_s$ but which can be covered by a coherent collection of sets $h_1,h_2,\ldots$, and $h_n$ belonging to $H_{\alpha(1)},H_{\alpha(2)},\ldots$, and $H_{\alpha(n)}$ respectively, then}
+\begin{equation}\tag{1}2(1/r^{\alpha(1)}+1/r^{\alpha(2)}+\cdots+1/r^{\alpha(n)})>1/r^s.\end{equation}
+\begingroup\renewcommand{\thefootnote}{}\footnotetext{Received January 14, 1947; presented to the American Mathematical Society April 26, 1947.}\endgroup
+\newpage % Original page 512
+\proof We may suppose that $h_1$ contains $P$, that $h_i$ intersects $h_j$ if and only if $i$ is equal to $j-1$, $j$, or $j+1$, and that $h_n$ contains $Q$. There is an ordered subcollection $W$ of $h_1,h_2,\ldots,h_n$ such that the end elements of $W$ contain $P$ and $Q$ respectively and such that adjacent elements of $W$ intersect each other. Now (1) is true for the collection $h_1,h_2,\ldots,h_n$ if it is true for this subcollection $W$. The ordered collection $h_1,h_2,\ldots,h_n$ is called a chain of elements from $P$ to $Q$.
+
+We shall show that
+\begin{equation}\tag{2}1/r^{\alpha(1)}+2/r^{\alpha(2)}+\cdots+2/r^{\alpha(n-1)}+1/r^{\alpha(n)}>1/r^s,\end{equation}
+thereby proving (1). We shall prove (2) by induction. If $n$ is 1, then $\alpha(1)<s$ and (2) is true.
+
+Assume that (2) is not true. Let $k$ be an integer such that (2) is true for all pairs of points $P,Q$ and all integers $n$ less than $k$, but is not true for $n$ equal to $k$. Suppose that $h_1,h_2,\ldots,h_k$ is a chain of elements from $P$ to $Q$, that $m$ is an integer such that no element of $H_m$ contains $P+Q$, and that (2) does not hold for $k$ and $m$ equal to $n$ and $s$ respectively.
+
+Denote some point common to both $h_i$ and $h_{i+1}$ by $P(i)$ and denote $Q$ by $P(n)$. Let $j_1,j_2,\ldots,j_r$ be integers such that $j_{i+1}>j_i$, some element of $H_{m+1}$ contains both $P$ and $P(j_1-1)$ but no element of $H_{m+1}$ contains both $P$ and $P(j_1)$, some element of $H_{m+1}$ contains both $P(j_1-1)$ and $P(j_2-1)$ but no element of it contains both $P(j_1-1)$ and $P(j_2)$, $\ldots$, and some element of $H_{m+1}$ contains both $P(j_{r-1}-1)$ and $P(j_r-1)$ but no element of it contains both $P(j_{r-1}-1)$ and $P(j_r)$. It is not possible for any element of $H_{m+1}$ to contain both $P(j_t-1)$ ($t<r$) and $Q$, because if it did, then some coherent collection of no more than $r$ elements of $H_{m+1}$ would cover $P+Q$, and accordingly, some element of $H_m$ would cover $P+Q$. Also, $j_1>1$ or else $\alpha(1)\leq s$ and (2) holds.
+
+Since (2) is true for $n$ equal to any integer which is less than $k$, we have that
+\begin{equation}\tag{3}
+\begin{aligned}
+1/r^{\alpha(1)}+2/r^{\alpha(2)}+\cdots+2/r^{\alpha(j_1-1)}+1/r^{\alpha(j_1)}&>1/r^{m+1},\\
+1/r^{\alpha(j_1)}+2/r^{\alpha(j_1+1)}+\cdots+2/r^{\alpha(j_2-1)}+1/r^{\alpha(j_2)}&>1/r^{m+1},\\
+\cdots\qquad\cdots\qquad\cdots\qquad\cdots\qquad&\cdots,\\
+1/r^{\alpha(j_{r-1})}+2/r^{\alpha(j_{r-1}+1)}+\cdots+2/r^{\alpha(j_r-1)}+1/r^{\alpha(j_r)}&>1/r^{m+1}.
+\end{aligned}
+\end{equation}
+Adding these inequalities, we obtain (2).
+
+As is demonstrated by the inequality (2), the left member of inequality (1) is unnecessarily large. One might wonder how much could be omitted from this member. By an argument similar to that given above, it can be shown that \textit{if $h_1$ and $h_n$ contain $P$ and $Q$ respectively and $n>1$, then the sum of some $n-1-R$ terms of $1/r^{\alpha(1)}$, $1/r^{\alpha(2)}$, $1/r^{\alpha(2)}$, $1/r^{\alpha(3)}$, $1/r^{\alpha(3)}$, $\ldots$, $1/r^{\alpha(n-1)}$, $1/r^{\alpha(n-1)}$, $1/r^{\alpha(n)}$ is greater than $1/r^s$, where $R$ is the remainder obtained on dividing $n-2$ by $r-1$}. However, for each triple of integers $n$, $r\geq2$, and $s$, an example
+\newpage % Original page 513
+\noindent can be given of a coherent collection of sets $h_1,h_2,\ldots,h_n$ satisfying the conditions previously given but such that the sum of each $n-2-R$ elements of $1/r^{\alpha(1)}$, $1/r^{\alpha(2)}$, $1/r^{\alpha(2)}$, $\ldots$, $1/r^{\alpha(n-1)}$, $1/r^{\alpha(n-1)}$, $1/r^{\alpha(n)}$ is less than $1/r^s$.
+
+\heading{The general metrization problem.} The general metrization problem is to characterize topologically a space which can be assigned a metric. As an application of Theorem 1, we shall give such a characterization. Theorem 2 resembles a well-known result given by Alexandroff and Urysohn. This result states [1] that \textit{a topological space is metrizable provided there exists a sequence $G_1,G_2,\ldots$ such that}
+\begin{enumerate}[label=(\alph*),nosep,leftmargin=2.5em]\itshape
+\item for each integer $i$, $G_i$ is a collection of domains covering space,
+\item if $D$ is a domain and $P$ is a point in $D$, there is an integer $n$ such that every element of $G_n$ containing $P$ is a subset of $D$, and
+\item each pair of intersecting elements of $G_{i+1}$ is a subset of some element of $G_i$.
+\end{enumerate}
+Kindred theorems have been treated by Niemytzki [9], Chittenden [5], Wilson [12], Frink [6], and Vickery [11].
+
+In their proof of the above result, Alexandroff and Urysohn made use of results of Chittenden [4] concerning the equivalence of distance and uniformly regular \'ecart. Frink [6] proves an equivalent theorem much more directly by using a theorem somewhat like Theorem 1 of this paper. While the following theorem may be proved by either of these methods, the proof that we give resembles that given by Frink.
+
+\thm{2}{A topological space is metrizable provided there exists a sequence $H_1,H_2,\ldots$ such that}
+\begin{enumerate}[label=(\alph*),nosep,leftmargin=2.5em]\itshape
+\item for each integer $i$, $H_i$ is a collection of sets covering the space,
+\item a point $P$ is a limit point of the set $M$ if and only if for each integer $n$, some element of $H_n$ contains $P$ and intersects $M-M\cdot P$, and
+\item each pair of points that is covered by the sum of a pair of intersecting elements of $H_{i+1}$ can be covered by an element of $H_i$.
+\end{enumerate}
+\proof We shall not conclude from (c) that \textit{(c$'$) each pair of points that is covered by either an element of $H_{i+1}$ or the sum of a pair of intersecting elements of $H_{i+1}$ can be covered by an element of $H_i$} because it may be that $H_{i+1}$ consists of a collection of mutually exclusive sets; in this case, there would not be a pair of intersecting elements of $H_{i+1}$ and there might be an element of $H_{i+1}$ containing two points which could not be covered by any element of $H_i$.
+
+However, hypothesis (c$'$) may be substituted for (c). Let $H'_i$ be the collection of all sets $h$ such that $h$ is either a point or a pair of points which can be covered by an element of $H_1$, by an element of $H_2$, $\ldots$, and also by an element of $H_i$. The sequence of collections $H'_1,H'_2,\ldots$ has the properties indicated in (a), (b), and (c$'$). We shall suppose that $H_1,H_2,\ldots$ satisfies conditions (a), (b), and (c$'$).
+
+If $P$ is a point and $Q$ is a point, we define $d(P,Q)$ as the minimum of 1 and the greatest lower bound of the collection of sums of the type $1/2^{\alpha(1)}+1/2^{\alpha(2)}+$
+\newpage
+\noindent $\cdots+1/2^{\alpha(n)}$ where $h_1,h_2,\ldots,h_n$ are the elements of a coherent collection of sets covering $P+Q$ and $h_i$ is an element of $H_{\alpha(i)}$.
+
+We shall show that the metric defined by $d(x,y)$ satisfies the triangle condition. If $P$, $Q$, and $R$ are points, $U$ is a coherent collection of sets covering $P+R$, and $V$ is a coherent collection of sets covering $R+Q$, then the coherent collection $U+V$ covers $P+Q$. Hence, $d(P,Q)\leq d(P,R)+d(R,Q)$.
+
+If $M$ is a set not having $P$ as a limit point, there is an integer $s$ such that no element of $H_s$ containing $P$ intersects $M-M\cdot P$. Then by Theorem 1, we have that if $Q$ is a point of $M-M\cdot P$, $d(P,Q)\geq1/2^{s+1}$. Also, the sum of the elements of $H_n$ which contain $P$ intersects every set having $P$ as a limit point. Hence, a set $M$ has $P$ as a limit point only if for each positive number $\epsilon$, $M$ contains a point $Q$ different from $P$ such that $d(P,Q)<\epsilon$.
+
+Since $d(P,Q)=0$ only if $P=Q$ and the metric defined by $d(P,Q)$ is symmetric, satisfies the triangle condition, and preserves limit points, it is a metric for the space.
+
+\heading{Almost convex metrics.} A metric defined by $d(x,y)$ is \textit{convex} provided that for each point $P$ and each point $Q$ there is a point $R$ such that $d(P,R)=d(R,Q)=d(P,Q)/2$. It is \textit{almost convex} [2] provided that for each point $P$, each point $Q$, and each positive number $\epsilon$, there is a point $R$ such that $|d(P,R)-d(P,Q)/2|<\epsilon$ and $|d(R,Q)-d(P,Q)/2|<\epsilon$.
+
+It has been shown by Urysohn [10] that a normal space has a metric if it is completely separable. However, the method used for defining a metric is such that no point is defined to be between any other two points. Hence, no metric defined by this method is convex. In fact, none is even almost convex.
+
+The metric defined in the following theorem has the interesting property that if a connected space has an almost convex metric $d(x,y)$, then the elements of $H_1,H_2,\ldots$ may be so chosen that the metric defined is $d(x,y)$. We select the elements of $H_i$ to be the set of all pairs of points whose distance apart is less than $1/2^i$. Hence, the methods we use can give the ordinary metric to a Euclidean space. Theorem 3 can be compared with a result by Aronszajn [2; Theorem 2].
+
+\thm{3}{A necessary and sufficient condition that a connected topological space have an almost convex metric is that there exist a sequence $H_1,H_2,\ldots$ satisfying conditions (a), (b), and (c) mentioned in Theorem 2 and}
+
+\textit{(d) each pair of points that can be covered by an element of $H_i$ can be covered by the sum of two intersecting elements of $H_{i+1}$.}
+
+If the space is a point, the result is trivial. Hence, we only consider the case in which it is nondegenerate.
+
+\textit{Necessity.} If the space has an almost convex metric defined by $d(x,y)$, we define $H_i$ to be the set of all pairs of points whose distance apart is less than $1/2^i$. We note that the sequence $H_1,H_2,\ldots$ satisfies conditions (a), (b), (c), and (d).
+
+\textit{Sufficiency.} From hypothesis (d), we find that $H_n$ $(n>1)$ contains more
+\newpage
+\noindent than one element. Since space is connected, each element of $H_n$ $(n>1)$ intersects another element of $H_n$. Hence, condition (c$'$) follows from hypotheses (c) and (d) and the fact that space is connected.
+
+Using condition (b) and the fact that space is connected, we find that for each pair of points $P$ and $Q$, there is a finite coherent collection of elements of $H_1$ which covers $P+Q$. The distance $d(P,Q)$ is defined to be the greatest lower bound of the collection of all sums of the type $1/2^{\alpha(1)}+1/2^{\alpha(2)}+\cdots+1/2^{\alpha(n)}$, where $h_1,h_2,\ldots$, and $h_n$ are the elements of a coherent collection covering $P+Q$ and $h_i$ is an element of $H_{\alpha(i)}$. As is shown in Theorem 2, $d(x,y)$ defines a metric. We shall show that this metric is almost convex.
+
+We shall show that if $P$ and $Q$ are two points and $\epsilon$ is a positive number, then there is a point $R$ such that $|d(P,R)-d(P,Q)/2|<\epsilon$ and $|d(R,Q)-d(P,Q)/2|<\epsilon$. Let $h_1,h_2,\ldots,h_n$ be the elements of a coherent collection covering $P+Q$ such that $h_i$ is an element of $H_{\alpha(i)}$ and $1/2^{\alpha(1)}+1/2^{\alpha(2)}+\cdots+1/2^{\alpha(n)}<d(P,Q)+\epsilon$. We shall suppose that $h_1$ contains $P$, $h_i$ intersects $h_{i+1}$, and $h_n$ contains $Q$.
+
+Using condition (d), we find that each element of $H_i$ in $h_1,h_2,\ldots,h_n$ may be replaced by an intersecting pair of elements of $H_{i+1}$ so that the resulting collection is a coherent collection containing $P+Q$. The resulting sum is the same. This procedure may be continued so as to obtain a coherent collection of elements $h'_1,h'_2,\ldots,h'_m$ covering $P+Q$ such that each $h'_i$ is an element of $H_j$, $m/2^j<d(P,Q)+\epsilon$, and $1/2^j<\epsilon/2$. Suppose that $h'_1$ contains $P$, $h'_i$ intersects $h'_{i+1}$, and $h'_m$ contains $Q$. Let $R$ be a point of $h'_k$ where $m/2\leq k\leq(m+1)/2$. We find that
+\[
+\begin{aligned}
+d(P,R)&\geq d(P,Q)/2+d(P,Q)/2-d(Q,R)\\
+&>d(P,Q)/2+m/2^{j+1}-\epsilon/2-(m+2)/2^{j+1}\\
+&=d(P,Q)/2-\epsilon/2-1/2^j>d(P,Q)/2-\epsilon.
+\end{aligned}
+\]
+Also,
+\[
+\begin{aligned}
+d(P,R)&\leq(m+1)/2^{j+1}=(m/2^{j+1}-\epsilon/2)+\epsilon/2+1/2^{j+1}\\
+&<d(P,Q)/2+\epsilon/2+\epsilon/2.
+\end{aligned}
+\]
+Similarly, it may be found that $|d(R,Q)-d(P,Q)/2|<\epsilon$.
+
+We could have given Theorem 3 in the following stronger (for the sufficiency case) but more complicated form:
+
+\thm{$3'$}{Suppose that $N(1),N(2),\ldots$ is a sequence of positive integers infinitely many of which are greater than 1. A necessary and sufficient condition that a connected space have an almost convex metric is that there exist a sequence $H_1,H_2,\ldots$ satisfying conditions (a) and (b) of Theorem 2 and such that}
+
+\textit{(c) each pair of points that can be covered by a coherent collection of $N(i)$ elements of $H_{i+1}$ can be covered by an element of $H_i$ and}
+\newpage
+\textit{(d) each pair of points that can be covered by an element of $H_i$ can be covered by a coherent collection of $N(i)$ elements of $H_{i+1}$.}
+
+In proving the necessity of this theorem, the elements of $H_i$ could be defined as the set of all pairs of points whose distance apart is less than $1/[N(i)N(i-1)\cdots N(1)]$. For the sufficiency case, the distance between two points could be defined to be the greatest lower bound of sums of the type $1/[N(\alpha_1)N(\alpha_1-1)\cdots N(1)]+1/[N(\alpha_2)N(\alpha_2-1)\cdots N(1)]+\cdots+1/[N(\alpha_n)N(\alpha_n-1)\cdots N(1)]$, where $h_1,h_2,\ldots,h_n$ is a coherent collection of sets covering the two points and $h_i$ is an element of $H_{\alpha(i)}$.
+
+\heading{Extending metrics.} In this last section, we shall consider the problem of defining a metric for a space that will preserve a given metric that is defined on a closed subset of that space.
+
+The following result may be too simple to be dignified by calling it a theorem. It is included so that it can be used in the proof of Theorem 5.
+
+\thm{4}{Suppose $H$ and $K$ are two closed sets and $d(x,y;H)$ and $d(x,y;K)$ are metrics on $H$ and $K$ respectively, such that if $P$ and $Q$ are points of $H\cdot K$, then $d(P,Q;H)=d(P,Q;K)$. Then there is a metric $d(x,y)$ on $H+K$ that preserves $d(x,y;H)$ on $H$ and $d(x,y;K)$ on $K$.}
+
+\proof We shall suppose that $H\cdot K$ exists. If $P+Q$ belongs to $H$ [or $K$], we define $d(P,Q)$ to be $d(P,Q;H)$ [or $d(P,Q;K)$]. If $P$ belongs to $H$ and $Q$ to $K$, we define $d(P,Q)$ to be the greatest lower bound of $d(P,R;H)+d(R,Q;K)$ where $R$ is a point of $H\cdot K$. We shall show that $d(x,y)$ satisfies the triangle condition on $H+K$.
+
+Assume that there are three points $P$, $R$, and $Q$ such that
+\[
+d(P,Q)-\theta=d(P,R)+d(R,Q)\qquad(\theta>0).
+\]
+Then two of the points $P$, $R$, $Q$ belong to one of the sets $H$, $K$ and the other of the three points belongs to the other set. If $P+R$ belongs to $H$ and $Q$ is a point of $K$, there is a point $A$ of $H\cdot K$ such that
+\[
+\begin{aligned}
+d(P,R)+d(R,Q)&>d(P,R;H)+d(R,A;H)+d(A,Q;K)-\theta\\
+&\geq d(P,A;H)+d(A,Q;K)-\theta\geq d(P,Q)-\theta.
+\end{aligned}
+\]
+Also, if $P+Q$ belongs to $H$ and $R$ is a point of $K$, there is a point $A$ of $H\cdot K$ and a point $B$ of $H\cdot K$ such that
+\[
+\begin{aligned}
+d(P,R)+d(R,Q)&>d(P,A;H)+d(A,R;K)-\theta/2\\
+&\qquad+d(R,B;K)+d(B,Q;H)-\theta/2\\
+&\geq d(P,A;H)+d(A,B;K)+d(B,Q;H)-\theta\\
+&=d(P,A;H)+d(A,B;H)+d(B,Q;H)-\theta\\
+&\geq d(P,Q;H)-\theta=d(P,Q)-\theta.
+\end{aligned}
+\]
+\newpage
+\noindent Hence, the assumption that $d(x,y)$ does not satisfy the triangle condition is false.
+
+\thm{5}{Suppose that $K$ is a closed subset of a metrizable space $S$ and that $d(x,y;K)$ is a metric on $K$. Then there is a metric $d(x,y)$ on $S$ that preserves the metric $d(x,y;K)$ on $K$; that is, if $P$ and $Q$ are points of $K$, then $d(P,Q)=d(P,Q;K)$.}
+
+\textit{If $d(x,y;K)$ is bounded.} First, we shall consider the case in which the diameter of $K$ under $d(x,y;K)$ is finite. For convenience, we shall suppose that this diameter is less than $\frac18$.
+
+In showing the existence of a metric $d(x,y)$ on $S$, we shall make use of a metric $d'(x,y)$ on $S$ which has the property that the distance between two points of $K$ under $d'(x,y)$ is greater than the distance between the same two points under $d(x,y;K)$.
+
+Let $d''(x,y)$ be a metric for $S$ such that the diameter of $S$ under $d''(x,y)$ is less than $\frac12$. Let $G_i$ be the collection of all domains in $S$ whose diameter under $d''(x,y)$ is less than $1/2^i$. Denote by $G'_i$ the collection obtained by omitting from $G_i$ all of its domains that contain two points of $K$ whose distance apart under $d(x,y;K)$ is greater than or equal to $1/2^{i+2}$.
+
+Let $H_1,H_2,\ldots$ be a sequence such that $H_1$ is $G'_1$, $H_2$ is a subcollection of $G'_2$ covering $S$ such that each element of $H_2$ is a subset of an element of $H_1$ and each pair of intersecting elements of $H_2$ is covered by an element of $H_1$, and in general, $H_{n+1}$ is a subcollection of $G'_{n+1}$ covering $S$ such that each element of $H_{n+1}$ is a subset of an element of $H_n$ and each pair of intersecting elements of $H_{n+1}$ is covered by an element of $H_n$. Once $H_n$ is obtained, we can obtain $H_{n+1}$ as follows. For each point $P$, select an element $h_p$ of $H_n$ containing $P$ and let $D_p$ be an element of $G'_{n+1}$ containing $P$ such that the diameter under $d''(x,y)$ of $D_p$ is less than one-half the distance under $d''(x,y)$ from $P$ to the complement of $h_p$. Let $H_{n+1}$ be a collection of such $D_p$'s covering space.
+
+We observe that the sequence $H_1,H_2,\ldots$ satisfies the conditions mentioned in Theorem 2 and that $S$ is an element of $H_1$. Hence, we may use the method given in Theorem 2 to define a metric $d'(x,y)$ on $S$. We shall show that if $P$ and $Q$ are two points of $K$, then $d'(P,Q)>d(P,Q;K)$.
+
+Let $j$ be a positive integer such that $1/2^{j+1}\leq d(P,Q;K)<1/2^j$. Since $P+Q$ does not belong to any element of $G'_{j-1}$, it does not belong to any element of $H_{j-1}$. If $h_1,h_2,\ldots,h_n$ is a coherent collection of domains covering $P+Q$ where $h_i$ is an element of $H_{\alpha(i)}$, we find from Theorem 1 that $1/2^{\alpha(1)}+1/2^{\alpha(2)}+\cdots+1/2^{\alpha(n)}>1/2^j$. Hence, $d'(P,Q)\geq1/2^j>d(P,Q;K)$.
+
+If $P$ is a point and $Q$ is a point, we define $d(P,Q)$ to be the minimum of $d'(P,Q)$ and the greatest lower bound of $d'(P,A)+d(A,B;K)+d'(B,Q)$, where $A$ is a point of $K$ and so is $B$.
+
+If $P$, $Q$, $A$, and $B$ are points of $K$, then
+\[
+\begin{aligned}
+d'(P,A)+d(A,B;K)+d'(B,Q)&\geq d(P,A;K)\\
+&\quad+d(A,B;K)+d(B,Q;K)\geq d(P,Q;K).
+\end{aligned}
+\]
+\newpage
+\noindent Treating $P$ and $Q$ as $A$ and $B$, we find that $d(P,Q)=d(P,Q;K)$. Hence, $d(x,y)$ preserves $d(x,y;K)$ on $K$. We shall now show that $d(x,y)$ is a metric for $S$.
+
+Clearly, $d(P,Q)=d(Q,P)\geq0$, the equality holding only if $P=Q$. Also, $d(x,y)$ preserves limit points in the space $S$. We shall show that $d(x,y)$ satisfies the triangle condition, thereby showing that it is a metric. This demonstrates that Theorem 4 is true if $d(x,y;K)$ is bounded.
+
+Assume that the triangle condition is not satisfied and that there are three points $P$, $R$, and $Q$ such that
+\begin{equation}\tag{4}
+d(P,Q)-\theta=d(P,R)+d(R,Q)\qquad(\theta>0).
+\end{equation}
+If $d(P,R)\ne d'(P,R)$ and $d(R,Q)\ne d'(R,Q)$, then there exists a point $A$, a point $B$, a point $C$, and a point $D$ all of $K$ so that
+\[
+d(P,R)+\theta/2>d'(P,A)+d(A,B;K)+d'(B,R)
+\]
+and
+\[
+d(R,Q)+\theta/2>d'(R,C)+d(C,D;K)+d'(D,Q).
+\]
+Adding the above two inequalities, we obtain
+\begin{equation}\tag{5}
+\begin{aligned}
+&d(P,R)+d(R,Q)+\theta\\
+&\quad>d'(P,A)+d(A,B;K)+d'(B,R)+d'(R,C)\\
+&\hspace{5cm}+d(C,D;K)+d'(D,Q)\\
+&\quad\geq d'(P,A)+d(A,B;K)+d'(B,C)+d(C,D;K)+d'(D,Q)\\
+&\quad\geq d'(P,A)+d(A,D;K)+d'(D,Q)\geq d(P,Q).
+\end{aligned}
+\end{equation}
+Now (5) contradicts (4). Similarly, we find that if $d(P,R)=d'(P,R)$ or $d(R,Q)=d'(R,Q)$, the triangle inequality is also satisfied.
+
+\textit{If $d(x,y;K)$ is not bounded.} Let $P$ be a point of $K$ and $D_1,D_2,\ldots$ be a collection of domains in $S$ such that $D_1$ does not contain $P$, $D_i$ contains all points $Q$ of $K$ such that $d(P,Q;K)>i$, $\overline D_{i+1}$ is a subset of $D_i$, and the common part of $D_1,D_2,\ldots$ does not exist. For convenience, we shall denote $S-D_i$ by $E_i$. We note that $E_i$ is a closed subset of $S$ and that if $P$ and $Q$ are points of $K\cdot E_i$, then $d(P,Q;K)\leq2i$.
+
+Since $d(x,y;K)$ is bounded over $K\cdot E_1$, there is a bounded metric $d(x,y;E_1)$ on $E_1$ that preserves $d(x,y;K)$ on $K\cdot E_1$. By Theorem 4, there is a bounded metric $d(x,y;E_1+K\cdot E_2)$ on $E_1+K\cdot E_2$ that preserves $d(x,y;E_1)$ on $E_1$ and $d(x,y;K)$ on $K\cdot E_2$. Furthermore, there is a bounded metric $d(x,y;E_2)$ on $E_2$ that preserves $d(x,y;E_1+K\cdot E_2)$ on $E_1+K\cdot E_2$. Continuing this process, we find that there are bounded metrics $d(x,y;E_3)$, $d(x,y;E_4)$, $\ldots$ such that $d(x,y;E_i)$ preserves $d(x,y;K)$ on $K\cdot E_i$ and preserves $d(x,y;E_{i-1})$ on $E_{i-1}$.
+
+If $P$ and $Q$ are points of $E_i$, then $d(P,Q;E_i)=d(P,Q;E_j)$ for $j>i$. If $E_i$ contains $P$ and $Q$, define $d(P,Q)$ to be $d(P,Q;E_i)$. Since for each integer $i$, $d(x,y;E_i)$ preserves $d(x,y;K)$ on $K\cdot E_i$, $d(x,y)$ preserves $d(x,y;K)$ on $K$.
+\newpage
+\begin{center}\textsc{References}\end{center}
+\begin{enumerate}[leftmargin=2em,label=\arabic*.,itemsep=3pt]
+\item \textsc{P. Alexandroff and P. Urysohn}, \textit{Une condition nécessaire et suffisante pour qu'une classe $(L)$ soit une classe $(B)$}, Comptes Rendus Hebdomadaires des Séances de l'Académie des Sciences, vol.\ 177(1923), pp.\ 1274--1276.
+\item \textsc{N. Aronszajn}, \textit{Quelques remarques sur les relations entre les notions d'écart régulier et de distance}, Bulletin of the American Mathematical Society, vol.\ 44(1938), pp.\ 653--657.
+\item \textsc{G. Birkhoff}, \textit{Metric foundations of geometry. I}, Transactions of the American Mathematical Society, vol.\ 55(1944), pp.\ 465--492.
+\item \textsc{E. W. Chittenden}, \textit{On the equivalence of écart and voisinage}, Transactions of the American Mathematical Society, vol.\ 18(1917), pp.\ 161--166.
+\item \textsc{E. W. Chittenden}, \textit{On the metrization problem and related problems in the theory of abstract sets}, Bulletin of the American Mathematical Society, vol.\ 33(1927), pp.\ 13--34.
+\item \textsc{A. H. Frink}, \textit{Distance functions and the metrization problem}, Bulletin of the American Mathematical Society, vol.\ 43(1937), pp.\ 133--142.
+\item \textsc{A. Lindenbaum}, \textit{Contributions à l'étude de l'espace métrique. I}, Fundamenta Mathematicae, vol.\ 8(1926), pp.\ 209--222.
+\item \textsc{R. L. Moore}, \textit{Foundations of Point Set Theory}, American Mathematical Society Colloquium Publications, vol.\ 13, New York, 1932.
+\item \textsc{V. W. Niemytzki}, \textit{On the ``third axiom of metric space''}, Transactions of the American Mathematical Society, vol.\ 29(1927), pp.\ 507--513.
+\item \textsc{P. Urysohn}, \textit{Zum Metrisationsproblem}, Mathematische Annalen, vol.\ 94(1925), pp.\ 309--315.
+\item \textsc{C. W. Vickery}, \textit{Axioms for Moore spaces and metric spaces}, Bulletin of the American Mathematical Society, vol.\ 46(1940), pp.\ 560--564.
+\item \textsc{W. A. Wilson}, \textit{On semi-metric spaces}, American Journal of Mathematics, vol.\ 53(1931), pp.\ 361--373.
+\end{enumerate}
+\bigskip\textsc{The University of Texas.}
+\end{document}

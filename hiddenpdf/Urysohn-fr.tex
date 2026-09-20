@@ -1,0 +1,1204 @@
+% French transcription of the 1927 paper from the owner's 39-page scan.
+% Source: Mycollections/MyResearchRef/UrysohnUniversal/PatchPatch/PatchWork/PatchWork.pdf
+% Original printed pages 43--64 and 74--90. See TRANSLATION-NOTES.md.
+\documentclass[a4paper,12pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[mathscr]{eucal}
+\pagestyle{plain}
+\newcommand{\fais}{\mathfrak{F}}
+\newcommand{\iso}{\mathfrak{I}}
+\newcommand{\srcpage}[1]{} % Original printed-page boundary.
+\setlength{\emergencystretch}{2em}
+\begin{document}
+\title{Sur un espace métrique universel}
+\author{\textsc{Mémoire posthume de Paul Urysohn,}\\
+\textsc{rédigé par Paul Alexandroff (Moscou).}}
+\maketitle
+\srcpage{43}
+\section*{I. --- Préliminaires.}
+\paragraph{1.}
+On entend par \textit{espace métrique} ou \textit{classe} $(\mathscr{D})$\footnote{C'est à M.~Fréchet qu'on doit la notion fort importante de l'espace métrique. Il l'a introduite pour la première fois en 1906 sous un autre nom qui fut d'ailleurs remplacé par la dénomination «~classe $(\mathscr{D})$~». La dénomination «~espace métrique~» fut proposée par M.~Hausdorff.}
+un ensemble formé d'éléments d'une nature absolument quelconque, et tel que pour deux éléments quelconques $x$ et $y$ de cet ensemble, il est défini un nombre non négatif $\rho(x,y)$ s'appelant la \textit{distance} entre les deux \textit{points} $x$ et $y$ de l'espace métrique et vérifiant les conditions suivantes~:
+
+$1^\circ$ $\rho(x,y)=0$ dans le cas (et dans ce cas seulement) où les deux éléments $x$ et $y$ sont identiques~;
+
+$2^\circ$ $\rho(x,y)=\rho(y,x)$~;
+
+$3^\circ$ Quels que soient les trois points $x$, $y$, $z$ de l'espace métrique donné, on a toujours
+\[
+\rho(x,y)+\rho(y,z)\geqq\rho(x,z).
+\]
+\paragraph{2.}
+Soient $E$ un espace métrique et $A$ un sous-ensemble quelconque de points de $E$. Désignons par $x$ un point arbitraire de $E$ appartenant ou non à l'ensemble $A$. Le point $x$ étant supposé fixe, désignons par $y$ un point quelconque (variable) de l'ensemble $A$, et considérons l'ensemble de tous les nombres non négatifs $\rho(x,y)$ obtenus en prenant pour $y$ chacun des points de $A$. La borne inférieure de cet ensemble de nombres non négatifs est aussi un nombre non négatif que nous désignerons par $\rho(x,A)$, et que nous appellerons la \textit{distance entre le point $x$ et l'ensemble $A$}. Il est évident
+\srcpage{44}
+que si $x$ fait partie de $A$, la distance $\rho(x,A)$ est nulle, car la borne inférieure en question est alors atteinte et égale à $\rho(x,x)=0$.
+
+Mais il n'est pas nécessaire, pour que $\rho(x,A)$ soit nulle, que $x$ soit un point de $A$~: on voit aussitôt que l'égalité $\rho(x,A)=0$ veut dire précisément qu'il existe des points de $A$ (coïncidant ou non avec $x$), et dont la distance de $x$ est aussi petite que l'on veut. Or, on dit qu'un point $x$ (appartenant ou non à $A$) est \textit{point d'accumulation de $A$}, s'il existe des points de $A$ \textit{différant} de $x$ et tels que leur distance du point $x$ est aussi petite que l'on veut.
+
+L'ensemble de tous les points $x$ de l'espace $E$ tels que $\rho(x,A)=0$ s'appelle \textit{la fermeture de l'ensemble $A$} et sera désigné dans la suite par $\overline{A}$. Il est évident que l'ensemble $\overline{A}$ est formé de tous les points de $A$ et de tous les points d'accumulation de $A$. On s'aperçoit facilement que $\overline{A}$ est toujours un ensemble fermé.
+
+Nous désignerons toujours par $A-B$ ($A$ et $B$ étant deux ensembles quelconques dont chacun peut se réduire à un seul point ou même à l'ensemble vide) l'ensemble de tous les points de $A$ n'appartenant pas à $B$ (il n'est nullement supposé dans cette définition que $B$ fasse partie de $A$).
+
+Cette définition bien comprise, on voit aussitôt que le point $x$ est un point d'accumulation de $A$ dans le cas (et dans ce cas seulement) où $\rho(x,A-x)=0$. (Si $x$ n'appartient pas à $A$, on a $A-x=A$.)
+
+On aurait enfin toujours la même définition des points d'accumulation en procédant de la façon suivante. Appelons \textit{sphère du centre $x$ et de rayon $\varepsilon$} ($x$ est un point quelconque de l'espace métrique $E$, et $\varepsilon$ un nombre positif arbitraire), et désignons par $S(x,\varepsilon)$ l'ensemble de tous les points de $E$ distants de $x$ de moins de $\varepsilon$. En entendant par un \textit{voisinage} d'un point $x$ une sphère quelconque ayant ce point pour centre, un point $x$ est point d'accumulation d'un ensemble $A$ (situé dans $E$), si tout voisinage de ce point contient au moins un point de l'ensemble $A$, autre que le point $x$ lui-même [tout voisinage $S(x,\varepsilon)$ contient alors, comme on voit de suite, une infinité de points de $A$].
+
+La notion du point d'accumulation une fois définie, les notions d'ensemble fermé, d'ensemble ouvert ($=$ complémentaire d'un ensemble fermé), d'ensemble parfait, etc., sont immédiates. Citons parmi ces notions élémentaires seulement celle d'ensemble dense
+\srcpage{45}
+dans un espace~: l'ensemble $A$ agrégé à l'espace métrique $E$ est dit dense dans $E$, si l'on a $\overline{A}=E$.
+
+\paragraph{3.}
+Un ensemble infini $A$ de points de $E$ sera dit \textit{convergent}\footnote{F.~Hausdorff, \textit{Grundz\"uge der Mengenlehre}, Leipzig, Veit, 1914, p.~232. Ce livre sera désigné dans la suite simplement par \textit{Hausdorff}.}
+vers le point $x$ si tout sous-ensemble infini de $A$ (et, par suite, l'ensemble $A$ lui-même) admet $x$ pour point d'accumulation. On démontre aisément que $A$ converge vers $x$ dans le cas (et dans ce cas seulement) où, quel que soit $\varepsilon>0$, $S(x,\varepsilon)$ contient tous les points de $A$, sauf peut-être un nombre fini de ces points. On démontre aussi d'une façon élémentaire qu'aucun ensemble ne peut converger, dans un espace métrique, vers deux points, et que tout l'ensemble convergent est toujours dénombrable~; ce dernier fait permet de parler des \textit{suites convergentes}
+\begin{equation}\tag{1}\label{u:eq1}
+a_1,a_2,\dots,a_n,\dots
+\end{equation}
+de points de $E$.
+
+Une remarque importante doit cependant être faite pour éviter tout malentendu. Quand nous parlons d'un ensemble convergent, nous supposons toujours que cet ensemble est formé de points deux à deux différents. Si, au contraire, \textit{une suite} (1) de points de $E$ est donnée, on ne fait pas en général la restriction tout à l'heure mentionnée. On doit préciser alors ce qu'on entend en disant que la suite (1) converge vers le point $a$.
+
+Nous admettrons pour un moment la définition de M.~Fréchet, et nous dirons que la suite (1) converge vers le point $a$, si la suite des nombres non négatifs $\rho(a,a_n)$ tend vers zéro. On voit aussitôt qu'une suite, dans laquelle chaque groupe de points coïncidant tous entre eux est fini, converge toujours et seulement si l'\textit{ensemble} des points de cette suite est lui aussi convergent~; si, au contraire, il y a, dans la suite (1), une suite partielle de points coïncidant tous entre eux, la convergence, d'après M.~Fréchet, de la suite (1) signifie simplement que tous les éléments $a_n$ représentent, à partir d'une certaine valeur de $n$, le même point de l'espace $E$, qui est alors le point $a$ lui-même (point limite de la suite convergente).
+
+D'autre part, si un \textit{ensemble} $A$ est convergent vers le point $x$,
+\srcpage{46}
+on obtient une suite convergente vers $x$ en numérotant de n'importe quelle façon les points de $A$ sous la seule condition que jamais une infinité de numéros différents ne soit attribuée à un même point de $A$.
+
+\paragraph{4.}
+Si une suite (1) de points de $E$ est convergente, le principe de convergence de Cauchy se trouve nécessairement vérifié, c'est-à-dire qu'à tout $\varepsilon>0$ correspond un entier $m$ tel que $\rho(a_p,a_q)<\varepsilon$, quels que soient les entiers $p$ et $q$ supérieurs à $m$. En appelant \textit{suite fondamentale} toute suite (1) vérifiant le principe de convergence de Cauchy, on peut dire que toute suite convergente est une suite fondamentale. Une classe particulièrement importante d'espaces métriques est celle qui admet la réciproque de la dernière proposition~: c'est la classe d'espaces métriques complets. Un espace métrique est donc dit \textit{complet} si toute suite fondamentale y est convergente\footnote{Nous considérons dans ce travail cette forme, qu'on pourrait appeler forme métrique, de la notion de l'espace complet et qui se rapporte à un \textit{espace donné comme tel}, c'est-à-dire avec les distances bien définies. M.~Fréchet (à qui la notion d'espace complet est due) considère la question d'un point de vue bien plus général et qui présente des avantages surtout dans bien des recherches topologiques.
+
+M.~Fréchet dit qu'un espace métrique est complet si parmi toutes les définitions de distance \textit{donnant lieu aux mêmes points d'accumulation}, une au moins admet le principe de convergence de Cauchy.
+
+Dans la conception de M.~Fréchet, l'espace métrique est considéré comme un être topologique, c'est-à-dire comme un représentant d'une classe topologique d'espaces (deux à deux homéomorphes).
+
+Dans toute \textit{théorie topologique} c'est, en effet, le seul point de vue consécutif~; mais dans le présent travail consacré exclusivement aux propriétés métriques, il est préférable de considérer le sens plus spécial de l'expression «~complet~» que nous avons adopté ici et qui est dû à M.~Hausdorff.}.
+
+On doit à M.~Hausdorff le remarquable résultat suivant~:
+
+Quel que soit l'espace métrique $E$, on peut y adjoindre (et cela d'une manière seulement) un certain ensemble d'éléments de façon à obtenir un nouvel espace $\widetilde{E}$ vérifiant les conditions suivantes~:
+
+$1^\circ$ L'ensemble de tous les points de $E$ forme un sous-ensemble dense dans l'espace $\widetilde{E}$, et la distance entre deux points quelconques de $E$ reste conservée dans l'espace $\widetilde{E}$~;
+\srcpage{47}
+
+$2^\circ$ L'espace $\widetilde{E}$ est complet.
+
+\paragraph{5.}
+On obtient l'espace $\widetilde{E}$ de la façon suivante~:
+
+Soient
+\begin{equation}\tag{1}
+a_1,a_2,\dots,a_n,\dots
+\end{equation}
+et
+\begin{equation}\tag{2}
+b_1,b_2,\dots,b_n,\dots
+\end{equation}
+deux suites fondamentales formées de points de l'espace $E$. Nous dirons, d'après M.~Hausdorff, que les deux suites (1) et (2) sont \textit{confinales} si $\rho(a_n,b_n)$ tend vers zéro avec $\frac{1}{n}$.
+
+Les propriétés suivantes des suites fondamentales sont immédiates~:
+
+$1^\circ$ Une suite fondamentale est convergente, ou bien elle est divergente ($=$ ne possédant aucun point d'accumulation)~;
+
+$2^\circ$ Si une suite fondamentale est convergente (respectivement divergente), toute suite confinale jouit de la même propriété~;
+
+$3^\circ$ Deux suites confinales à une troisième sont confinales entre elles.
+
+La dernière propriété permet de diviser en faisceaux l'ensemble des suites fondamentales, en disant que deux suites appartiennent à un même faisceau si elles sont confinales.
+
+Considérons un faisceau $\fais$ quelconque de suites fondamentales. Deux cas seulement sont possibles~:
+
+\textit{a.} Toutes les suites formant le faisceau $\fais$ convergent vers le même point $a_{\fais}$ de l'espace $E$~;
+
+\textit{b.} Toutes les suites formant le faisceau $\fais$ divergent.
+
+Dans le cas \textit{b}, nous pouvons créer un nouvel être mathématique (point de $\widetilde{E}$ n'appartenant pas à $E$), que nous désignons par $\alpha_{\fais}$.
+
+On formera des $a_{\fais}$ (dont l'ensemble coïncide évidemment avec $E$), et $\alpha_{\fais}$ l'espace $\widetilde{E}$ en définissant les distances de la façon suivante~:
+\srcpage{48}
+
+$1^\circ$ Entre $a_{\fais_1}$ et $a_{\fais_2}$ sera conservée la distance que ces deux points avaient dans $E$~;
+
+$2^\circ$ Considérons un point $a_{\fais}$ de $E$, et «~un point $\alpha_{\fais_1}$ de $\widetilde{E}$ n'appartenant pas à $E$~». Soit $c_1,c_2,\dots,c_n,\dots$ une suite quelconque du faisceau $\fais_1$ (définissant $\alpha_{\fais_1}$). Posons
+\[
+\underset{\text{(dans $\widetilde{E}$)}}{\rho(a_{\fais},\alpha_{\fais_1})}
+=\lim_{n\to\infty}\underset{\text{(dans $E$)}}{\rho(a_{\fais},c_n)}
+\]
+(on voit immédiatement que la limite existe et qu'elle ne dépend pas de la suite choisie parmi celles qui forment $\fais_1$)~;
+
+$3^\circ$ De même, si l'on a deux «~points $\alpha_{\fais_1}$ et $\alpha_{\fais_2}$ de $\widetilde{E}$ n'appartenant pas à $E$~», on prendra deux suites arbitraires $c_1,c_2,\dots,c_n,\dots$, respectivement $d_1,d_2,\dots,d_n,\dots$, faisant partie de $\fais_1$ respectivement de $\fais_2$, et l'on posera
+\[
+\underset{\text{(dans $\widetilde{E}$)}}{\rho(\alpha_{\fais_1},\alpha_{\fais_2})}
+=\lim_{n\to\infty}\underset{\text{(dans $E$)}}{\rho(c_n,d_n)}.
+\]
+\textit{On voit aisément} que $\widetilde{E}$ est un espace métrique vérifiant toutes les conditions mentionnées (on consultera pour la démonstration le Chapitre VIII du livre cité de M.~Hausdorff).
+
+\paragraph{6.}
+Seule la propriété de l'unicité de l'espace $\widetilde{E}$ (l'espace $E$ étant, bien entendu, donné) exige peut-être quelques explications.
+
+Introduisons à cet effet les notions suivantes qui seront d'un usage constant dans ce qui suit~:
+
+Nous appellerons \textit{isométrique} toute correspondance biunivoque entre les points des deux espaces métriques $E_1$ et $E_2$ qui conserve les distances (c'est-à-dire qu'on a toujours $\rho(x_1,y_1)=\rho(x_2,y_2)$, quels que soient les deux couples de points correspondants $x_1$ et $y_1$ de $E_1$, respectivement $x_2$ et $y_2$ de $E_2$).
+
+Deux espaces métriques $E_1$ et $E_2$ seront dits \textit{congruents} (ou \textit{identiques considérés comme espaces métriques}), s'il est possible d'établir, entre $E_1$ et $E_2$, une correspondance isométrique.
+
+L'unicité de l'espace $\widetilde{E}$ résulte alors du théorème suivant, facile à vérifier~:
+
+\textit{S'il existe une correspondance isométrique $\iso_0$ entre deux
+\srcpage{49}
+ensembles $D_1$ et $D_2$ situés respectivement dans les espaces métriques complets $E_1$ et $E_2$, et denses dans ces espaces, il existe une correspondance isométrique entre $E_1$ et $E_2$ coïncidant sur $D_1$ et $D_2$ avec $\iso_0$.}
+
+Remarquons tout d'abord qu'à tout faisceau de suites fondamentales de $D_1$ correspond d'une façon isométrique un faisceau de suites fondamentales de $D_2$. Les espaces $E_1$ et $E_2$ étant complets, à chaque faisceau correspond un point de $E_1$ ou de $E_2$ (point limite commun à toutes les suites du faisceau). Il suffit donc de faire correspondre à tout point $a_{\fais_1}$ de $E_1$ le point $a_{\fais_2}$ de $E_2$ ($\fais_1$ et $\fais_2$ étant deux faisceaux correspondants en vertu de la représentation isométrique de $D_1$ sur $D_2$).
+
+La correspondance $\iso$ ainsi obtenue fait évidemment correspondre à tout point\footnote{Il suffit de remarquer qu'à tout point $x$ d'un espace métrique $E$ correspond un faisceau $\fais_x(D)$ de suites convergeant vers ce point, et formées des points d'un ensemble quelconque $D$ dense dans $E$.}
+de l'un des deux espaces $E_1$ et $E_2$ un et un seul point de l'autre espace.
+
+Cette correspondance est de plus isométrique. En effet, soient $a^1_{\fais_1}$, respectivement $a^1_{\fais_1^*}$ deux points de $E_1$ (appartenant ou non à $D_1$), et $a^2_{\fais_2}$, $b^2_{\fais_2^*}$ les points correspondants de $E_2$. Soient $a_1^i,a_2^i,\dots,a_n^i,\dots$, respectivement $a_1^{*i},a_2^{*i},\dots,a_n^{*i},\dots$ ($i=1,2$) des suites extraites de $\fais_i$, respectivement de $\fais_i^*$, sous la condition que $a_n^1$ (ou $a_n^{*1}$) correspond d'après $\iso_0$ (quel que soit $n$) à $a_n^2$, respectivement $a_n^{*2}$.
+
+On a alors
+\[
+\rho(a_n^1,a_n^{*1})=\rho(a_n^2,a_n^{*2}),
+\]
+\[
+\rho(a^1_{\fais_1},a^1_{\fais_2^*})
+=\lim_{n\to\infty}\rho(a_n^1,a_n^{*1})
+=\lim_{n\to\infty}\rho(a_n^2,a_n^{*2})
+=\rho(a^2_{\fais_2},a^2_{\fais_2^*}).
+\]
+\hfill C. Q. F. D.\footnote{On trouvera plus de détails dans le livre de M.~Hausdorff~; le raisonnement ci-dessus est une simple reproduction des raisonnements du n\textsuperscript{o}~8 du Chapitre VIII de ce livre.}
+
+Nous ferons dans ce travail beaucoup d'applications de cette proposition, d'ailleurs élémentaire.
+
+\srcpage{50}
+\section*{II. --- Position du problème.}
+\paragraph{7.}
+Le résultat de M.~Hausdorff dont nous nous sommes occupés dans les n\textsuperscript{os}~4--6 peut être énoncé de la façon suivante~:
+
+\textit{Tout espace métrique $E$ est contenu d'une façon isométrique dans un et un seul espace métrique complet $\widetilde{E}$ sous la condition que $E$ soit dense dans $\widetilde{E}$.}
+
+Il résulte de l'unicité de l'espace $\widetilde{E}$ que nous pouvons considérer le passage d'un espace métrique quelconque $E$ à l'espace complet $\widetilde{E}$ comme une opération bien déterminée.
+
+D'accord avec le point de vue adopté dans ce travail, il faut généraliser un peu la notion exprimée en disant qu'un espace métrique est (d'une façon isométrique) contenu dans l'autre~; en effet, la nature des éléments, formant l'espace métrique, restant tout à fait en dehors de nos considérations (deux espaces métriques congruents étant considérés comme identiques), il convient de dire que l'espace métrique $E_1$ est contenu dans l'espace métrique $E_2$ si $E_2$ contient une image isométrique de $E_1$. Les mots «~d'une façon isométrique~» deviennent maintenant inutiles, car nous ne considérons aucune autre façon, dont un espace pourrait être contenu dans l'autre.
+
+On parvient donc d'une façon naturelle au problème général que voici~:
+
+\textit{Un espace métrique \textup{\textsc{universel}}, c'est-à-dire contenant tout autre espace métrique, existe-t-il~?}
+
+\paragraph{8.}
+On voit aussitôt que ce problème posé dans toute sa généralité se résout par la négative. En effet, supposons qu'il existe un espace métrique universel $W$ de puissance $\mu$. Or, il est facile de construire un espace métrique (même connexe) $E$ de puissance non inférieure à $\mu^{\mu}$, donc de puissance supérieure à $\mu$. Pour cela, il suffit de considérer un ensemble de puissance $\mu^{\mu}$ d'exemplaires du segment rectiligne $[a,b]$ de longueur $1$, c'est-à-dire un ensemble de puissance $\mu^{\mu}$ d'espaces métriques $J_\gamma=[a_\gamma,b_\gamma]$ congruents à
+\srcpage{51}
+ce segment, l'indice $\gamma$ parcourant un ensemble de puissance $\mu^{\mu}$ de valeurs.
+
+Dans cet ensemble nous identifions entre eux tous les «~points~» $a_\gamma$, nous désignons par $a$ le seul point ainsi obtenu, et nous posons, pour deux points $x,y$ appartenant à deux $J_\gamma$ différents,
+\[
+\rho(x,y)=\overline{ax}+\overline{ay}
+\]
+($\overline{ax}$ désignant la distance entre $x$ et $a$ sur le segment $J_\gamma$ correspondant). Pour deux points $x,y$ appartenant au même segment $J_\gamma$, la distance sur ce segment sera conservée comme distance en $E$. L'espace métrique $E$ ainsi obtenu est formé d'un ensemble de points dont la puissance est évidemment non inférieure à $\mu^{\mu}$, donc supérieure à celle de l'espace $W$. Ce dernier espace ne peut donc pas contenir l'espace $E$.
+
+\paragraph{9.}
+Le problème d'un espace métrique universel conserve néanmoins sa valeur si on le restreint d'une façon convenable.
+
+Cette restriction se pose d'ailleurs d'elle-même~; il est bien connu que parmi les espaces métriques (complets ou non) une classe est d'une importance incomparablement supérieure à toute autre~: c'est la classe introduite par M.~Fréchet sous le nom d'espaces métriques séparables, c'est-à-dire possédant un sous-ensemble dense au plus dénombrable.
+
+On sait que pour les espaces métriques séparables, le problème qui nous intéresse actuellement admet une réponse affirmative. M.~Fréchet a, en effet, démontré en 1910 (\textit{Math. Annal.}, t.~68, p.~161--162), qu'au sens indiqué au n\textsuperscript{o}~7 tous les espaces métriques séparables sont contenus dans un même espace métrique. La démonstration se fait en quelques lignes, et cet espace métrique, qu'il appelle $D_\omega$, a une définition très simple. C'est un espace dont chaque point $\xi$ est défini par une suite infinie de coordonnées numériques $x_1,x_2,\dots$ (assujetties seulement à être bornées dans leur ensemble pour chaque point $\xi$), et où la distance de deux points est égale à la borne supérieure de la valeur absolue de la différence des coordonnées de même rang.
+
+Mais l'espace $D_\omega$ de M.~Fréchet n'est pas séparable~; faut-il donc sortir de la famille des espaces métriques séparables pour trouver
+\srcpage{52}
+un espace métrique qui les contient tous au sens isométrique~? Le but de ce Mémoire est de montrer que cela n'est point nécessaire~; plus précisément \textit{il existe un espace métrique séparable $U$ contenant tout autre espace métrique séparable} (au sens expliqué au n\textsuperscript{o}~7).
+
+Nous verrons que cet espace universel\footnote{Nous allons user de cet adjectif dès à présent dans le sens restreint~: universel $=$ contenant tout espace métrique séparable.}
+jouit de plusieurs propriétés remarquables, et qu'il est, sous certaines conditions supplémentaires, le seul espace répondant à la question.
+
+C'est à ces choses-là qu'est consacré le présent Mémoire. L'idée de s'en occuper a été suggérée à l'auteur par M.~Fréchet qui a, pour la première fois, posé et résolu une question spéciale appartenant au même ordre d'idées\footnote{Voir aussi le Mémoire de M.~Fréchet dans \textit{American Journ. of Math.}, 47, 1925, p.~10.}
+et qui sera formulée au n\textsuperscript{o}~23 de ce travail.
+
+Les résultats ci-dessous ont été exposés d'une façon succincte dans une Note parue aux \textit{Comptes rendus de l'Académie des Sciences de Paris} (t.~180, p.~803, séance du 16 mars 1925).
+
+\section*{III. --- L'espace $U_0$ et ses propriétés.}
+\paragraph{10.}
+L'espace universel $U$, dont la construction et l'étude forment l'objet de ce travail, sera obtenu comme espace $\widetilde{U}_0$, en partant d'un certain espace métrique dénombrable $U_0$ que nous allons construire.
+
+Considérons à cet effet tous les systèmes formés d'un nombre fini quelconque de nombres positifs rationnels. Nous désignerons chacun de ces systèmes par la lettre $Q$ suivie d'un certain indice naturel (l'ensemble de tous les systèmes $Q$ étant évidemment dénombrable).
+
+La loi de cette énumération des systèmes $Q$ est la suivante~:
+
+Tout d'abord, nous considérons tous les systèmes $Q$ formés, chacun, d'un seul nombre rationnel et rangés dans un ordre quelconque. Nous leur attribuons comme indices successivement tous les nombres naturels qui ne sont pas divisibles par $4$.
+\srcpage{53}
+
+Considérons maintenant tous les systèmes $Q$ formés d'un nombre $p>1$ de nombres rationnels, et numérotons-les en employant successivement tous les nombres naturels qui sont divisibles par $2^p$ sans être divisibles par $2^{p+1}$.
+
+Tout système $Q$ reçoit ainsi un numéro bien déterminé, de sorte que nous obtenons la suite suivante contenant tous les systèmes $Q$,
+\begin{equation}\tag{3}
+Q_1,Q_2,\dots,Q_n,\dots.
+\end{equation}
+Tout $Q_n$ étant un système formé d'un certain nombre fini $p_n$ de nombres positifs rationnels, nous pouvons écrire
+\begin{equation}\tag{4}
+Q_n=[r_1^{(n)},r_2^{(n)},\dots,r_{p_n}^{(n)}],
+\end{equation}
+$r_1^{(n)},r_2^{(n)},\dots,r_{p_n}^{(n)}$ étant les nombres rationnels formant $Q_n$.
+
+D'après le mode d'énumération des systèmes $Q$ que nous avons choisi, on a toujours
+\begin{equation}\tag{5}
+n>p_n,
+\end{equation}
+si $n$ est supérieur à $1$, tandis que
+\begin{equation}\tag{$5_1$}
+p_1=1
+\end{equation}
+($p_n$ désigne toujours le nombre d'éléments formant le système $Q_n$).
+
+Cette remarque nous sera très utile dans un instant.
+
+Nous désignons maintenant par $U_0$ l'espace métrique formé d'une infinité dénombrable d'éléments $a_1,a_2,\dots,a_n,\dots$, où la distance est définie de la manière suivante~:
+
+Nous commençons par poser $\rho(a_1,a_1)=0$. Supposons définis les nombres non négatifs $\rho(a_i,a_k)$, quels que soient $i$ et $k$ inférieurs à $n+1$.
+
+Posons $\rho(a_{n+1},a_{n+1})=0$, et considérons le système
+\begin{equation}\tag{4}
+Q_n=(r_1^{(n)},r_2^{(n)},\dots,r_{p_n}^{(n)}).
+\end{equation}
+En posant, pour simplifier l'écriture, $p_n=q$, $r_i^{(n)}=\rho_i$ ($i\leqq q$), on n'a que deux cas à considérer~:
+
+$1^\circ$ Une au moins des inégalités
+\begin{equation}\tag{$\Delta$}
+|\rho_i-\rho_k|\leqq\rho(a_i,a_k)\leqq\rho_i+\rho_k
+\qquad(i,k\leqq q)
+\end{equation}
+ne se trouve pas vérifiée. Nous dirons alors que $Q_n$ est irrégulier,
+\srcpage{54}
+et nous définirons
+\begin{equation}\tag{6}
+\rho(a_{n+1},a_j)=\max_{i,k\leqq n}\rho(a_i,a_k)
+\end{equation}
+quel que soit $j\leqq n$~;
+
+$2^\circ$ Toutes les inégalités $(\Delta)$ sont vérifiées. Nous dirons alors que $Q_n$ est régulier, et nous poserons
+\begin{equation}\tag{7}
+\rho(a_{n+1},a_j)=\min_{\lambda\leqq q}\{\rho(a_j,a_\lambda)+\rho_\lambda\},
+\end{equation}
+quel que soit $j\leqq n$. Cette dernière définition donne, en particulier,
+\begin{equation}\tag{8}
+\rho(a_{n+1},a_j)=\rho_j\qquad\text{pour tout }j\leqq q.
+\end{equation}
+En effet, soient $j$ et $\lambda$ deux nombres naturels quelconques non supérieurs à $q$.
+
+En remarquant que $q$ est inférieur à $n$ et que $Q_n$ est régulier, on tire des inégalités $(\Delta)$
+\begin{equation}\tag{9}
+\rho_j\leqq\rho_\lambda+\rho(a_j,a_\lambda).
+\end{equation}
+En remarquant que $\rho(a_j,a_j)=0$, on a, par conséquent,
+\begin{equation}\tag{9 bis}
+\rho_j+\rho(a_j,a_j)\leqq\rho_\lambda+\rho(a_j,a_\lambda),
+\end{equation}
+c'est-à-dire qu'en regardant $j\leqq q$ comme fixe et $\lambda$ comme prenant toutes les valeurs naturelles $\leqq q$, l'expression $\rho_\lambda+\rho(a_j,a_\lambda)$ atteint sa valeur minimum pour $\lambda=j$, et cette valeur est égale précisément à $\rho_j$. En comparant ce résultat avec (7), on obtient bien (8).
+
+On définit ainsi $\rho(a_i,a_k)$ pour tous les couples $i,k$ de nombres naturels, et l'on voit que $\rho(a_i,a_k)$ est égal à zéro dans le seul cas où $i=k$.
+
+Les deux arguments $a_i,a_k$ entrant dans $\rho(a_i,a_k)$ d'une façon symétrique, il nous reste seulement à prouver qu'on a toujours
+\begin{equation}\tag{10}
+\rho(a_i,a_j)+\rho(a_j,a_k)\geqq\rho(a_i,a_k),
+\end{equation}
+quels que soient les nombres naturels $i,j,k$.
+
+Cette relation est évidemment vraie pour $i=j=k=1$. Supposons qu'elle soit vraie si $i,j,k$ sont tous non supérieurs à $n$, et démontrons-la pour le cas où chacun de ces entiers positifs est au plus égal à $n+1$. Il n'est évidemment question qu'au cas où un des nombres $i,j,k$ est égal à $n+1$.
+\srcpage{55}
+Il s'agit évidemment de la démonstration des seules inégalités
+\begin{align}
+\rho(a_i,a_{n+1})+\rho(a_{n+1},a_k)&\geqq\rho(a_i,a_k),\tag{11}\\
+\rho(a_{n+1},a_i)+\rho(a_i,a_k)&\geqq\rho(a_{n+1},a_k),\tag{11 bis}
+\end{align}
+où $i$ et $k$ ont des valeurs quelconques inférieures\footnote{Si un au moins des indices $i,k$ était égal à $n+1$, les inégalités (11) et (11 bis) seraient évidentes.} à $n+1$.
+
+Si $Q_n$ était irrégulier, $\rho(a_i,a_{n+1})$ serait égal au maximum des $\rho(a_p,a_q)$, $p,q\leqq n$, et nous n'aurions rien à démontrer. Supposons que $Q_n$ soit régulier.
+
+Désignons par $\lambda_0$ respectivement $\lambda'_0$ une valeur de $\lambda$ rendant minimum l'expression
+\[
+\rho(a_i,a_\lambda)+\rho_\lambda\qquad(\lambda\leqq q)
+\]
+respectivement l'expression
+\[
+\rho(a_k,a_\lambda)+\rho_\lambda.
+\]
+Il s'ensuit de (7) que
+\[
+\rho(a_i,a_{n+1})=\rho(a_i,a_{\lambda_0})+\rho_{\lambda_0}
+\quad\text{et}\quad
+\rho(a_{n+1},a_k)=\rho(a_k,a_{\lambda'_0})+\rho_{\lambda'_0},
+\]
+de façon que le premier membre de (11) est égal à
+{\small
+\begin{equation}\tag{12}
+\begin{aligned}
+\rho(a_i,a_{\lambda_0})+\rho_{\lambda_0}+\rho(a_k,a_{\lambda'_0})+\rho_{\lambda'_0}
+&=\rho(a_i,a_{\lambda_0})+\rho(a_k,a_{\lambda'_0})+(\rho_{\lambda_0}+\rho_{\lambda'_0})\\
+&\geqq\rho(a_i,a_{\lambda_0})+\rho(a_k,a_{\lambda'_0})+\rho(a_{\lambda_0},a_{\lambda'_0})
+\end{aligned}
+\end{equation}
+}
+(la dernière inégalité résulte des inégalités $(\Delta)$ qui sont ici applicables, car $\lambda_0$ et $\lambda'_0$ ne surpassent pas $q$, et $Q_n$ est supposé régulier).
+
+L'inégalité (10) étant vraie pour $i,j,k\leqq n$, on a, en remarquant que $i,k,\lambda_0,\lambda'_0$ sont $\leqq n$,
+\begin{equation}\tag{13}
+\begin{aligned}
+&\rho(a_i,a_{\lambda_0})+\rho(a_k,a_{\lambda'_0})+\rho(a_{\lambda_0},a_{\lambda'_0})\\
+&\quad=[\rho(a_i,a_{\lambda_0})+\rho(a_{\lambda_0},a_{\lambda'_0})]+\rho(a_k,a_{\lambda'_0})\\
+&\quad\geqq\rho(a_i,a_{\lambda'_0})+\rho(a_k,a_{\lambda'_0})\\
+&\quad\geqq\rho(a_i,a_k),
+\end{aligned}
+\end{equation}
+ce qui démontre bien la relation (11).
+
+Quant à (11 bis), on a pour les mêmes raisons (en conservant la
+\srcpage{56}
+signification de $\lambda_0$),
+\[
+\begin{aligned}
+\rho(a_{n+1},a_i)+\rho(a_i,a_k)
+&=[\rho(a_i,a_{\lambda_0})+\rho_{\lambda_0}]+\rho(a_i,a_k)\\
+&=[\rho(a_i,a_{\lambda_0})+\rho(a_i,a_k)]+\rho_{\lambda_0}\\
+&\geqq\rho(a_k,a_{\lambda_0})+\rho_{\lambda_0}\\
+&\geqq\min_{\lambda\leqq q}\{\rho(a_k,a_\lambda)+\rho_\lambda\}\\
+&=\rho(a_{n+1},a_k).
+\end{aligned}
+\]
+La relation (10) étant ainsi établie de proche en proche, on voit bien que l'ensemble des points $a_1,a_2,\dots,a_n,\dots$ avec la définition adoptée de distance forme un espace métrique~; nous désignerons cet espace par $U_0$. On voit de plus que la distance entre deux points quelconques de $U_0$ est toujours un nombre rationnel.
+
+\paragraph{11.}
+Démontrons maintenant la propriété suivante de l'espace $U_0$ qui occupe la position centrale du présent travail~:
+
+\textbf{I$_0$.} \textit{Supposons donné un nombre fini quelconque de points de l'espace $U_0$}
+\[
+a_{n_1},a_{n_2},\dots,a_{n_s}\qquad(n_1<n_2<\dots<n_s);
+\]
+\textit{$s$ étant le nombre de ces points, supposons donnés, en outre, $s$ nombres positifs rationnels}
+\[
+\mu_{n_1},\mu_{n_2},\dots,\mu_{n_s},
+\]
+\textit{satisfaisant à toutes les $s(s-1)$ inégalités}
+\begin{equation}\tag{$\Delta^*$}
+|\mu_{n_i}-\mu_{n_k}|\leqq\rho(a_{n_i},a_{n_k})\leqq\mu_{n_i}+\mu_{n_k}
+\qquad(i,k\leqq s),
+\end{equation}
+\textit{et n'assujettis à aucune autre condition.}
+
+\textit{Il existe alors un point $a_\sigma$ de l'espace $U_0$ tel que}
+\[
+\rho(a_{n_i},a_\sigma)=\mu_{n_i}\qquad(i\leqq s).
+\]
+\textit{Démonstration.} --- Il suffit de considérer le cas où
+\begin{equation}\tag{14}
+n_1=1,\quad n_2=2,\quad\dots,\quad n_s=s.
+\end{equation}
+En effet, dans le cas contraire, on n'aura qu'à poser, pour tout $n<n_s$, $n\ne n_i$,
+\begin{equation}\tag{15}
+\mu_n=\min_{i\leqq s}\{\rho(a_n,a_{n_i})+\mu_{n_i}\}.
+\end{equation}
+Pour prouver que les points $a_1,a_2,\dots,a_{n_s}$, respectivement les
+\srcpage{57}
+nombres rationnels $\mu_1,\mu_2,\dots,\mu_{n_s}$, satisfont aux conditions de notre énoncé, nous devrons démontrer les inégalités
+\begin{equation}\tag{$\Delta^*$ bis}
+|\mu_p-\mu_q|\geqq\rho(a_p,a_q)\leqq\mu_p+\mu_q\qquad(p,q\leqq n_s),
+\end{equation}
+analogues aux inégalités $(\Delta^*)$.
+
+On démontre d'abord (comme dans le numéro précédent) qu'en posant dans (15) $n=n_p$ ($p\leqq s$), la formule (15) se réduit à une identité.
+
+En effet, on tire de $(\Delta^*)$
+\[
+\{\rho(a_{n_p},a_{n_i})+\mu_{n_i}\}\geqq|\mu_{n_p}-\mu_{n_i}|+\mu_{n_i}\geqq\mu_{n_p}
+\]
+quel que soit $i\leqq s$, c'est-à-dire que la valeur minimum de l'expression $\rho(a_{n_p},a_{n_i})+\mu_{n_i}$ (où $i$ prend toutes les valeurs naturelles $\leqq s$) est atteinte pour $i=p$, de sorte que l'égalité (15) est valable quel que soit $n\leqq n_s$.
+
+Ceci posé, on a immédiatement, en désignant par $\kappa$ respectivement $\lambda$ la valeur de $i\leqq s$ rendant minimum l'expression
+\[
+\{\rho(a_p,a_{n_i})+\mu_{n_i}\}\quad\text{resp.}\quad\{\rho(a_q,a_{n_i})+\mu_{n_i}\};
+\]
+\[
+\begin{aligned}
+\mu_p+\mu_q&=\{\rho(a_p,a_{n_\kappa})+\mu_{n_\kappa}\}+\{\rho(a_q,a_{n_\lambda})+\mu_{n_\lambda}\}\\
+&=\rho(a_p,a_{n_\kappa})+\rho(a_q,a_{n_\lambda})+(\mu_{n_\kappa}+\mu_{n_\lambda}),
+\end{aligned}
+\]
+ce qui donne, d'après $(\Delta^*)$,
+\begin{equation}\tag{16}
+\begin{aligned}
+\mu_p+\mu_q&\geqq\rho(a_p,a_{n_\kappa})+\rho(a_q,a_{n_\lambda})+\rho(a_{n_\kappa},a_{n_\lambda})\\
+&=\{\rho(a_p,a_{n_\kappa})+\rho(a_{n_\kappa},a_{n_\lambda})\}+\rho(a_q,a_{n_\lambda})\\
+&\geqq\rho(a_p,a_{n_\lambda})+\rho(a_q,a_{n_\lambda})\\
+&\geqq\rho(a_p,a_q).
+\end{aligned}
+\end{equation}
+D'autre part
+\begin{equation}\tag{$16'$}
+\begin{aligned}
+\rho(a_p,a_q)+\mu_q&=\rho(a_p,a_q)+\{\rho(a_q,a_{n_\lambda})+\mu_{n_\lambda}\}\\
+&=\{\rho(a_p,a_q)+\rho(a_q,a_{n_\lambda})\}+\mu_{n_\lambda}\\
+&\geqq\rho(a_p,a_{n_\lambda})+\mu_{n_\lambda}\\
+&\geqq\min_{i\leqq s}\{\rho(a_p,a_{n_i})+\mu_{n_i}\}=\mu_p.
+\end{aligned}
+\end{equation}
+Les inégalités $(\Delta^*\text{ bis})$ sont évidemment contenues dans l'ensemble des inégalités (16) et $(16')$.
+
+Démontrons donc la proposition I$_0$ dans la supposition (14). Rien n'est plus facile que cela~; il suffit de poser, en effet, $\sigma=\nu+1$, où $\nu$ est déterminé par la condition
+\[
+Q_\nu=(\mu_1,\mu_2,\dots,\mu_s).
+\]
+\srcpage{58}
+En effet, en vertu des inégalités $(\Delta^*)$, $Q_\nu$ est [en tenant toujours compte de (14)] un système régulier. On a donc, d'après (8),
+\[
+\rho(a_{\nu+1},a_j)=\mu_j
+\]
+quel que soit $j\leqq s$.\hfill C. Q. F. D.
+
+Remarquons en passant qu'il serait facile de démontrer, en se basant sur la proposition I$_0$, que \textit{$U_0$ contient tout espace métrique $E_0$ formé d'un ensemble au plus dénombrable de points, sous la condition que la distance entre deux points arbitraires de $E_0$ soit toujours rationnelle.}
+
+(Pour la démonstration, le lecteur n'a qu'à appliquer le raisonnement du n\textsuperscript{o}~13 avec des simplifications convenables, d'ailleurs évidentes.)
+
+\section*{IV. --- L'espace $U$ et ses propriétés principales.}
+\paragraph{12.}
+L'espace $U$ est par définition l'espace métrique complet $\widetilde{U}_0$~; il est, par sa définition même, complet et séparable (l'espace $U_0$ formant un ensemble dénombrable dense dans $U$).
+
+Voici la propriété fondamentale de l'espace $U$, dont, malgré son caractère auxiliaire, toutes les autres propriétés de cet espace sont des conséquences plus ou moins immédiates.
+
+\textbf{I.} \textit{Supposons donné un nombre fini quelconque de points de l'espace $U$}
+\[
+x_1,x_2,\dots,x_s;
+\]
+\textit{$s$ étant le nombre de ces points, supposons donnés en outre $s$ nombres positifs quelconques}
+\[
+\alpha_1,\alpha_2,\dots,\alpha_s,
+\]
+\textit{satisfaisant aux inégalités}
+\begin{equation}\tag{$\widetilde{\Delta}$}
+|\alpha_i-\alpha_k|\leqq\rho(x_i,x_k)\geqq\alpha_i+\alpha_k
+\end{equation}
+% The second inequality is printed >= in the scan; see transcription notes.
+\textit{et qui ne sont assujettis à aucune autre condition.}
+
+\textit{Il existe alors un point $y$ de l'espace $U$ tel que}
+\[
+\rho(y,x_i)=\alpha_i\qquad(i\leqq s).
+\]
+\textit{Démonstration.} --- Supposons d'abord, ce qui est évidemment
+\srcpage{59}
+toujours permis, que la numération des nombres positifs $\alpha_1,\alpha_2,\dots,\alpha_s$ et des points $x_1,x_2,\dots,x_s$ est faite de façon que l'on ait
+\begin{equation}\tag{17}
+\alpha_1\geqq\alpha_2\geqq\dots\geqq\alpha_s.
+\end{equation}
+Soient $\varepsilon$ un nombre positif arbitraire et $\varepsilon_0$ un nombre positif inférieur à $\dfrac{\varepsilon}{6s}$ et assez petit pour qu'on ait en outre
+\begin{equation}\tag{18}
+3s\cdot\varepsilon_0<\min\rho(x_i,x_k)\qquad(k<i\leqq s).
+\end{equation}
+En vertu de l'égalité $\overline{U}_0=U$ on peut trouver des points
+\[
+a_1^\varepsilon,a_2^\varepsilon,\dots,a_s^\varepsilon
+\]
+de l'espace $U_0$ et des nombres rationnels
+\[
+\beta_1^\varepsilon,\beta_2^\varepsilon,\dots,\beta_s^\varepsilon,
+\]
+de manière que l'on ait
+\begin{equation}\tag{19}
+\left\{\begin{aligned}
+&\rho(a_i^\varepsilon,x_i)<\varepsilon_0\\
+&\alpha_i+(3i-1)\varepsilon_0<\beta_i^\varepsilon<\alpha_i+3i\cdot\varepsilon_0
+\end{aligned}\right.\qquad(i=1,2,\dots,s).
+\end{equation}
+Démontrons alors les inégalités
+\begin{equation}\tag{$\Delta^*_\varepsilon$}
+|\beta_i^\varepsilon-\beta_k^\varepsilon|\leqq\rho(a_i^\varepsilon,a_k^\varepsilon)
+\leqq\beta_i^\varepsilon+\beta_k^\varepsilon\qquad(k<i\leqq s).
+\end{equation}
+Nous avons successivement~: d'abord, d'après la seconde des inégalités (19),
+\[
+\beta_i^\varepsilon-\beta_k^\varepsilon
+<\alpha_i+3i\cdot\varepsilon_0-\{\alpha_k+(3k-1)\varepsilon_0\}
+\leqq\alpha_i-\alpha_k+(3s-2)\varepsilon_0;
+\]
+donc, d'après (17) (en tenant compte de ce que $k<i$),
+\[
+\beta_i^\varepsilon-\beta_k^\varepsilon<(3s-2)\varepsilon_0,
+\]
+ce qui donne, d'après la première des inégalités (19),
+\[
+\beta_i^\varepsilon-\beta_k^\varepsilon<3s\cdot\varepsilon_0
+-\{\rho(a_i^\varepsilon,x_i)+\rho(a_k^\varepsilon,x_k)\};
+\]
+donc, en vertu de (18),
+\begin{equation}\tag{20}
+\begin{aligned}
+\beta_i^\varepsilon-\beta_k^\varepsilon
+&<\{\rho(x_i,x_k)-\rho(a_i^\varepsilon,x_i)\}-\rho(a_k^\varepsilon,x_k)\\
+&\leqq\rho(x_k,a_i^\varepsilon)-\rho(a_k^\varepsilon,x_k)\\
+&\leqq\rho(a_i^\varepsilon,a_k^\varepsilon);
+\end{aligned}
+\end{equation}
+\srcpage{60}
+ensuite [d'après la seconde des inégalités (19)]
+\[
+\begin{aligned}
+\beta_k^\varepsilon-\beta_i^\varepsilon
+&<\alpha_k+3k\cdot\varepsilon_0-\{\alpha_i+(3i-1)\varepsilon_0\}\\
+&=(\alpha_k-\alpha_i)-3(i-k)\varepsilon_0+\varepsilon_0\\
+&\leqq(\alpha_k-\alpha_i)-2\varepsilon_0;
+\end{aligned}
+\]
+donc, d'après $(\widetilde{\Delta})$ et la première des inégalités (19),
+\[
+\begin{aligned}
+\beta_k^\varepsilon-\beta_i^\varepsilon
+&<\rho(x_i,x_k)-\{\rho(a_i^\varepsilon,x_i)+\rho(a_k^\varepsilon,x_k)\}\\
+&=\{\rho(x_i,x_k)-\rho(a_i^\varepsilon,x_i)\}-\rho(a_k^\varepsilon,x_k),
+\end{aligned}
+\]
+ce qui donne immédiatement
+\begin{equation}\tag{21}
+\beta_k^\varepsilon-\beta_i^\varepsilon
+<\rho(a_i^\varepsilon,x_k)-\rho(a_k^\varepsilon,x_k)
+\leqq\rho(a_i^\varepsilon,a_k^\varepsilon);
+\end{equation}
+enfin, d'après la première des inégalités (19) et la relation $(\widetilde{\Delta})$,
+{\small
+\[
+\rho(a_i^\varepsilon,a_k^\varepsilon)\leqq\rho(x_i,x_k)+2\varepsilon_0
+\leqq\alpha_i+\alpha_k+2\varepsilon_0
+<\alpha_i+(3i-1)\varepsilon_0+\alpha_k+(3k-1)\varepsilon_0,
+\]
+}
+ce qui donne, d'après la seconde des inégalités (19),
+\begin{equation}\tag{22}
+\rho(a_i^\varepsilon,a_k^\varepsilon)<\beta_i^\varepsilon+\beta_k^\varepsilon.
+\end{equation}
+Les inégalités $(\Delta^*_\varepsilon)$ sont évidemment contenues dans le système des relations (20), (21) et (22).
+
+Remarquons enfin qu'on a les inégalités suivantes~:
+\begin{align}
+\rho(a_i^\varepsilon,x_i)&<\frac{\varepsilon}{2},\tag{23}\\
+|\beta_i^\varepsilon-\alpha_i|&<\frac{\varepsilon}{2}.\tag{24}
+\end{align}
+En effet (23) est une conséquence immédiate de la première inégalité (19), $\varepsilon_0$ étant $<\frac{\varepsilon}{2}$. Quant à (24), on a [d'après la seconde inégalité (19)]
+\[
+\alpha_i<\beta_i^\varepsilon<\alpha_i+3i\cdot\varepsilon_0
+\leqq\alpha_i+3s\cdot\varepsilon_0<\alpha_i+\frac{\varepsilon}{2}.
+\]
+Le système des points
+\[
+a_1^\varepsilon,a_2^\varepsilon,\dots,a_s^\varepsilon,
+\]
+de l'espace $U_0$ et des nombres rationnels
+\[
+\beta_1^\varepsilon,\beta_2^\varepsilon,\dots,\beta_s^\varepsilon
+\]
+vérifie (d'après $\Delta^*_\varepsilon$) toutes les conditions figurant dans l'énoncé du
+\srcpage{61}
+théorème I$_0$. Il existe par conséquent un point $y^\varepsilon$ appartenant à $U_0$ (donc \textit{a fortiori} à $U$) et tel que
+\begin{equation}\tag{25}
+\rho(y^\varepsilon,a_i^\varepsilon)=\beta_i^\varepsilon\qquad(i=1,2,\dots,s).
+\end{equation}
+On a par conséquent
+\[
+\begin{aligned}
+|\rho(y^\varepsilon,x_i)-\alpha_i|
+&\leqq|\rho(y^\varepsilon,x_i)-\beta_i^\varepsilon|+|\beta_i^\varepsilon-\alpha_i|\\
+&=|\rho(y^\varepsilon,x_i)-\rho(y^\varepsilon,a_i^\varepsilon)|+|\beta_i^\varepsilon-\alpha_i|\\
+&\leqq\rho(x_i,a_i^\varepsilon)+|\beta_i^\varepsilon-\alpha_i|
+<\frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\varepsilon.
+\end{aligned}
+\]
+Remarquons en outre que le point $y^\varepsilon$ peut être défini d'une façon absolument effective, sans aucun choix arbitraire~: en effet, ce point étant un point de l'ensemble $U_0$, énuméré une fois pour toutes, il suffit de prendre le premier point de $U_0$ vérifiant les inégalités (25).
+
+Résumons comme il suit l'analyse précédente~:
+
+\textsc{Lemme.} --- \textit{Quels que soient les points et les nombres positifs $\alpha_i$ $(i=1,2,\dots,s)$ satisfaisant aux conditions de l'énoncé I, il existe pour tout $\varepsilon>0$ un point bien déterminé $y^\varepsilon$ de $U$ tel que}
+\begin{equation}\tag{26}
+|\rho(y^\varepsilon,x_i)-\alpha_i|<\varepsilon\qquad(i=1,2,\dots,s).
+\end{equation}
+Soit maintenant $\varepsilon_1=\dfrac{\alpha_s}{2}$ et désignons par $y_1$ le point $y^{\varepsilon_1}$. On a par conséquent
+\begin{equation}\tag{27, 1}
+|\rho(y_1,x_i)-\alpha_i|<\frac{\alpha_s}{2}\qquad(i=1,2,\dots,s).
+\end{equation}
+Supposons que nous ayons déjà construit les points $y_1,y_2,\dots,y_k$ de façon à satisfaire aux conditions
+\begin{equation}\tag{27, $k$}
+|\rho(y_k,x_i)-\alpha_i|<\frac{\alpha_s}{2^k}\qquad(i=1,2,\dots,s)
+\end{equation}
+et
+\begin{equation}\tag{28, $k$}
+\rho(y_{k-1},y_k)<\frac{3\alpha_s}{2^k}\qquad\text{(pour $k>1$).}
+\end{equation}
+Considérons le système suivant formé de points de $U$, et de
+\srcpage{62}
+nombres positifs
+\begin{equation}\tag{$S_k$}
+\left\{\begin{array}{ccccc}
+x_1,&x_2,&\dots,&x_s,&y_k\\[4pt]
+\alpha_1,&\alpha_2,&\dots,&\alpha_s,&\dfrac{\alpha_s}{2^k}
+\end{array}\right.
+\end{equation}
+(le nombre $s$ étant arbitraire, la circonstance que $s$ est remplacé par $s+1$ n'a évidemment aucune importance).
+
+Le système $(S_k)$ satisfait aux inégalités du type $(\widetilde{\Delta})$. Pour s'en apercevoir, il suffit de démontrer les inégalités
+\begin{equation}\tag{29}
+\left|\alpha_i-\frac{\alpha_s}{2^k}\right|\leqq\rho(x_i,y_k)
+\leqq\alpha_i+\frac{\alpha_s}{2^k}\qquad(i=1,2,\dots,s).
+\end{equation}
+Or on a, d'après $(27,k)$ et (17),
+\[
+\alpha_i-\frac{\alpha_s}{2^k}<\rho(x_i,y_k),
+\]
+\[
+\frac{\alpha_s}{2^k}-\alpha_i\leqq\frac{\alpha_i}{2^k}-\alpha_i<0\leqq\rho(x_i,y_k),
+\]
+\[
+\alpha_i+\frac{\alpha_s}{2^k}>\rho(x_i,y_k),
+\]
+ce qui démontre bien les inégalités (29).
+
+Appliquons maintenant notre lemme au système $(S_k)$ en prenant pour $\varepsilon$ le nombre $\varepsilon_{k+1}=\dfrac{\alpha_s}{2^{k+1}}$. Désignons par $y_{k+1}$ le point $y^{\varepsilon_{k+1}}$ ainsi obtenu.
+
+Nous avons immédiatement
+\begin{equation}\tag{27, $k+1$}
+|\rho(y_{k+1},x_i)-\alpha_i|<\frac{\alpha_s}{2^{k+1}}\qquad(i=1,2,\dots,s)
+\end{equation}
+et de même
+\[
+\left|\rho(y_{k+1},y_k)-\frac{\alpha_s}{2^k}\right|<\frac{\alpha_s}{2^{k+1}};
+\]
+donc
+\begin{equation}\tag{28, $k+1$}
+\rho(y_{k+1},y_k)<\frac{3\alpha_s}{2^{k+1}}.
+\end{equation}
+Les points $y_1,y_2,\dots,y_k,\dots$ se déterminent ainsi par induction et les inégalités $(27,k)$ et $(28,k)$ sont vraies quel que soit le nombre naturel $k$.
+
+D'après $(28,k)$ la suite des $y_k$ est une suite fondamentale\footnote{Voir le n\textsuperscript{o}~4.},
+\srcpage{63}
+elle converge donc (l'espace $U$ étant complet) vers un point que nous désignons par $y$. On a évidemment [d'après $(27,k)$]
+\[
+\rho(y,x_i)=\lim_{k\to\infty}\rho(y_k,x_i)=\alpha_i\qquad(i=1,2,\dots,s),
+\]
+ce qui démontre le théorème I.
+
+\paragraph{13.}
+Il nous sera facile de démontrer maintenant l'\textit{universalité} de l'espace $U$ (au sens précisé dans le n\textsuperscript{o}~9, note (1) de la page 52).
+
+\textbf{II.} \textit{Quel que soit l'espace métrique séparable $E$, il existe dans $U$ un ensemble $M$ congruent à $E$.}
+
+Tout espace métrique séparable étant contenu dans un espace métrique, séparable et \textit{complet}\footnote{Voir les n\textsuperscript{os}~4--5.}, il suffit de prouver le théorème II pour un espace $E$ séparable et complet.
+
+L'espace $E$ étant séparable, soit $D$ un ensemble au plus dénombrable dense dans $E$ et formé des points $d_1,d_2,\dots,d_n,\dots$.
+
+Soit $x_1$ un point arbitraire de $U$ et supposons que les points $x_1,x_2,\dots,x_n$ de $U$ soient déjà choisis de façon que l'on ait
+\begin{equation}\tag{30}
+\rho(x_i,x_k)=\rho(d_i,d_k),
+\end{equation}
+quels que soient $i$ et $k$ non supérieurs à $n$ [pour $n=1$ cette condition est évidemment remplie, car on a $\rho(x_1,x_1)=\rho(d_1,d_1)=0$]. Considérons le système des points et des nombres positifs
+\[
+\begin{array}{cccc}
+x_1,&x_2,&\dots,&x_n,\\
+\alpha_1,&\alpha_2,&\dots,&\alpha_n,
+\end{array}
+\]
+avec
+\[
+\alpha_i=\rho(d_i,d_{n+1})\qquad\text{(où $i=1,2,\dots,n$).}
+\]
+On a évidemment
+\[
+|\rho(d_i,d_{n+1})-\rho(d_k,d_{n+1})|\leqq\rho(d_i,d_k)
+\leqq\rho(d_i,d_{n+1})+\rho(d_k,d_{n+1}),
+\]
+c'est-à-dire
+\[
+|\alpha_i-\alpha_k|\leqq\rho(x_i,x_k)\leqq\alpha_i+\alpha_k\qquad(i,k\leqq n).
+\]
+Nous nous trouvons par conséquent dans les conditions du théorème I et nous pouvons déterminer effectivement un point $x_{n+1}$ de $U$ vérifiant les inégalités
+\begin{equation}\tag{31}
+\rho(x_{n+1},x_i)=\alpha_i=\rho(d_{n+1},d_n).
+\end{equation}
+\srcpage{64}
+En procédant ainsi par induction nous ne serons jamais arrêtés (sauf dans le cas où l'ensemble $D$ et par suite l'espace $E$ étaient formés d'un nombre fini de points $d_1,d_2,\dots,d_n$, auquel cas l'ensemble des points $x_1,x_2,\dots,x_n$ de $U$ serait congruent à $E$).
+
+Nous obtenons par cette construction un ensemble dénombrable $M_0$ formé des points de $U$
+\begin{equation}\tag{32}
+d_1,d_2,\dots,d_n,\dots.
+\end{equation}
+Cet ensemble est congruent à l'ensemble $D$ [d'après l'égalité (31) valable quel que soit le nombre naturel $n$]. Or l'espace $U$ étant complet, l'espace $\widetilde{M}_0=M$ est contenu dans $U$ ($M_0$ étant un sous-ensemble de $U$). Les deux espaces complets $M$ et $E$ contiennent respectivement les ensembles congruents $M_0$ et $D$ comme sous-ensembles denses~; il en résulte (en vertu du résultat démontré au n\textsuperscript{o}~6) que $M$ et $E$ sont congruents.
+\hfill C. Q. F. D.
+
+\begin{flushright}\textit{(À suivre.)}\end{flushright}
+\srcpage{74}
+\begin{center}
+\textsc{Sur un espace métrique universel~;}\\
+\textsc{Mémoire posthume de Paul Urysohn,}\\
+\textsc{rédigé par Paul Alexandroff (Moscou).}\\
+\textit{(Fin.)}
+\end{center}
+\paragraph{14.}
+\textit{L'homogénéité de l'espace $U$.} --- Posons la définition suivante~:
+
+\textit{Un espace métrique $E$ est métriquement homogène si, les ensembles finis et congruents $A$ et $B$ (situés dans $E$) étant quelconques, il existe une représentation isométrique de $E$ sur lui-même transformant $A$ en $B$.}
+
+Démontrons donc que
+
+\textbf{III.} \textit{$U$ est un espace métriquement homogène.}
+
+\textit{Démonstration.} --- Soient $A_0$ et $B_0$ deux ensembles congruents situés dans $U$ et formés d'un nombre fini de points $a_1,a_2,\dots,a_n$ respectivement $b_1,b_2,\dots,b_n$.
+
+Soit $D$ un ensemble dénombrable quelconque dense dans $U$. Nous supposons les points de $D$ rangés une fois pour toutes dans une suite dénombrable
+\begin{equation}\tag{33}
+d_1,d_2,\dots,d_n,\dots.
+\end{equation}
+Supposons construits les ensembles congruents $A_h$ et $B_h$, formés respectivement des points
+\[
+a_1,\dots,a_n,\dots,a_{n+h}\quad\text{et}\quad b_1,b_2,\dots,b_{n+h}
+\]
+\srcpage{75}
+avec
+\[
+\rho(a_i,a_k)=\rho(b_i,b_k)
+\]
+quels que soient $i$ et $k$ non supérieurs à $n+h$ (l'entier $h$ étant supposé $\geqq0$).
+
+Les ensembles congruents $A_{h+1}$ et $B_{h+1}$ se déterminent alors par le procédé suivant~:
+
+Supposons d'abord que $h$ soit pair. Nous posons
+\[
+a_{n+h+1}=d_i,
+\]
+$d_i$ étant le premier point de la suite (32) non compris parmi les points $a_1,a_2,\dots,a_{n+h}$.
+
+Considérons le système de points et de nombres positifs
+\begin{equation}\tag{33 a}
+\left\{\begin{array}{cccc}
+b_1,&b_2,&\dots,&b_{n+h},\\
+\rho(a_1,a_{n+h+1}),&\rho(a_2,a_{n+h+1}),&\dots,&\rho(a_{n+h},a_{n+h+1}).
+\end{array}\right.
+\end{equation}
+Nous sommes évidemment dans les conditions du théorème I. Soit donc par définition $b_{n+h+1}$ celui des points de $U$ qui vérifie les relations
+\[
+\rho(b_i,b_{n+h+1})=\rho(a_i,a_{n+h+1})\qquad(i=1,2,\dots,n+h+1)
+\]
+et qui résulte de la construction du n\textsuperscript{o}~12.
+
+On voit aussitôt que les ensembles $A_{h+1}$ et $B_{h+1}$ formés en adjoignant respectivement à $A_h$ et $B_h$ les points $a_{n+h+1}$ et $b_{n+h+1}$ sont encore congruents. Si $h$ est impair, la construction de $A_{h+1}$ et de $B_{h+1}$ est absolument analogue à celle que nous venons d'indiquer pour $h$ impair~: la seule différence consiste en ce que les rôles joués par les points $a_1,\dots,a_{n+h}$ et $b_1,\dots,b_{n+h}$ sont maintenant intervertis~: on commence par la construction du point $b_{n+h+1}$ qui est le premier point de la suite (32) ne faisant pas partie de l'ensemble $B_h$, et l'on applique ensuite le théorème I au système
+\begin{equation}\tag{33 b}
+\left\{\begin{array}{cccc}
+a_1,&a_2,&\dots,&a_{n+h},\\
+\rho(b_1,b_{n+h+1}),&\rho(b_2,b_{n+h+1}),&\dots,&\rho(b_{n+h},b_{n+h+1}),
+\end{array}\right.
+\end{equation}
+ce qui nous donne un point $a_{n+h+1}$ satisfaisant à l'égalité
+\[
+\rho(a_i,a_{n+h+1})=\rho(b_i,b_{n+h+1})\qquad(i=1,2,\dots,n+h+1).
+\]
+Les ensembles $A_{h+1}$ et $B_{h+1}$ sont évidemment congruents.
+\srcpage{76}
+En procédant ainsi par induction, on obtient pour tout $h\geqq0$ les ensembles congruents $A_h$ et $B_h$, se composant chacun de $n+h$ points. L'ensemble $A$ formé par la réunion de tous les ensembles $A_h$ est évidemment congruent à l'ensemble $B$, formé de la même manière des ensembles $B_h$. Chacun de ces ensembles est dense dans $U$, car $A$ aussi bien que $B$ contient l'ensemble $D$ qui était dense dans $U$ (c'est là la raison pour laquelle il nous fallait arranger notre construction en échangeant chaque fois les rôles des ensembles $A_n$ et $B_n$).
+
+La correspondance isométrique
+\begin{equation}\tag{34}
+a_m\sim b_m\qquad(m=1,2,3,\dots)
+\end{equation}
+est donc une correspondance entre deux ensembles denses dans $U$.
+
+Or le raisonnement du n\textsuperscript{o}~6 permet d'étendre cette correspondance à une représentation isométrique de $U$ tout entier sur lui-même, transformant $A_h$ en $B_h$, donc en particulier $A_0$ en $B_0$. En effet, soit $x$ un point quelconque de $U$. L'ensemble $A$ étant dense dans $U$, il existe un faisceau de suites fondamentales formées des points de $A$ et convergentes vers $x$.
+
+La correspondance établie entre $A$ et $B$ transforme ces suites en suites fondamentales. L'espace $U$ étant complet, ce faisceau détermine un point $y$ de $U$, point limite de toutes les suites du faisceau en question. C'est ce point $y$ que nous faisons correspondre à $x$. On voit immédiatement qu'on obtient ainsi une application biunivoque de $U$ sur lui-même, que cette application conserve les distances, et qu'elle fait correspondre mutuellement les ensembles $A$ et $B$.
+
+\textsc{Corollaire.} --- \textit{Quels que soient les points $x$ et $y$ de $U$ et le nombre positif $\varepsilon$, les sphères $S(x,\varepsilon)$ et $S(y,\varepsilon)$ sont congruentes.}
+
+Il suffit en effet de considérer la transformation isométrique de $U$ en lui-même faisant correspondre entre eux les points $x$ et $y$. Cette transformation transforme $S(x,\varepsilon)$ en $S(y,\varepsilon)$.\hfill C. Q. F. D.
+
+\paragraph{15.}
+Démontrons maintenant le suivant~:
+
+\textsc{Théorème d'unicité.} --- \textbf{IV.} \textit{Tout espace métrique complet, séparable, universel et homogène est congruent à l'espace $U$.}
+
+Nous partageons la démonstration en deux étapes~:
+\srcpage{77}
+
+$1^\circ$ \textit{Dans tout espace $V$ satisfaisant aux conditions de l'énoncé IV, le théorème I se trouve vérifié.}
+
+Soient, en effet,
+\begin{equation}\tag{35}
+x_1,x_2,\dots,x_s
+\end{equation}
+un système quelconque des points de $V$ et
+\begin{equation}\tag{36}
+\alpha_1,\alpha_2,\dots,\alpha_s
+\end{equation}
+un système de nombres réels tels que
+\begin{equation}\tag{$\Delta$}
+|\alpha_i-\alpha_k|\leqq\rho(x_i,x_k)\leqq\alpha_i+\alpha_k\qquad(i,k\leqq s).
+\end{equation}
+Il résulte des inégalités $(\Delta)$, qu'on obtiendrait un espace métrique $E$ en prenant les éléments quelconques,
+\[
+z_1,z_2,\dots,z_{s+1}
+\]
+et en posant
+\begin{equation}\tag{37}
+\rho(z_i,z_k)=\rho(x_i,x_k)\qquad\text{(si $i$ et $k$ sont $\leqq s$)}
+\end{equation}
+et
+\begin{equation}\tag{38}
+\rho(z_i,z_{s+1})=\alpha_i\qquad(i=1,2,\dots,s).
+\end{equation}
+L'espace $V$ étant universel, il existe un ensemble $E^*$ situé dans $V$, congruent à $E$ et formé des points
+\begin{equation}\tag{39}
+\left\{\begin{aligned}
+&y_1,y_2,\dots,y_s,y_{s+1},\\
+&\rho(y_i,y_k)=\rho(z_i,z_k)
+\end{aligned}\right.\qquad(i,k\leqq s+1).
+\end{equation}
+L'espace $V$ étant homogène, et l'ensemble des points (35) étant évidemment congruent à l'ensemble des points $y_1,y_2,\dots,y_s$, il existe une application isométrique de $V$ sur lui-même, transformant $y_1,y_2,\dots,y_s$ respectivement en $x_1,x_2,\dots,x_s$. En désignant par $x_{s+1}$ le point qui sera, dans cette application, l'image du point $y_{s+1}$, on aura bien
+\[
+\rho(x_{s+1},x_i)=\rho(y_{s+1},y_i)=\rho(z_{s+1},z_i)=\alpha_i\qquad(i=1,2,\dots,s).
+\]
+Le théorème I est ainsi établi pour l'espace $V$.
+
+$2^\circ$ Démontrons maintenant que \textit{tout espace métrique complet, séparable et vérifiant le théorème I est congruent à l'espace $U$}.
+
+Soit $V$ un espace métrique complet séparable et vérifiant le théorème
+\srcpage{78}
+I. Désignons respectivement par $P$ et $Q$ les ensembles dénombrables denses respectivement dans $U$ et dans $V$. Supposons de nouveau que les points de $P$ et de $Q$ sont rangés une fois pour toutes dans une suite dénombrable. Désignons par $a_1$ un point arbitraire de l'espace $U$, et par $b_1$ un point arbitraire de $V$.
+
+Supposons déjà construits les ensembles congruents
+\[
+A_n=\{a_1,a_2,\dots,a_n\}\quad\text{et}\quad B_n=\{b_1,b_2,\dots,b_n\}
+\]
+situés respectivement dans $U$ et dans $V$.
+
+Si $n$ est pair, désignons par $a_{n+1}$ le premier point de $P$ étranger à l'ensemble $A_n$.
+
+Le système
+\[
+\begin{array}{cccc}
+b_1,&b_2,&\dots,&b_n,\\
+\rho(a_{n+1},a_1),&\rho(a_{n+1},a_2),&\dots,&\rho(a_{n+1},a_n)
+\end{array}
+\]
+satisfait aux conditions du théorème I~; donc, il existe dans $V$ un point $b_{n+1}$ tel que
+\[
+\rho(b_{n+1},b_i)=\rho(a_{n+1},a_i).
+\]
+Si $n$ est impair, les rôles de $A$ et $B$, $P$ et $Q$, $U$ et $V$ sont intervertis (\textit{voir} le numéro précédent).
+
+On obtient ainsi pour tout $n$ les ensembles congruents $A_n$ et $B_n$.
+
+En désignant respectivement par $A$ et par $B$ la réunion de tous les ensembles $A_n$ et $B_n$, on obtient deux ensembles dénombrables congruents, dont $A$ est dense dans $U$ et $B$ dense dans $V$ ($A$ contenant $P$ et $B$ contenant $Q$).
+
+Les espaces $U$ et $V$ étant complets, il résulte du résultat démontré au n\textsuperscript{o}~6 que $U$ et $V$ sont congruents.\hfill C. Q. F. D.
+
+\paragraph{16.}
+\textit{Remarque.} --- Dans notre dernier énoncé $2^\circ$, la supposition que $V$ soit un espace complet et homogène, cette supposition est essentielle.
+
+En effet, il existe des espaces métriques séparables et universels qui ne sont ni complets, ni homogènes~; d'autre part, il existe des espaces métriques séparables qui sont universels et complets sans être homogènes. Nous en verrons aussitôt des exemples~; mais nous tenons à mentionner d'abord la seule question dans cet ordre d'idées qui reste encore ouverte~:
+\srcpage{79}
+
+\textit{Un espace universel et homogène, mais qui n'est pas complet, existe-t-il~?}
+
+\paragraph{17.}
+Passons à la construction des exemples dont nous venons de parler. Construisons un espace $U+p$ de la façon suivante~: Soit $a$ un point quelconque de $U$. Prenons un nouvel élément, point $p$, et formons de tous les points de $U$ et du point $p$ l'espace métrique $U+p$ en posant
+\[
+\rho(x,p)=\rho(x,a)+1,
+\]
+quel que soit le point $x$ de $U$. Tous les trois axiomes de l'espace métrique sont évidemment satisfaits par $U+p$. On a de plus
+\[
+\rho(x,p)\geqq1
+\]
+quel que soit le point $x$ de $U+p$, autre que $p$. Il s'ensuit que $U+p$ contient un point isolé $p$. Cet espace ne peut donc pas être homogène (car alors tous les points y seraient isolés, ce qui est absurde, l'espace $U+p$ étant universel, comme contenant l'espace universel $U$). L'espace $U+p$ n'étant pas homogène, il n'est pas non plus congruent à $U$. Enfin $U+p$ est complet, car tout espace métrique obtenu en adjoignant un point isolé à un espace métrique complet jouit lui-même de la dernière propriété.
+
+\paragraph{18.}
+Construisons de même un espace métrique séparable qui n'est ni complet, ni homogène, mais qui est néanmoins universel et vérifie en outre le théorème I.
+
+Reprenons l'espace $U+p$ construit dans le numéro précédent. L'espace $U$ étant universel et $U+p$ étant séparable, il existe une représentation isométrique de $U+p$ sur un ensemble $M$ situé dans $U$. Désignons par $q$ le point de $M$ correspondant, dans cette représentation, au point $p$ de $U+p$. L'ensemble $M-q$ est par conséquent congruent à $U$. Cet ensemble étant contenu dans l'espace métrique $V=U-q$, le dernier espace est universel. Or l'espace $V$ n'est pas complet, car toutes les suites convergeant (dans $U$) vers $q$, deviennent, dans $V$, des suites fondamentales divergentes. $V$ n'est point homogène~: en effet, supposons que $V$ soit homogène. Le point $q$ n'étant pas isolé dans $U$ (car $U$ ne contient aucun point isolé), il existe dans $U$ deux points $a$ et $b$ dont les distances du
+\srcpage{80}
+point $q$ ne sont pas égales entre elles. On a donc (dans $U$)
+\[
+\rho(a,q)\ne\rho(b,q).
+\]
+Désignons par $\rho$ le nombre positif $\rho(a,q)$, par $\sigma$ le nombre positif $\rho(b,q)$. L'espace $V$ étant supposé homogène, il existe une transformation isométrique $\mathfrak{T}$ de $V$ en lui-même, faisant correspondre entre eux les points $a$ et $b$. Or, toute suite fondamentale divergente dans $V$ converge nécessairement dans $U$ vers le point $q$. Il en résulte que $\mathfrak{T}$ transforme toute suite fondamentale divergente dans $V$
+\begin{equation}\tag{40}
+u_1,u_2,\dots,u_n,\dots
+\end{equation}
+en une suite confinale
+\begin{equation}\tag{41}
+v_1,v_2,\dots,v_n,\dots.
+\end{equation}
+$\mathfrak{T}$ étant une transformation isométrique, on a
+\begin{equation}\tag{41}
+\rho(u_n,a)=\rho(v_n,b).
+\end{equation}
+D'autre part, les deux suites (40) et (41) convergent, dans $U$, vers le même point $q$, ce qui nous donne, contrairement à la définition des nombres $\rho$ et $\sigma$,
+\begin{equation}\tag{42}
+\lim_{n\to\infty}\rho(u_n,a)=\rho=\lim_{n\to\infty}\rho(v_n,b)=\sigma.
+\end{equation}
+Montrons enfin que le théorème I reste vrai dans l'espace $V$.
+
+Prenons de nouveau un système de points de $V$ et de nombres positifs
+\[
+\begin{array}{cccc}
+x_1,&x_2,&\dots,&x_s,\\
+\alpha_1,&\alpha_2,&\dots,&\alpha_s,
+\end{array}
+\]
+vérifiant les inégalités $(\Delta)$ bien des fois citées.
+
+Soit $\alpha$ le plus petit parmi les nombres
+\begin{equation}\tag{43}
+\alpha_i+\rho(q,x_i)\qquad(i=1,2,\dots,s).
+\end{equation}
+Le système de points (de $U$) et de nombres positifs
+\[
+\begin{array}{ccccc}
+x_1,&x_2,&\dots,&x_s,&q,\\
+\alpha_1,&\alpha_2,&\dots,&\alpha_s,&\alpha
+\end{array}
+\]
+satisfait encore aux inégalités $(\Delta)$, puisque nous avons ($i_0$ désignant
+\srcpage{81}
+la valeur de $i$ donnant à l'expression (43) sa valeur minima)
+\[
+\begin{aligned}
+\alpha-\alpha_k&\leqq\{\alpha_k+\rho(q,x_k)\}-\alpha_k=\rho(q,x_k),\\
+\alpha_k-\alpha&=\alpha_k-\{\rho(q,x_{i_0})+\alpha_{i_0}\}=(\alpha_k-\alpha_{i_0})\\
+&\quad-\rho(q,x_{i_0})\leqq\rho(x_k,x_{i_0})-\rho(q,x_{i_0})\leqq\rho(x_k,q),\\
+\alpha_k+\alpha&=\alpha_k+\alpha_{i_0}+\rho(q,x_{i_0})\geqq\rho(x_k,x_{i_0})+\rho(q,x_{i_0})\geqq\rho(x_k,q).
+\end{aligned}
+\]
+Il existe donc dans $U$ un point $y$ tel que
+\begin{equation}\tag{44}
+\rho(y,x_k)=\alpha_k,\qquad\rho(y,q)=\alpha,
+\end{equation}
+pour tout $k\leqq s$. Le nombre $\alpha$ étant positif, $y$ est nécessairement distinct de $q$, c'est-à-dire que $y$ appartient à $V$, de sorte que c'est bien pour l'espace $V$ que les égalités (44) ($k=1,2,\dots,s$) démontrent le théorème I.
+
+\section*{V. --- Autres propriétés de l'espace $U$.}
+\paragraph{19.}
+\textit{Quels que soient les deux points $a$ et $b$ de $U$, il existe dans $U$ un segment rectiligne $\overline{ab}$ de longueur $\rho(a,b)$ auquel les deux points $a$ et $b$ sont agrégés.} C'est-à-dire qu'il existe un ensemble $\overline{ab}$ de points de $U$, contenant $a$ et $b$ et applicable d'une façon isométrique sur un segment rectiligne $\overline{pq}$ (de l'espace euclidien ordinaire), cette application transformant de plus $a$ en $p$ et $b$ en $q$. [Il s'ensuit que la longueur de $\overline{pq}$ doit être précisément égale à $\rho(a,b)$.]
+
+En effet, le segment rectiligne $\overline{pq}$ de longueur $\rho(a,b)$ étant un espace métrique séparable, il existe dans $U$ une image isométrique de $\overline{pq}$, que nous désignerons par $\overline{a^*b^*}$ ($a^*$ étant l'image de $p$ et $b^*$ étant l'image de $q$). L'espace $U$ étant homogène, il existe une transformation isométrique de $U$ en lui-même, faisant correspondre au couple de points $(a^*,b^*)$ le couple de points $(a,b)$, les deux couples $(a,b)$ et $(a^*,b^*)$ étant congruents en vertu de l'égalité
+\[
+\rho(p,q)=\rho(a^*,b^*)=\rho(a,b).
+\]
+Cette transformation fait correspondre à $\overline{a^*b^*}$ un ensemble $\overline{ab}$ (congruent lui aussi à $\overline{pq}$), qui est l'ensemble désiré.
+
+\textit{Remarque.} --- Il existe même dans $U$ plusieurs segments rectilignes joignant les deux points donnés $a$ et $b$.
+
+\srcpage{82}
+En effet, soit, sur le segment $\overline{ab}$ que nous venons de construire, $c$ le point satisfaisant aux équations
+\begin{equation}\rho(a,c)=\rho(c,b)=\frac12\rho(a,b)\tag{45}\end{equation}
+(c'est-à-dire le milieu du segment $\overline{ab}$).
+
+Considérons l'espace métrique formé des quatre points $u,v,r,t$ possédant entre eux les distances suivantes :
+\[
+\begin{gathered}
+\rho(u,v)=\rho(a,b),\\
+\rho(u,r)=\rho(v,r)=\rho(u,t)=\rho(v,t)=\frac12\rho(a,b),\\
+\rho(r,t)=\rho(a,b).
+\end{gathered}
+\]
+Soit $\{a^*,b^*,c^*,d^*\}$ l'image isométrique (dans $U$) de $\{u,v,r,t\}$. L'ensemble $\{a^*,b^*,c^*\}$ étant congruent à l'ensemble $\{a,b,c\}$, il existe une transformation isométrique de $U$ en lui-même faisant correspondre entre eux les ensembles $\{a^*,b^*,c^*\}$ et $\{a,b,c\}$. Soit $d$ l'image de $d^*$ pour cette transformation. On a
+\[
+\rho(a,d)=\rho(b,d)=\frac12\rho(a,b),\qquad \rho(d,c)=\rho(a,b)\ne0.
+\]
+Or, comme il n'y a sur $\overline{ab}$ aucun point différent de $c$ et vérifiant les égalités (45), le point $d$ est étranger à $\overline{ab}$. Les deux ensembles $\{a,c,b\}$ et $\{a,d,b\}$ sont évidemment congruents. Il existe donc une transformation isométrique de $U$ en lui-même, transformant $\{a,c,b\}$ en $\{a,d,b\}$. Cette transformation fait correspondre au segment rectiligne $\overline{ab}=\overline{acb}$ un segment rectiligne $\overline{ab}=\overline{adb}$ passant par le point $d$ et par suite nécessairement différent du premier segment. \hfill C. Q. F. D.
+
+Du théorème V découlent immédiatement les corollaires suivants :
+
+\textsc{Corollaire I.} --- \textit{L'espace $U$ est connexe}\footnote{Au sens généralement admis de MM. Lennes et Hausdorff. Voir \textsc{Lennes}, \textit{Amer. Journ. of Math.}, \textbf{33}, 1911, p. 303; \textsc{Hausdorff}, p. 244.}.
+
+\textsc{Corollaire II.} --- \textit{L'espace $U$ est localement connexe}\footnote{Au sens de MM. Hahn et Mazurkiewicz. Voir \textsc{Hahn}, \textit{Sitzungsberichte Kaisrl. Kgl. Akademie Wien, math. naturw. Kl.}, Bd \textbf{123}, 1914, p. 2433--2489; \textsc{Mazurkiewicz}, \textit{Fund. Math.}, \textbf{I}, 1920, p. 166--209.}.
+
+\srcpage{83}
+\paragraph{20.}
+Désignons par $F(x,\varepsilon)$ l'ensemble des points $y$ de $U$ tels que
+\[\rho(x,y)=\varepsilon.\]
+Il résulte aussitôt des propriétés fondamentales de $U$ que, pour un $\varepsilon$ fixe mais arbitraire, tous les $F(x,\varepsilon)$ sont congruents entre eux. (La démonstration est absolument analogue à celle du corollaire du théorème II, n\textsuperscript{o}~14.)
+
+Parmi les ensembles $F(x,\varepsilon)$ aucun n'est vide (il suffit de prendre l'espace métrique formé des deux points $p,q$, $\rho(p,q)=\varepsilon$ et de considérer son image isométrique dans $U$). Démontrons le théorème suivant :
+
+\textbf{VI.} \textit{$F(x,\varepsilon)$ est un espace métrique de diamètre\footnote{On appelle diamètre d'un espace métrique $E$ la borne supérieure $\delta(E)$ de tous les nombres non négatifs $\rho(x,y)$, $x$ et $y$ étant des points de $E$. Si cette borne n'existe point, on dit que $E$ possède un diamètre infini.} $2\varepsilon$ contenant une image isométrique de tout espace métrique séparable de diamètre $\le2\varepsilon$.}
+
+Soit $E$ un espace métrique séparable quelconque de diamètre $\le2\varepsilon$. Soit $E^*$ l'espace $E+p$, où l'on a posé $\rho(p,y)=\varepsilon$, quel que soit le point $y$ de $E$.
+
+Soit $M^*$ l'image isométrique de $E^*$ dans $U$. Le point $x$ de $U$ étant fixé (par l'énoncé du théorème VI), si l'image $p^*$ du point $p$ (dans $M^*$) était différente du point $x$, on ferait une application isométrique de $U$ sur lui-même transformant $p^*$ en $x$. On peut donc supposer que $M^*$ contient le point $x$ comme image du point $p$. On a par suite
+\[M^*=M+x,\]
+où $M$ est l'image de $E$ et où l'on a $\rho(x,z)=\varepsilon$, quel que soit le point $z$ de $M$. Il en résulte que $M$ est un sous-ensemble de $F(x,\varepsilon)$, ce qu'il fallait démontrer.
+
+Reste à prouver que $\delta[F(x,\varepsilon)]=2\varepsilon$. D'après ce que nous venons de démontrer, $\delta[F(x,\varepsilon)]$ est sûrement non inférieur à $2\varepsilon$. D'autre part, on s'aperçoit aussitôt que dans tout espace métrique on a nécessairement $\delta[F(x,\varepsilon)]\le2\varepsilon$. Il en résulte que $\delta[F(x,\varepsilon)]$ est, dans notre cas, précisément égal à $2\varepsilon$.
+\srcpage{84}
+Le théorème VI se trouve complètement démontré.
+
+\textbf{VII.} \textit{$F(x,\varepsilon)$ est un espace métrique homogène.}
+
+Soient $A$ et $B$ deux sous-ensembles congruents de $F(x,\varepsilon)$ formés d'un nombre fini de points. Alors les ensembles $A+x$ et $B+x$ sont eux aussi congruents. L'application de $U$ sur lui-même transformant $A+x$ en $B+x$ laisse à sa place le point $x$ et transforme par conséquent $F(x,\varepsilon)$ en lui-même. \hfill C. Q. F. D.
+
+\textbf{VIII.} \textit{$F(x,\varepsilon)$ est le seul espace métrique complet, séparable et homogène, de diamètre non supérieur à $2\varepsilon$ qui contient une image isométrique de tout espace métrique séparable de diamètre $\le2\varepsilon$.}
+
+La démonstration de cette proposition est absolument analogue à celle du théorème IV. On démontre d'abord que tout espace $W$ satisfaisant aux conditions de l'énoncé VIII vérifie un théorème analogue au théorème I, à savoir
+
+\textbf{I$_\varepsilon$.} Quels que soient les points
+\[x_1,x_2,\ldots,x_s\]
+de $W$ et les nombres positifs non supérieurs à $2\varepsilon$
+\[\alpha_1,\alpha_2,\ldots,\alpha_s,\]
+tels que
+\[|\alpha_2-\alpha_k|\le\rho(x_i,x_k)\le\alpha_i+\alpha_k\qquad(i,k\le s),\]
+il existe un point $y$ de $W$, dont la distance de $x_i$ est égale à $\alpha_i$ ($i=1,2,\ldots,s$). La démonstration se fait mot pour mot comme celle du théorème analogue 1\textsuperscript{o} du n\textsuperscript{o}~15 [on remarquera que l'espace formé des points $z_1,z_2,\ldots,z_{s+1}$, liés entre eux par les relations (37), (38) est de diamètre $\le2\varepsilon$].
+
+D'une manière analogue, la seconde étape consiste dans la démonstration de la propriété suivante :
+
+Tout espace métrique $W$, complet, séparable et de diamètre non supérieur à $2\varepsilon$ est congruent à $F(x,\varepsilon)$ s'il vérifie la proposition I$_\varepsilon$. Cette démonstration est encore une reproduction exacte du raisonnement 2\textsuperscript{o} du n\textsuperscript{o}~15. On doit seulement remarquer (pour s'assurer que le procédé est toujours applicable) que les ensembles $A_n$ et $B_n$ construits successivement sont tous de diamètre non supérieur à $2\varepsilon$.
+
+\srcpage{85}
+\textbf{IX.} \textit{$F(x,\varepsilon)$ jouit de la propriété V.}
+
+La démonstration se fait en partant de VI et de VII par une méthode absolument analogue à celle dont nous nous sommes servis au n\textsuperscript{o}~19.
+
+Nous avons de même les analogues suivants des corollaires du n\textsuperscript{o}~19.
+
+\textsc{Corollaire I.} --- \textit{$F(x,\varepsilon)$ est connexe.}
+
+\textsc{Corollaire II.} --- \textit{$F(x,\varepsilon)$ est localement connexe.}
+
+\paragraph{21.}
+En désignant, comme d'habitude, par $S(x,\varepsilon)$ l'ensemble des points de $U$ distants de $x$ de moins de $\varepsilon$, et par $\mathfrak{E}(x,\varepsilon)$ l'ensemble complémentaire à $S(x,\varepsilon)+F(x,\varepsilon)$ (c'est-à-dire l'ensemble des points, dont la distance de $x$ surpasse $\varepsilon$), on a le résultat suivant :
+
+\textbf{X.} \textit{Dans la décomposition de $U$ en trois ensembles sans points communs deux à deux :}
+\[U=S(x,\varepsilon)+F(x,\varepsilon)+\mathfrak{E}(x,\varepsilon),\]
+\textit{les ensembles ouverts $S(x,\varepsilon)$ et $\mathfrak{E}(x,\varepsilon)$ sont connexes, et l'ensemble fermé $F(x,\varepsilon)$ est leur frontière commune.}
+
+En effet, $S(x,\varepsilon)$ est connexe, car quel que soit le point $t$ de $S(x,\varepsilon)$, il existe dans $U$ un segment rectiligne $\overline{xt}$ de longueur $\rho(x,t)<\varepsilon$; ce segment est donc contenu dans $S(x,\varepsilon)$. Quant à $\mathfrak{E}(x,\varepsilon)$ c'est la réunion de tous les ensembles $F(x,\eta)$ correspondant aux valeurs de $\eta$ supérieures à $\varepsilon$. Tout ensemble $F(x,\eta)$ étant d'après IX, corollaire I, connexe, il suffit de montrer\footnote{\textit{Loc. cit.}, p. 246.} qu'on peut joindre un point quelconque $w$ de $F(x,\eta_2)$ à un certain point $t$ de $F(x,\eta_1)$ par un segment rectiligne $\overline{tw}$ agrégé à $\mathfrak{E}(x,\varepsilon)$, et cela quels que soient les nombres positifs $\eta_1$ et $\eta_2$ satisfaisant à l'inégalité $\eta_1>\eta_2>\varepsilon$.
+
+Considérons pour le prouver un segment $\overline{xw}$. Ce segment étant congruent au segment rectiligne ordinaire de longueur $\rho(x,w)=\eta_2$,
+\srcpage{86}
+il y a pour tout $\eta<\eta_2$ un et seul point $t_\eta$ appartenant en même temps à $\overline{xw}$ et $S(x,\eta)$. Le segment rectiligne $\overline{tw}$ est donc tout simplement le segment $\overline{t_{\eta_1}w}$ situé sur $\overline{xw}$.
+
+On a évidemment
+\[
+\overline{S(x,\varepsilon)}-S(x,\varepsilon)\subset F(x,\varepsilon)
+\quad\text{et}\quad
+\overline{\mathfrak{E}(x,\varepsilon)}-\mathfrak{E}(x,\varepsilon)\subset F(x,\varepsilon)
+\]
+(où le signe $\subset$ désigne comme d'habitude l'inclusion : l'ensemble placé à gauche de $\subset$ fait partie de celui placé à droite).
+
+Pour reconnaître que $F(x,\varepsilon)$ est la frontière commune de $S(x,\varepsilon)$ et $\mathfrak{E}(x,\varepsilon)$, il nous reste donc de démontrer les inclusions
+\[
+F(x,\varepsilon)\subset\overline{S(x,\varepsilon)}\quad\text{et}\quad F(x,\varepsilon)\subset\overline{\mathfrak{E}(x,\varepsilon)}.
+\]
+Soient $u$ un point arbitraire de $F(x,\varepsilon)$ et $\delta$ un nombre positif inférieur à $\varepsilon$, d'ailleurs quelconque.
+
+Considérons les deux systèmes de points et de nombres positifs :
+\[
+\left\{\begin{array}{cc}x,&u,\\\varepsilon-\delta,&\delta\end{array}\right.
+\qquad\Big|\qquad
+\left\{\begin{array}{cc}x,&u,\\\varepsilon+\delta,&\delta\end{array}\right.
+\]
+On a
+\[|(\varepsilon-\delta)-\varepsilon|=|\delta-2\delta|<\varepsilon=\rho(x,u)=|(\varepsilon-\delta)+\delta|\]
+et
+\[|(\varepsilon+\delta)-\delta|=\varepsilon=\rho(x,u)<(\varepsilon+\delta)+\delta.\]
+Les inégalités $(\Delta)$ sont vérifiées et il existe par conséquent (en vertu du théorème I) un point $v_1$ et un point $v_2$ tels que
+\[
+\rho(x,v_1)=\varepsilon-\delta;\quad\rho(x,u)=\delta
+\qquad\Big|\qquad
+\rho(x,v_2)=\varepsilon+\delta;\quad\rho(u,v_2)=\delta.
+\]
+Le point $v_1$ appartient donc à $S(x,\varepsilon)$ et sa distance de $u$ est égale à $\delta$; de même, $v_2$ appartient à $\mathfrak{E}(x,\varepsilon)$ et sa distance de $u$ est de nouveau égale à $\delta$. Il en résulte que $\rho[u,S(x,\varepsilon)]=0=\rho[u,\mathfrak{E}(x,\varepsilon)]$; ce qui démontre notre proposition.
+
+\textbf{XI.} \textit{Quel que soit le sous-ensemble $L$ de $F(x,\varepsilon)$, l'ensemble $U-L$ est connexe} [il est supposé que $L$ ne coïncide pas avec $F(x,\varepsilon)$]. --- On a les inclusions évidentes
+\begin{equation}S(x,\varepsilon)\subset S(x,\varepsilon)+[F(x,\varepsilon)-L]\subset\overline{S(x,\varepsilon)},\tag{46}\end{equation}
+\begin{equation}\mathfrak{E}(x,\varepsilon)\subset\mathfrak{E}(x,\varepsilon)+[F(x,\varepsilon)-L]\subset\overline{\mathfrak{E}(x,\varepsilon)}.\tag{47}\end{equation}
+Les premiers membres des relations (46), (47) sont connexes
+\srcpage{87}
+(d'après IX); il résulte alors des résultats bien connus de M. Hausdorff\footnote{\textsc{Hausdorff}, \textit{loc. cit.}, p. 245.} que le second membre de chacune des relations (46), (47) forme aussi un ensemble connexe. Or ces deux ensembles connexes ont la partie commune $F(x,\varepsilon)-L$ qui est non vide d'après nos hypothèses. Il s'ensuit\footnotemark[\value{footnote}] que leur somme, c'est-à-dire l'ensemble
+\[S(x,\varepsilon)+\mathfrak{E}(x,\varepsilon)+[F(x,\varepsilon)-L]=U-L\]
+est lui aussi connexe. \hfill C. Q. F. D.
+
+\paragraph{22.}
+On demandera, peut-être, si l'espace $U$ ne jouit pas d'une propriété d'homogénéité plus précise que celle que nous avons indiquée au n\textsuperscript{o}~14. Voici un résultat qui pourrait présenter quelque intérêt à ce point de vue.
+
+\textbf{XII.} \textit{On peut indiquer dans $U$ deux ensembles congruents $A$ et $B$} (nécessairement infinis) \textit{tels qu'il n'existe aucune application isométrique de $U$ sur lui-même, transformant $A$ en $B$.}
+
+Toute application isométrique de $U$ sur lui-même étant \textit{a fortiori} une transformation topologique (c'est-à-dire biunivoque et bicontinue) de $U$ en lui-même, il suffira de construire deux ensembles congruents jouissant de propriétés topologiques différentes (par rapport à $U$). Nous parviendrons à ce résultat en construisant deux ensembles congruents $A$ et $B$ tels que $U-A$ n'est pas connexe, tandis que $U-B$ est connexe.
+
+Posons $A=F(x,\varepsilon)$, le point $x$ de $U$ et le nombre positif $\varepsilon$ étant absolument quelconques.
+
+En vertu de VI, il existe un sous-ensemble $M$ de $F(x,\varepsilon)$ congruent à l'ensemble $x+F(x,\varepsilon)$ (dont le diamètre est évidemment égal à $2\varepsilon$). Soit $q$ le point de $M$ correspondant au point $x$ [dans l'application isométrique de $M$ sur $x+F(x,\varepsilon)$]. L'image de $F(x,\varepsilon)$ est alors précisément l'ensemble $M-x$. En posant $B=M-x$ et en remarquant que $B\subset M-x\subset F(x,\varepsilon)-x$, donc que $F(x,\varepsilon)-B$ n'est pas vide, il résulte de XI que $U-B$ est connexe, tandis que $U-A$ n'est pas connexe d'après X. \hfill C. Q. F. D.
+
+Remarquons que les deux ensembles $A$ et $B$ que nous venons de construire sont tous les deux non denses dans $U$.
+
+\srcpage{88}
+\paragraph{23.}
+Revenons enfin au problème de M. Fréchet. M. Fréchet s'exprime ainsi : «\,\ldots Je cherche l'expression la plus générale de la “distance” sur une droite compatible avec la définition ordinaire de la limite. Je trouve que cette expression la plus générale s'obtient en faisant correspondre à cette droite une courbe de Jordan sans points multiples dans l'espace $D_\omega$ et en prenant pour distance sur la droite la distance des points correspondants\ldots\ dans $D_\omega$. Il est évident qu'on ne saurait remplacer $D_\omega$ par un espace à $n$ dimensions. \textit{Ma question} est alors : pourrait-on remplacer $D_\omega$ (qui n'est pas séparable) par un espace plus simple tel que $E_\omega$ ou l'espace de Hilbert.\,»
+
+Le problème de M. Fréchet est précisément le problème de trouver un espace métrique séparable contenant les images isométriques de tous les arcs simples (ouverts) de Jordan (donnés d'une façon abstraite comme des espaces métriques). Comme tout arc simple est un espace métrique séparable, l'espace $U$ résout bien la question posée par M. Fréchet.
+
+Par contre, ni l'espace $E_\omega$, ni l'espace de Hilbert ne sauraient apporter une telle résolution.
+
+En effet, l'espace $E_\omega$ est l'espace où chaque point $x$ est défini par une infinité des « coordonnées » $x_1,x_2,\ldots,x_n,\ldots$ et où la distance entre $x=(x_1,x_2,\ldots,x_n,\ldots)$ et $y=(y_1,y_2,\ldots,y_n,\ldots)$ est donnée par la formule
+\[\rho(x,y)=\sum_{n=1}^{\infty}\frac1{n!}\frac{|x_n-y_n|}{1+|x_n-y_n|}.\]
+On a donc toujours
+\[\rho(x,y)\le\sum_{n=1}^{\infty}\frac1{n!}=e-1<2,\]
+de façon que le diamètre de $E_\omega$ est inférieur à $2$; $E_\omega$ ne peut donc contenir une image isométrique d'un segment rectiligne d'une longueur égale par exemple à $2$.
+
+Quant à l'espace de Hilbert, il ne donne pas non plus une résolution de la question, comme on reconnaît de la façon suivante :
+
+Soit, dans le plan ordinaire, $\Phi$ la figure formée de l'axe des abscisses et des segments rectilignes : $[x=0,\ 0\le y\le1]$, $[x=1,\ 0\le y\le1]$, $[0\le x\le1,\ y=1]$. Désignons par $L$ l'arc ouvert
+\srcpage{89}
+simple, composé du rayon $[-\infty,0]$ de l'axe des abscisses, des trois segments tout à l'heure définis et du rayon $(1,+\infty)$ de l'axe des abscisses. Sans altérer les propriétés topologiques de $L$ on peut transformer cette figure en un espace métrique $M$, en posant, pour deux points arbitraires $\xi$ et $\eta$ de $L$,
+\[
+\begin{aligned}
+\rho(\xi,\eta)={}&\text{la longueur de la plus courte ligne polygonale située sur $\Phi$}\\
+&\text{et joignant les deux points $\xi$ et $\eta$.}
+\end{aligned}
+\]
+Cette définition de la distance (donnant lieu aux mêmes propriétés de convergence que la distance ordinaire sur $L$) vérifie évidemment tous les axiomes définissant les espaces métriques.
+
+Pour reconnaître que $M$ n'est pas contenu d'une façon isométrique dans l'espace de Hilbert, considérons les quatre points $a,b,c,d$ de $L$ définis comme il suit par leurs coordonnées
+\[a=(0,0),\qquad b=(-1,0),\qquad c=(0,1),\qquad d=(1,0).\]
+On obtient dans $M$ les distances suivantes :
+\begin{equation}
+\left\{\begin{aligned}\rho(a,b)=\rho(a,c)=\rho(a,d)&=1,\\\rho(b,c)=\rho(b,d)=\rho(c,d)&=2.\end{aligned}\right.\tag{48}
+\end{equation}
+Or, nous montrerons que non seulement l'espace $M$ n'est congruent à aucun sous-ensemble de l'espace de Hilbert, mais que même l'espace métrique (contenu dans $M$) formé des quatre points $a,b,c,d$ avec les distances (48) n'admet aucune représentation isométrique sur un sous-ensemble quelconque de l'espace de Hilbert.
+
+En effet, dans le cas contraire, on pourrait supposer qu'au point $a$ correspond l'origine des coordonnées hilbertiennes, c'est-à-dire le point
+\[a^*=(0,0,\ldots,0,\ldots).\]
+Supposons que les images des points $b,c,d$ soient respectivement les points
+\[b^*=(x_1,x_2,\ldots,x_n,\ldots),\qquad c^*=(y_1,y_2,\ldots,y_n,\ldots)\]
+et
+\[d^*=(z_1,z_2,\ldots,z_n,\ldots)\]
+de l'espace de Hilbert.
+
+La représentation étant supposée isométrique, on devrait avoir,
+\srcpage{90}
+dans ce dernier espace,
+\[
+\begin{gathered}
+\rho(a^*,b^*)=\rho(a^*,c^*)=\rho(a^*,d^*)=1,\\
+\rho(b^*,c^*)=\rho(b^*,d^*)=\rho(c^*,d^*)=2,
+\end{gathered}
+\]
+c'est-à-dire
+\[
+\sum_{n=1}^{\infty}x_n^2=\sum_{n=1}^{\infty}y_n^2=\sum_{n=1}^{\infty}z_n^2=1,
+\]
+\[
+\sum_{n=1}^{\infty}(x_n-y_n)^2=\sum_{n=1}^{\infty}(y_n-z_n)^2=\sum_{n=1}^{\infty}(z_n-x_n)^2=4,
+\]
+d'où
+\begin{equation}\sum_{n=1}^{\infty}(x_n^2+y_n^2+z_n^2)=3\tag{49}\end{equation}
+et
+\begin{equation}\sum_{n=1}^{\infty}\{(x_n-y_n)^2+(y_n-z_n)^2+(z_n-x_n)^2\}=12.\tag{50}\end{equation}
+On a d'autre part
+\begin{equation}\sum_{n=1}^{\infty}\{(x_n+y_n)^2+(y_n+z_n)^2+(z_n+x_n)^2\}>0,\tag{51}\end{equation}
+car dans le cas contraire on aurait, quel que soit $n$,
+\[x_n+y_n=y_n+z_n=z_n+x_n=0,\]
+donc
+\[x_n=y_n=z_n=0,\]
+ce qui est en contradiction avec (49).
+
+En ajoutant (50) et (51), on trouve
+\[4\sum_{n=1}^{\infty}(x_n^2+y_n^2+z_n^2)>12,\]
+ce qui est incompatible avec (49).
+\end{document}
