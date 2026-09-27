@@ -4,7 +4,9 @@ function translation(argLang) {
   const elements = document.getElementsByClassName("cngLang");
 
   for (let i = 0; i < elements.length; i++) {
-    const isSelectedLanguage = elements[i].getAttribute("lang") === argLang;
+    // A switch button's label language differs from the view in which it appears.
+    const displayLanguage = elements[i].getAttribute("data-display-lang") || elements[i].getAttribute("lang");
+    const isSelectedLanguage = displayLanguage === argLang;
     elements[i].style.display = isSelectedLanguage ? "" : "none";
   }
 

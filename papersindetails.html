@@ -31,10 +31,10 @@
   <hr class="headhr">
 <!-- Button contents Starts-->
 <div class="translate">
-  <button onclick="translation('en');" class="cngLang" lang="ja">
+  <button type="button" onclick="translation('en');" class="cngLang" data-display-lang="ja" lang="en">
     English view
   </button>
-  <button onclick="translation('ja');" class="cngLang" lang="en">
+  <button type="button" onclick="translation('ja');" class="cngLang" data-display-lang="en" lang="ja">
     日本語表示（一部英語）
   </button>
 </div>
@@ -351,7 +351,7 @@
       <li id="paper-9">
         <h3 lang="en">A factorization of metric spaces</h3>
         <p class="paper-meta" lang="ja">初回プレプリント発表：2022-12（<a href="https://arxiv.org/abs/2212.13409">arXiv:2212.13409</a>）</p>
-        <p class="paper-meta" lang="en">Yoshito Ishiki, Colloq. Math., (2023), 101–119, DOI: 10.4064/cm9066-6-2023. (<a href="https://www.impan.pl/en/publishing-house/journals-and-series/colloquium-mathematicum/all/174/1/115267/a-factorization-of-metric-spaces"> link </a>)</p>
+        <p class="paper-meta" lang="en">Yoshito Ishiki, Colloq. Math., 174 (2023), 101–119, DOI: 10.4064/cm9066-6-2023. (<a href="https://www.impan.pl/en/publishing-house/journals-and-series/colloquium-mathematicum/all/174/1/115267/a-factorization-of-metric-spaces"> link </a>)</p>
         <p class="paper-description" lang="ja">
           超距離空間の(空でない)閉集合が全体空間のレトラクトになるということの
           とても素晴らしい証明を読んだので，
@@ -530,7 +530,7 @@
           元の空間が同じ段階の乗法類（加法類）に属することを証明した．
           さらに，このモジュライ空間が完備距離化可能であるための必要十分条件は，
           元の空間がσ-コンパクトであることを示した．
-          ただいま校正中．まだまだ色々あるので待っててくれ．
+          校正中（<time datetime="2026-09-22">2026年9月22日</time>記載）．まだまだ色々あるので待っててくれ．
         </p>
       </li>
       <li id="paper-borelness-separability">
@@ -547,14 +547,13 @@
           元の空間がσ-コンパクトであることの同値性を，
           可分性を仮定せずに示した．
           これもまた，距離関数のモジュライ空間の理論の一つの到達点である．
-          ただいま校正中．
-          この説明文も校正中．
+          論文とこの説明文を校正中（<time datetime="2026-09-22">2026年9月22日</time>記載）．
         </p>
       </li>
       <li id="paper-scottish-book-155">
         <h3 lang="en">A counterexample to Scottish Book Problem 155</h3>
         <p class="paper-meta" lang="ja">初回プレプリント発表：2026-09-04</p>
-        <p class="paper-meta" lang="en">Yoshito Ishiki, 4 September 2026, DOI: <a href="https://doi.org/10.5281/zenodo.22422011">10.5281/zenodo.22422011</a>. (<a href="ai-research-reports.html#scottish-book-preprint">details and citation</a>)</p>
+        <p class="paper-meta" lang="en">Yoshito Ishiki, <a href="https://arxiv.org/abs/2609.29665">arXiv:2609.29665</a>. Archived website version 1.0 (4 September 2026), DOI: <a href="https://doi.org/10.5281/zenodo.22422011">10.5281/zenodo.22422011</a>. (<a href="ai-research-reports.html#scottish-book-preprint">details and citation</a>)</p>
         <p class="paper-description" lang="ja">
           実バナッハ空間の間の全単射で，
           半径1/4の任意の閉球上ではすべての二点間距離を保つが，
@@ -569,7 +568,7 @@
           変な写像を全射になるように，
           写像と定義域，値域を拡張するのに，
           このbookkeepingはすごい便利だなって思った．
-          ただいま校正中．
+          校正中（<time datetime="2026-09-21">2026年9月21日</time>記載）．
         </p>
       </li>
       <li id="paper-22">
@@ -581,7 +580,7 @@
           Gromov–Hausdorff空間が，
           可分無限次元Hilbert空間と同相であることを示した．
           AIパワーを使った．
-          ただいま校正中．この説明も校正中．しばし待たれよ．
+          論文とこの説明を校正中（<time datetime="2026-09-22">2026年9月22日</time>記載）．しばし待たれよ．
         </p>
       </li>
       <li id="paper-21">
@@ -599,7 +598,7 @@
           恒等写像以外に全単射な自己等長写像を持たないリジッドな距離関数を研究し，
           3点以上の空間上の任意の全有界な位相的距離が
           リジッドな位相的距離で一様近似できることを示した．
-          ただいま校正中．
+          校正中（<time datetime="2026-09-21">2026年9月21日</time>記載）．
         </p>
       </li>
     </ol>
@@ -663,6 +662,6 @@
 <footer>
   <p>&copy; 2021 Yoshito Ishiki. All rights reserved.</p>
 </footer>
-<script src="yoshito.js"></script>
+<script src="yoshito.js?v=20260927"></script>
 </body>
 </html>

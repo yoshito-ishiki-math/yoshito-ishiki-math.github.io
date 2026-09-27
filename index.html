@@ -28,11 +28,11 @@
  <hr class="headhr">
 
  <div class="translate">
-   <button onclick="translation('en');" class="cngLang" lang="ja">
+   <button type="button" onclick="translation('en');" class="cngLang" data-display-lang="ja" lang="en">
     English view
    </button>
 
-   <button onclick="translation('ja');" class="cngLang" lang="en">
+   <button type="button" onclick="translation('ja');" class="cngLang" data-display-lang="en" lang="ja">
     日本語表示（一部英語）
    </button>
  </div>
@@ -141,11 +141,11 @@
 <!-- Recent start-->
 <hr>
 <div class="translate">
-  <button onclick="translation('en');" class="cngLang" lang="ja">
+  <button type="button" onclick="translation('en');" class="cngLang" data-display-lang="ja" lang="en">
    English view
   </button>
 
-  <button onclick="translation('ja');" class="cngLang" lang="en">
+  <button type="button" onclick="translation('ja');" class="cngLang" data-display-lang="en" lang="ja">
    日本語表示（一部英語）
   </button>
 </div>
@@ -190,8 +190,8 @@
     日付・説明・リンクを書き換えてください。新しいものが上に並びます。
   -->
   <li>
-    <span class="cngLang" lang="en">Now available on arXiv:</span>
-    <span class="cngLang" lang="ja">arXivに公開されました：</span>
+    <span class="cngLang" lang="en"><time datetime="2026-09-25">25 September 2026</time> — Update: now available on arXiv:</span>
+    <span class="cngLang" lang="ja"><time datetime="2026-09-25">2026年9月25日</time> — お知らせ：arXivに公開されました：</span>
     <a href="https://arxiv.org/abs/2609.29665">arXiv:2609.29665</a>,
     A counterexample to Scottish Book Problem 155.
     (<a href="ai-research-reports.html#scottish-book-preprint">details and citation</a>)
@@ -241,12 +241,16 @@
       </a>).
   </li>
 <li>
+  <span class="cngLang" lang="en">Earlier announcement (date not recorded):</span>
+  <span class="cngLang" lang="ja">過去のお知らせ（告知日未記録）：</span>
   My paper "Spaces of metrics are Baire" became Open Access
   (<a href="https://doi.org/10.1016/j.topol.2025.109408">
         link
       </a>).
 </li>
   <li>
+    <span class="cngLang" lang="en">Earlier announcement (date not recorded):</span>
+    <span class="cngLang" lang="ja">過去のお知らせ（告知日未記録）：</span>
     The joint work with Katsuhisa Koshino "On isometric universality of spaces of metrics"
     is published in Topology and its Applications
      (<a href="https://www.sciencedirect.com/science/article/abs/pii/S0166864125001920">
@@ -254,6 +258,8 @@
       </a>).
   </li>
   <li>
+    <span class="cngLang" lang="en">Earlier announcement (date not recorded):</span>
+    <span class="cngLang" lang="ja">過去のお知らせ（告知日未記録）：</span>
     My paper "Spaces of metrics are Baire" is
     published in Topology and its Applications
       (<a href="https://doi.org/10.1016/j.topol.2025.109408">
@@ -261,7 +267,9 @@
       </a>).
   </li>
   <li>
-    My paper "Characterization of Urysohn universal ultrametric spaces"
+    <span class="cngLang" lang="en">Earlier announcement (date not recorded):</span>
+    <span class="cngLang" lang="ja">過去のお知らせ（告知日未記録）：</span>
+    My paper "Characterizations of Urysohn universal ultrametric spaces"
     is published in AGMS (<a href="https://www.degruyterbrill.com/document/doi/10.1515/agms-2025-0024/html">link</a>).
   </li>
   <li>
@@ -269,15 +277,17 @@
     <a href="https://arxiv.org/abs/2409.17701">arXiv:2409.17701</a>
     This is a joint work with Katsuhisa Koshino.
    We researched isometric universality of spaces of metrics.
-    For examples,
+    For example,
     we prove that the space of metrics on the Cantor set admits an isometric embedding
     from arbitrary compact metric spaces.
   </li>
   <li>
-    I am writing a manuscript titled "A survey on comeager subsets in spaces of metrics"
-    for submitting to RIMS K&#244;ky&#251;roku as an article based on  my talk in
-    "RIMS symposium (open),  General topology and related fields, in June 2024".
-
+    <span class="cngLang" lang="en">2024 — Publication:</span>
+    <span class="cngLang" lang="ja">2024年 — 刊行：</span>
+    My survey "Spaces of metrics are Baire", based on my talk at
+    "General topology and related fields" in June 2024, was published in
+    RIMS K&#244;ky&#251;roku No. 2296 (2024), 22–38.
+    (<a href="https://hdl.handle.net/2433/296462">Published article</a>)
   </li>
   <li>
     4th July/2024,
@@ -290,7 +300,7 @@
     For a metrizable space, and its closed subset,
     an extensor of metrics is defined as  a map from the space of metrics on the closed subset
     into the space of metrics on the space, which actually extends metrics. I constructed an extensor of metrics,
-    which preserving the supremum metrics on spaces of metrics.
+    which preserves the supremum metrics on spaces of metrics.
   </li>
   <li>
     Feb/2024,
@@ -314,11 +324,11 @@
  <hr>
 
  <div class="translate">
-  <button onclick="translation('en');" class="cngLang" lang="ja">
+  <button type="button" onclick="translation('en');" class="cngLang" data-display-lang="ja" lang="en">
    English view
   </button>
 
-  <button onclick="translation('ja');" class="cngLang" lang="en">
+  <button type="button" onclick="translation('ja');" class="cngLang" data-display-lang="en" lang="ja">
    日本語表示（一部英語）
   </button>
 </div>
@@ -924,7 +934,7 @@
   </li>
     <li>
     <a href="https://daisuke-kazukawa.github.io/">
-      Daisuke Kazukawa/大輔数川
+      Daisuke Kazukawa/数川大輔
     </a>
   </li>
   <li>
@@ -1126,7 +1136,7 @@
   <footer>
   <p>&copy; 2021 Yoshito Ishiki. All rights reserved.</p>
   </footer>
-  <script type="text/javascript" src="yoshito.js">
+  <script type="text/javascript" src="yoshito.js?v=20260927">
   </script>
 </body>
 
