@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harness &amp; Skills | Yoshito Ishiki</title>
+  <meta name="description" content="AI支援の数学研究に使う公開ハーネス、論文執筆・レビュー用skills、LaTeX管理ツールKichoを紹介します。Public tools for AI-assisted mathematical research by yoshito-ishiki-math.">
+  <link rel="stylesheet" href="yoshitostyle.css?v=20260914">
+  <style>
+    main, header {
+      line-height: 1.8;
+    }
+
+    main code {
+      overflow-wrap: anywhere;
+    }
+
+    .tool-section {
+      margin: 1.5rem 0;
+      padding: 0.5rem 1.25rem 1rem;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .tool-section h2 {
+      font-size: 1.35rem;
+      overflow-wrap: anywhere;
+    }
+
+    .tool-section li + li, .workflow-list li + li {
+      margin-top: 0.75rem;
+    }
+
+    .tool-overview {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+    }
+
+    .tool-overview caption {
+      margin-bottom: 0.5rem;
+      text-align: left;
+      font-weight: bold;
+    }
+
+    .tool-overview th, .tool-overview td {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .tool-overview thead {
+      background-color: #e8edf7;
+    }
+
+    .tool-overview tbody th {
+      width: 24%;
+      white-space: nowrap;
+    }
+
+    .tool-meta {
+      color: #555;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .tool-section {
+        padding-right: 1rem;
+        padding-left: 1rem;
+      }
+
+      .tool-overview th, .tool-overview td {
+        padding: 0.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav class="site-nav" aria-label="Main navigation">
+  <a href="index.html">Home</a>
+  <a href="papers.html">Papers</a>
+  <a href="ai-research-reports.html">Preprints &amp; Reports</a>
+  <a href="research-tools.html" aria-current="page">Harness &amp; Skills</a>
+  <a href="notes.html">Notes</a>
+  <a href="talks.html">Talks</a>
+  <a href="lecturenotes.html">Lecture Notes</a>
+  <a href="materials.html">Materials</a>
+</nav>
+
+<header>
+  <hr class="headhr">
+  <div class="translate">
+    <button type="button" onclick="translation('en');" class="cngLang" data-display-lang="ja" lang="en">English view</button>
+    <button type="button" onclick="translation('ja');" class="cngLang" data-display-lang="en" lang="ja">日本語表示</button>
+  </div>
+  <h1 class="cngLang" lang="en">Harness &amp; Skills</h1>
+  <h1 class="cngLang" lang="ja">数学研究のハーネスとスキル</h1>
+  <p class="cngLang" lang="en">
+    These are public tools I use and develop for mathematical research with AI agents.
+    They help keep research records, write and review papers, and manage LaTeX projects.
+    The repositories are available on <a href="https://github.com/yoshito-ishiki-math">yoshito-ishiki-math on GitHub</a>.
+  </p>
+  <p class="cngLang" lang="ja">
+    AIエージェントと数学研究を進めるために，私が利用・開発しているツールの公開版を紹介します．
+    研究記録の整理，論文の執筆とレビュー，LaTeX原稿の管理を支えます．
+    ソースはGitHubの<a href="https://github.com/yoshito-ishiki-math">yoshito-ishiki-math</a>で公開しています．
+  </p>
+  <p class="tool-meta">
+    <span class="cngLang" lang="en">Last updated: <time datetime="2026-10-07">7 October 2026</time>.</span>
+    <span class="cngLang" lang="ja">最終更新：<time datetime="2026-10-07">2026年10月7日</time>．</span>
+  </p>
+</header>
+
+<nav class="page-toc" aria-label="On this page">
+  <a href="#overview">Overview / 全体像</a>
+  <a href="#harness">Harness</a>
+  <a href="#skills">Skills</a>
+  <a href="#kicho">Kicho</a>
+  <a href="#getting-started">Getting started / 使い始める</a>
+  <a href="#credits">Credits / 元になったプロジェクト</a>
+</nav>
+
+<main>
+  <section id="overview">
+    <h2 class="cngLang" lang="en">How the tools fit together</h2>
+    <h2 class="cngLang" lang="ja">三つのツールの役割</h2>
+    <p class="cngLang" lang="en">
+      A harness gives a research project its working structure: what to read, how to record evidence, and where to resume.
+      A skill packages instructions and supporting resources for a particular task.
+      Kicho provides commands for the LaTeX project itself.
+    </p>
+    <p class="cngLang" lang="ja">
+      ハーネスは，研究プロジェクトで何を読み，どのように証拠を記録し，どこから再開するかを整理する枠組みです．
+      スキル（skill）は，特定の作業の手順と参考資料をまとめたものです．
+      Kichoは，LaTeX原稿の作成・ビルド・保存などを行うコマンドを提供します．
+    </p>
+    <table class="tool-overview">
+      <caption><span class="cngLang" lang="en">Choose a tool for your task</span><span class="cngLang" lang="ja">目的に応じた入口</span></caption>
+      <thead>
+        <tr>
+          <th scope="col"><span class="cngLang" lang="en">Tool</span><span class="cngLang" lang="ja">ツール</span></th>
+          <th scope="col"><span class="cngLang" lang="en">Main role</span><span class="cngLang" lang="ja">主な役割</span></th>
+          <th scope="col"><span class="cngLang" lang="en">Use it when…</span><span class="cngLang" lang="ja">こんなときに</span></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row"><a href="#harness">Harness</a></th>
+          <td><span class="cngLang" lang="en">Research state and evidence</span><span class="cngLang" lang="ja">研究の状態と証拠の管理</span></td>
+          <td><span class="cngLang" lang="en">You want to continue a research project across sessions.</span><span class="cngLang" lang="ja">複数のセッションにわたって研究を進めたい．</span></td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="#skills">Skills</a></th>
+          <td><span class="cngLang" lang="en">Writing, exposition review, and paragraph IDs</span><span class="cngLang" lang="ja">論文執筆，説明のレビュー，段落ID</span></td>
+          <td><span class="cngLang" lang="en">You have a manuscript to write, revise, or review.</span><span class="cngLang" lang="ja">原稿を執筆・改訂・レビューしたい．</span></td>
+        </tr>
+        <tr>
+          <th scope="row"><a href="#kicho">Kicho</a></th>
+          <td><span class="cngLang" lang="en">LaTeX project operations</span><span class="cngLang" lang="ja">LaTeXプロジェクトの操作</span></td>
+          <td><span class="cngLang" lang="en">You want to build a PDF or prepare a submission package.</span><span class="cngLang" lang="ja">PDFを作成し，投稿用のファイルを準備したい．</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 各ツールの公開READMEに合わせて説明とリンクを更新してください． -->
+  <section id="harness" class="tool-section">
+    <h2><a href="https://github.com/yoshito-ishiki-math/math-research-harness-public">math-research-harness-public</a></h2>
+    <p class="cngLang" lang="en">
+      A template for research directed by the mathematician working with an AI agent.
+      It connects conversations to durable notes, claims, literature, computations, and Git checkpoints,
+      so the next session can start from the recorded state of the project.
+    </p>
+    <p class="cngLang" lang="ja">
+      数学者の指示に沿ってAIエージェントと研究を進めるためのテンプレートです．
+      会話で得た内容を，研究メモ，主張，文献，計算，Gitのチェックポイントに結び付け，
+      次のセッションで記録された研究状態から再開できるようにします．
+    </p>
+    <ul class="cngLang" lang="en">
+      <li><code>AGENTS.md</code> defines the working contract; <code>STEERING.md</code> records current directions.</li>
+      <li>Each research thread keeps its claims and ledger, with evidence and unresolved questions recorded separately.</li>
+      <li>Workflows cover literature provenance, reproducible computation, Lean formalization, and review records tied to a specific manuscript version.</li>
+      <li>Numbered <code>paperN/</code> directories hold independent Kicho manuscript projects. The included research example is fictional.</li>
+    </ul>
+    <ul class="cngLang" lang="ja">
+      <li><code>AGENTS.md</code>に作業規約を，<code>STEERING.md</code>に現在の方針を記録します．</li>
+      <li>研究テーマごとに主張と台帳を持ち，証拠と未解決の問いを区別して残します．</li>
+      <li>出典を残す文献調査，再現可能な計算，Leanによる形式化，原稿の版に対応した確認記録を扱います．</li>
+      <li><code>paperN/</code>に独立したKicho原稿を配置します．収録された研究例は，使い方を示す架空のサンプルです．</li>
+    </ul>
+    <p>
+      <a href="https://github.com/yoshito-ishiki-math/math-research-harness-public/blob/main/README.ja.md">日本語README</a> ·
+      <a href="https://github.com/yoshito-ishiki-math/math-research-harness-public/blob/main/README.md">English README</a> ·
+      <a href="https://github.com/yoshito-ishiki-math/math-research-harness-public/blob/main/docs/OWNER-GUIDE.ja.md">所有者向けガイド</a> ·
+      <a href="https://github.com/yoshito-ishiki-math/math-research-harness-public/blob/main/examples/WORKED-SESSION.md">Worked session</a>
+    </p>
+  </section>
+
+  <section id="skills" class="tool-section">
+    <h2><a href="https://github.com/yoshito-ishiki-math/math-paper-skills">math-paper-skills</a></h2>
+    <p class="cngLang" lang="en">
+      Reusable skills for mathematical manuscripts, with instructions in <code>SKILL.md</code> and supporting references.
+      You can use them in a manuscript project on its own or together with the research harness.
+    </p>
+    <p class="cngLang" lang="ja">
+      数学原稿のための，再利用可能なスキル集です．<code>SKILL.md</code>に作業手順を記し，参考資料を添えています．
+      個別の原稿プロジェクトでも，研究ハーネスと組み合わせても使えます．
+    </p>
+    <ul>
+      <li>
+        <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/write-research-paper/SKILL.md"><code>write-research-paper</code></a><br>
+        <span class="cngLang" lang="en">Draft and revise a paper under the author's direction, including checking and repairing its exposition.</span>
+        <span class="cngLang" lang="ja">著者の指示に沿って論文を執筆・改訂し，執筆側で説明を点検して修正します．</span>
+      </li>
+      <li>
+        <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/read-research-paper/SKILL.md"><code>read-research-paper</code></a><br>
+        <span class="cngLang" lang="en">Review the exposition of a frozen manuscript as an explicitly delegated independent reader. It supports sequential reading, whole-manuscript review, and bounded review of changes.</span>
+        <span class="cngLang" lang="ja">明示的に委任された独立の読者として，固定版原稿の説明をレビューします．逐次読み，全体レビュー，指定した変更箇所のレビューに対応します．</span>
+      </li>
+      <li>
+        <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/latex-paragraph-ids/SKILL.md"><code>latex-paragraph-ids</code></a><br>
+        <span class="cngLang" lang="en">Maintain stable paragraph IDs in LaTeX, so comments and editing requests can refer to the same paragraph after revisions.</span>
+        <span class="cngLang" lang="ja">LaTeX原稿に固定の段落IDを付け，改訂後も同じ段落を指定してコメントや編集依頼ができるようにします．</span>
+      </li>
+    </ul>
+    <p class="cngLang" lang="en">
+      The writing and reading skills share references; install them together and preserve the repository layout.
+      An <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/examples/author-style.md">optional author-style example</a>
+      can be adapted to your own preferences.
+    </p>
+    <p class="cngLang" lang="ja">
+      執筆用と読者用は参考資料を共有するので，両方を導入してリポジトリ内の配置を保ちます．
+      <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/examples/author-style.md">著者スタイルの例</a>は，
+      必要な規則を選んで自分の方針に合わせるための任意採用の見本です．
+    </p>
+    <p>
+      <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/README.ja.md">日本語README・導入手順</a> ·
+      <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/README.md">English README</a>
+    </p>
+  </section>
+
+  <section id="kicho" class="tool-section">
+    <h2><a href="https://github.com/yoshito-ishiki-math/kicho">Kicho</a></h2>
+    <p class="cngLang" lang="en">
+      A command-line workflow manager for LaTeX research projects.
+      It works with standard TeX tools such as <code>latexmk</code>, LuaLaTeX, and Biber,
+      and provides English and Japanese project templates.
+    </p>
+    <p class="cngLang" lang="ja">
+      LaTeXによる研究原稿を管理するコマンドラインツールです．
+      <code>latexmk</code>，LuaLaTeX，Biberなどの通常のTeX環境と組み合わせて使い，
+      英語・日本語のプロジェクト用テンプレートを提供します．
+    </p>
+    <ul class="cngLang" lang="en">
+      <li><code>init</code> creates a project; <code>doctor</code> checks the environment; <code>check</code> validates project files.</li>
+      <li><code>build</code> compiles the PDF; <code>archive</code> saves a source, PDF, and metadata snapshot.</li>
+      <li><code>flatten</code> combines supported source inclusions; <code>submit</code> prepares a local submission package, including an arXiv option.</li>
+    </ul>
+    <ul class="cngLang" lang="ja">
+      <li><code>init</code>でプロジェクトを作成し，<code>doctor</code>で環境を確認し，<code>check</code>でファイルを検査します．</li>
+      <li><code>build</code>でPDFを作り，<code>archive</code>でソース・PDF・メタデータのスナップショットを保存します．</li>
+      <li><code>flatten</code>で対応するソースの読み込みをまとめ，<code>submit</code>で投稿用ファイルをローカルに準備します．arXiv用の出力にも対応します．</li>
+    </ul>
+    <p class="cngLang" lang="en">Kicho is installed separately from the harness and skills. Its submission commands create files for you to review and upload.</p>
+    <p class="cngLang" lang="ja">Kicho本体は，ハーネスやスキルとは別に導入します．投稿用コマンドで作ったファイルを確認し，自分で投稿先へアップロードします．</p>
+    <p>
+      <a href="https://github.com/yoshito-ishiki-math/kicho/blob/main/README.ja.md">日本語README</a> ·
+      <a href="https://github.com/yoshito-ishiki-math/kicho/blob/main/README.md">English README</a>
+    </p>
+  </section>
+
+  <section id="getting-started">
+    <h2 class="cngLang" lang="en">Getting started</h2>
+    <h2 class="cngLang" lang="ja">使い始めるには</h2>
+    <ol class="workflow-list">
+      <li>
+        <span class="cngLang" lang="en"><strong>Choose the scope.</strong> For a research project, start with the harness and its owner guide. For an existing manuscript, begin with the skills. Tell the agent which files and question to work on.</span>
+        <span class="cngLang" lang="ja"><strong>作業範囲を伝える．</strong>研究プロジェクトにはハーネスと所有者向けガイドを，既存原稿の作業にはスキルを入口にします．対象のファイルと取り組む問いをエージェントに伝えます．</span>
+      </li>
+      <li>
+        <span class="cngLang" lang="en"><strong>Follow the setup guide.</strong> Clone the repositories you need. The harness uses Git and <code>uv</code>; the skills README explains installation for Codex and Claude Code. Add Kicho and a TeX environment for LaTeX work.</span>
+        <span class="cngLang" lang="ja"><strong>導入ガイドに従う．</strong>必要なリポジトリをクローンします．ハーネスはGitと<code>uv</code>を使い，スキルのREADMEにはCodex・Claude Code向けの導入方法があります．LaTeX作業にはKichoとTeX環境も用意します．</span>
+      </li>
+      <li>
+        <span class="cngLang" lang="en"><strong>Make a concrete request.</strong> In Codex CLI or the IDE extension, for example: <code>$write-research-paper</code> “Revise Section 2, preserving the mathematical claims.” Record research progress in the harness. Request an independent reader explicitly when you need one.</span>
+        <span class="cngLang" lang="ja"><strong>具体的に依頼する．</strong>例えばCodex CLIやIDE拡張で，<code>$write-research-paper</code>「数学的な主張を保って第2節を改訂して」と依頼します．研究の進捗はハーネスに残し，独立の読者によるレビューが必要なときは明示的に委任します．</span>
+      </li>
+      <li>
+        <span class="cngLang" lang="en"><strong>Check each kind of evidence.</strong> Review the mathematical argument, the exposition, and the compiled PDF separately. A successful build or record check alone does not establish a theorem.</span>
+        <span class="cngLang" lang="ja"><strong>確認の種類を分ける．</strong>数学的な論証，文章の説明，ビルドしたPDFをそれぞれ確認します．ビルドや記録の検査に通ったことだけで，定理が証明されたことにはなりません．</span>
+      </li>
+    </ol>
+    <p class="cngLang" lang="en">For the current skill format and discovery rules, see the <a href="https://learn.chatgpt.com/docs/build-skills">official OpenAI documentation</a>. Consult each repository's README for its setup details.</p>
+    <p class="cngLang" lang="ja">現在のskillの形式と探索方法は，<a href="https://learn.chatgpt.com/docs/build-skills">OpenAI公式ドキュメント</a>を参照してください．各ツールの具体的な導入方法は，それぞれのREADMEにあります．</p>
+  </section>
+
+  <section id="credits">
+    <h2 class="cngLang" lang="en">Origin and public scope</h2>
+    <h2 class="cngLang" lang="ja">元になったプロジェクトと公開範囲</h2>
+    <p class="cngLang" lang="en">
+      The public harness and paper skills build on Haruhisa Enomoto's
+      <a href="https://github.com/haruhisa-enomoto/math-research-harness">math-research-harness</a> and
+      <a href="https://github.com/haruhisa-enomoto/math-paper-skills">math-paper-skills</a>.
+      I have added portable workflows from my own use while retaining the original MIT license and attribution.
+      Personal research records and manuscript corpora are outside these public distributions.
+      All three tools introduced here are available under the MIT license.
+    </p>
+    <p class="cngLang" lang="ja">
+      公開ハーネスと論文用スキルは，榎本悠久（Haruhisa Enomoto）氏の
+      <a href="https://github.com/haruhisa-enomoto/math-research-harness">math-research-harness</a>と
+      <a href="https://github.com/haruhisa-enomoto/math-paper-skills">math-paper-skills</a>を元にしています．
+      元のMITライセンスと著作権表示を保持し，私の運用から再利用可能な手順を加えました．
+      個人の研究記録や論文コーパスは公開版に含めていません．ここで紹介した三つのツールはMITライセンスで公開しています．
+    </p>
+    <p>
+      <a href="https://github.com/yoshito-ishiki-math/math-research-harness-public/blob/main/PUBLIC-RELEASE.md">Harness: public scope</a> ·
+      <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/PUBLIC-RELEASE.md">Skills: public scope</a>
+    </p>
+  </section>
+</main>
+
+<footer>
+  <hr>
+  <p><a href="index.html">Back to Home / ホームに戻る</a></p>
+</footer>
+<script src="yoshito.js?v=20260927"></script>
+</body>
+</html>
