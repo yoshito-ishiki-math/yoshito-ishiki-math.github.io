@@ -68,7 +68,7 @@
       font-size: 0.9rem;
     }
 
-    .marketplace-install {
+    .marketplace-install, .tool-command {
       padding: 1rem;
       white-space: pre-wrap;
       overflow-wrap: anywhere;
@@ -144,12 +144,12 @@
     <p class="cngLang" lang="en">
       A harness gives a research project its working structure: what to read, how to record evidence, and where to resume.
       A skill packages instructions and supporting resources for a particular task.
-      Kicho provides commands for the LaTeX project itself.
+      Kicho manages the LaTeX project, paragraph-ID tools, and submission copies.
     </p>
     <p class="cngLang" lang="ja">
       ハーネスは，研究プロジェクトで何を読み，どのように証拠を記録し，どこから再開するかを整理する枠組みです．
       スキル（skill）は，特定の作業の手順と参考資料をまとめたものです．
-      Kichoは，LaTeX原稿の作成・ビルド・保存などを行うコマンドを提供します．
+      Kichoは，LaTeX原稿の操作に加えて，段落IDのツールと提出用コピーの作成を管理します．
     </p>
     <table class="tool-overview">
       <caption><span class="cngLang" lang="en">Choose a tool for your task</span><span class="cngLang" lang="ja">目的に応じた入口</span></caption>
@@ -173,7 +173,7 @@
         </tr>
         <tr>
           <th scope="row"><a href="#kicho">Kicho</a></th>
-          <td><span class="cngLang" lang="en">LaTeX project operations</span><span class="cngLang" lang="ja">LaTeXプロジェクトの操作</span></td>
+          <td><span class="cngLang" lang="en">LaTeX projects, paragraph IDs, and submission files</span><span class="cngLang" lang="ja">LaTeX原稿，段落ID，提出用ファイルの管理</span></td>
           <td><span class="cngLang" lang="en">You want to build a PDF or prepare a submission package.</span><span class="cngLang" lang="ja">PDFを作成し，投稿用のファイルを準備したい．</span></td>
         </tr>
       </tbody>
@@ -200,13 +200,15 @@
       The marketplace appears as <strong>Yoshito Ishiki Math</strong>.
       Its <strong>Math Paper Skills</strong> plugin installs <code>write-research-paper</code>,
       <code>read-research-paper</code>, and <code>latex-paragraph-ids</code> together.
-      Paragraph-ID operations use Kicho's <code>paraids</code> command.
+      Kicho supplies the paragraph-ID package, tools, and submission cleanup;
+      the paragraph-ID skill records editing conventions.
     </p>
     <p class="cngLang" lang="ja">
       一覧の表示名は<strong>Yoshito Ishiki Math</strong>です．
       <strong>Math Paper Skills</strong>プラグインで，<code>write-research-paper</code>，
       <code>read-research-paper</code>，<code>latex-paragraph-ids</code>をまとめて導入します．
-      段落IDの操作にはKichoの<code>paraids</code>コマンドを使います．
+      段落IDのパッケージ・補助ツール・提出時の処理はKichoが管理し，
+      段落IDのskillは編集時の利用規則を案内します．
     </p>
     <pre class="marketplace-install"><code>codex plugin marketplace add yoshito-ishiki-math/math-skills-marketplace
 codex plugin add math-paper-skills@yoshito-ishiki-math</code></pre>
@@ -293,8 +295,8 @@ codex plugin add japanese-math-skills@dempacomm</code></pre>
     <ul>
       <li>
         <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/write-research-paper/SKILL.md"><code>write-research-paper</code></a><br>
-        <span class="cngLang" lang="en">Draft and revise a paper under the author's direction, including checking and repairing its exposition.</span>
-        <span class="cngLang" lang="ja">著者の指示に沿って論文を執筆・改訂し，執筆側で説明を点検して修正します．</span>
+        <span class="cngLang" lang="en">Draft and revise a paper under the author's direction, including checking its exposition and consulting the relevant manuscript context.</span>
+        <span class="cngLang" lang="ja">著者の指示に沿って論文を執筆・改訂し，原稿の背景と指定を確認しながら，執筆側で説明を点検して修正します．</span>
       </li>
       <li>
         <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/read-research-paper/SKILL.md"><code>read-research-paper</code></a><br>
@@ -303,10 +305,25 @@ codex plugin add japanese-math-skills@dempacomm</code></pre>
       </li>
       <li>
         <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/latex-paragraph-ids/SKILL.md"><code>latex-paragraph-ids</code></a><br>
-        <span class="cngLang" lang="en">Maintain stable paragraph IDs in LaTeX, so comments and editing requests can refer to the same paragraph after revisions.</span>
-        <span class="cngLang" lang="ja">LaTeX原稿に固定の段落IDを付け，改訂後も同じ段落を指定してコメントや編集依頼ができるようにします．</span>
+        <span class="cngLang" lang="en">Use Kicho-managed paragraph IDs for editing and release preparation. The skill defines how to retain IDs when paragraphs move or change and how to use editorial notes; Kicho supplies the implementation.</span>
+        <span class="cngLang" lang="ja">Kichoが管理する段落IDを，編集と提出準備に使うためのskillです．段落の移動・修正でIDを保持する方法や編集注記の利用規則を案内し，実装はKichoを使います．</span>
       </li>
     </ul>
+    <p class="cngLang" lang="en">
+      The writing skill loads guides as needed for
+      <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/write-research-paper/references/manuscript-provenance.md">manuscript provenance</a>
+      (source claims, citation versions, and protected passages),
+      <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/write-research-paper/references/mathematical-figures.md">mathematical figures</a>
+      (editable drawings and checks of the affected output), and
+      <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/write-research-paper/references/manuscript-local-conventions.md">manuscript-local conventions</a>
+      (notation, style, and the author's scoped choices).
+    </p>
+    <p class="cngLang" lang="ja">
+      執筆用skillは，依頼に応じて
+      <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/write-research-paper/references/manuscript-provenance.md">原稿の来歴</a>（取り込んだ主張，引用した版，保護された改稿範囲），
+      <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/write-research-paper/references/mathematical-figures.md">数学図</a>（編集可能な図と影響する出力の確認），
+      <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/skills/write-research-paper/references/manuscript-local-conventions.md">原稿固有の規則</a>（記号，文体，著者の個別指定）のガイドを読みます．
+    </p>
     <p class="cngLang" lang="en">
       The writing and reading skills share references; install them together and preserve the repository layout.
       An <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/examples/author-style.md">optional author-style example</a>
@@ -339,17 +356,46 @@ codex plugin add japanese-math-skills@dempacomm</code></pre>
       <li><code>init</code> creates a project; <code>doctor</code> checks the environment; <code>check</code> validates project files.</li>
       <li><code>build</code> compiles the PDF; <code>archive</code> saves a source, PDF, and metadata snapshot.</li>
       <li><code>flatten</code> combines supported source inclusions; <code>submit</code> prepares a local submission package, including an arXiv option.</li>
+      <li><code>paraids</code> installs the paragraph-ID package and issues, finds, and checks IDs. Existing IDs and manuscript-local package versions are retained.</li>
     </ul>
     <ul class="cngLang" lang="ja">
       <li><code>init</code>でプロジェクトを作成し，<code>doctor</code>で環境を確認し，<code>check</code>でファイルを検査します．</li>
       <li><code>build</code>でPDFを作り，<code>archive</code>でソース・PDF・メタデータのスナップショットを保存します．</li>
       <li><code>flatten</code>で対応するソースの読み込みをまとめ，<code>submit</code>で投稿用ファイルをローカルに準備します．arXiv用の出力にも対応します．</li>
+      <li><code>paraids</code>で段落IDパッケージを導入し，IDの発行・検索・検査を行います．既存のIDと原稿側のパッケージの版を保持します．</li>
     </ul>
+    <p class="cngLang" lang="en">
+      Check <code>kicho help paraids</code> for the installed interface.
+      Issuing, finding, and checking IDs do not rewrite manuscript text.
+      For a manuscript under <code>MyPaper</code>, the basic commands are:
+    </p>
+    <p class="cngLang" lang="ja">
+      導入済みのKichoの使い方は<code>kicho help paraids</code>で確認できます．
+      IDの発行・検索・検査は原稿本文を書き換えません．
+      <code>MyPaper</code>に原稿がある場合，基本的な操作は次のとおりです．
+    </p>
+    <pre class="tool-command"><code>kicho paraids install --root MyPaper
+kicho paraids new --root MyPaper --count 3
+kicho paraids check --root MyPaper</code></pre>
+    <p class="cngLang" lang="en">
+      <code>submit</code> and <code>submit --arxiv</code> comment out IDs, red editorial notes,
+      and related settings in a submission copy, leaving the working manuscript intact.
+      For manuscripts with IDs or notes, standard submission rebuilds the PDF from that copy;
+      the arXiv option creates a source ZIP. <code>archive</code> retains the working IDs and notes.
+      Paragraph-ID commands and submission cleanup require Python 3.9 or later.
+    </p>
+    <p class="cngLang" lang="ja">
+      <code>submit</code>と<code>submit --arxiv</code>は，作業原稿を保ったまま，提出用コピーの
+      段落ID・赤字の編集注記・関連設定をコメントアウトします．
+      ID・注記がある通常の提出ではそのコピーからPDFを作り直し，arXiv用にはソースZIPを作ります．
+      <code>archive</code>は作業中のIDと注記を残して保存します．段落IDのコマンドと提出時の処理にはPython 3.9以上が必要です．
+    </p>
     <p class="cngLang" lang="en">Kicho is installed separately from the harness and skills. Its submission commands create files for you to review and upload.</p>
     <p class="cngLang" lang="ja">Kicho本体は，ハーネスやスキルとは別に導入します．投稿用コマンドで作ったファイルを確認し，自分で投稿先へアップロードします．</p>
     <p>
       <a href="https://github.com/yoshito-ishiki-math/kicho/blob/main/README.ja.md">日本語README</a> ·
-      <a href="https://github.com/yoshito-ishiki-math/kicho/blob/main/README.md">English README</a>
+      <a href="https://github.com/yoshito-ishiki-math/kicho/blob/main/README.md">English README</a> ·
+      <a href="https://github.com/yoshito-ishiki-math/kicho/blob/main/docs/paragraphids.md">段落ID・編集注記の利用方法</a>
     </p>
   </section>
 
