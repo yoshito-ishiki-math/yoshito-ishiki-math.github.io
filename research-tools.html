@@ -7,7 +7,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Harness &amp; Skills | Yoshito Ishiki</title>
-  <meta name="description" content="AI支援の数学研究に使う公開ハーネス、論文執筆・レビュー用skills、LaTeX管理ツールKichoを紹介します。Public tools for AI-assisted mathematical research by yoshito-ishiki-math.">
+  <meta name="description" content="AI支援の数学研究用ハーネス、skills、Kichoと、スキルを一括導入するCodexマーケットプレイスを紹介します。Public research tools and skill marketplaces by Yoshito Ishiki.">
   <link rel="stylesheet" href="yoshitostyle.css?v=20260914">
   <style>
     main, header {
@@ -68,6 +68,15 @@
       font-size: 0.9rem;
     }
 
+    .marketplace-install {
+      padding: 1rem;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      background-color: #f7f9ff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
     @media (max-width: 600px) {
       .tool-section {
         padding-right: 1rem;
@@ -104,20 +113,23 @@
     These are public tools I use and develop for mathematical research with AI agents.
     They help keep research records, write and review papers, and manage LaTeX projects.
     The repositories are available on <a href="https://github.com/yoshito-ishiki-math">yoshito-ishiki-math on GitHub</a>.
+    To install the skills together, start with the <a href="#marketplace">marketplaces below</a>.
   </p>
   <p class="cngLang" lang="ja">
     AIエージェントと数学研究を進めるために，私が利用・開発しているツールの公開版を紹介します．
     研究記録の整理，論文の執筆とレビュー，LaTeX原稿の管理を支えます．
     ソースはGitHubの<a href="https://github.com/yoshito-ishiki-math">yoshito-ishiki-math</a>で公開しています．
+    スキルをまとめて導入するには，<a href="#marketplace">マーケットプレイスの案内</a>をご覧ください．
   </p>
   <p class="tool-meta">
-    <span class="cngLang" lang="en">Last updated: <time datetime="2026-10-07">7 October 2026</time>.</span>
-    <span class="cngLang" lang="ja">最終更新：<time datetime="2026-10-07">2026年10月7日</time>．</span>
+    <span class="cngLang" lang="en">Last updated: <time datetime="2026-10-08">8 October 2026</time>.</span>
+    <span class="cngLang" lang="ja">最終更新：<time datetime="2026-10-08">2026年10月8日</time>．</span>
   </p>
 </header>
 
 <nav class="page-toc" aria-label="On this page">
   <a href="#overview">Overview / 全体像</a>
+  <a href="#marketplace">Marketplaces / マーケットプレイス</a>
   <a href="#harness">Harness</a>
   <a href="#skills">Skills</a>
   <a href="#kicho">Kicho</a>
@@ -166,6 +178,73 @@
         </tr>
       </tbody>
     </table>
+  </section>
+
+  <!-- マーケットプレイスの公開READMEに合わせて導入コマンドを更新してください． -->
+  <section id="marketplace" class="tool-section">
+    <h2 class="cngLang" lang="en">Install skills from a marketplace</h2>
+    <h2 class="cngLang" lang="ja">マーケットプレイスからスキルを導入する</h2>
+    <p class="cngLang" lang="en">
+      These GitHub-backed Codex marketplaces package related skills as plugins,
+      preserving their shared references. With a Codex CLI that supports <code>codex plugin</code>,
+      run the commands for the package you need.
+    </p>
+    <p class="cngLang" lang="ja">
+      関連するスキルを，相互参照を保ったプラグインとしてまとめて導入するための，
+      GitHub上のCodexマーケットプレイスです．<code>codex plugin</code>に対応するCodex CLIで，
+      必要なパッケージの導入コマンドを実行します．
+    </p>
+
+    <h3><a href="https://github.com/yoshito-ishiki-math/math-skills-marketplace">Math Skills Marketplace</a></h3>
+    <p class="cngLang" lang="en">
+      The marketplace appears as <strong>Yoshito Ishiki Math</strong>.
+      Its <strong>Math Paper Skills</strong> plugin installs <code>write-research-paper</code>,
+      <code>read-research-paper</code>, and <code>latex-paragraph-ids</code> together.
+      Paragraph-ID operations use Kicho's <code>paraids</code> command.
+    </p>
+    <p class="cngLang" lang="ja">
+      一覧の表示名は<strong>Yoshito Ishiki Math</strong>です．
+      <strong>Math Paper Skills</strong>プラグインで，<code>write-research-paper</code>，
+      <code>read-research-paper</code>，<code>latex-paragraph-ids</code>をまとめて導入します．
+      段落IDの操作にはKichoの<code>paraids</code>コマンドを使います．
+    </p>
+    <pre class="marketplace-install"><code>codex plugin marketplace add yoshito-ishiki-math/math-skills-marketplace
+codex plugin add math-paper-skills@yoshito-ishiki-math</code></pre>
+    <p>
+      <a href="https://github.com/yoshito-ishiki-math/math-skills-marketplace/blob/main/README.ja.md">日本語README・導入と更新</a> ·
+      <a href="https://github.com/yoshito-ishiki-math/math-skills-marketplace/blob/main/README.md">English README</a>
+    </p>
+
+    <h3><a href="https://github.com/DempaComm/japanese-math-skills-marketplace">DempaComm Skills Marketplace</a></h3>
+    <p class="cngLang" lang="en">
+      Choose <strong>DempaComm</strong> for Japanese mathematical writing.
+      The <strong>Japanese Math Skills</strong> plugin includes <code>write-japanese-math</code>
+      and <code>read-japanese-math</code>, with a public example corpus and search tools.
+      The repository records the corpus attribution and CC BY 4.0 and MIT license notices.
+    </p>
+    <p class="cngLang" lang="ja">
+      日本語の数学文書には，表示名<strong>DempaComm</strong>のマーケットプレイスを使えます．
+      <strong>Japanese Math Skills</strong>プラグインには，<code>write-japanese-math</code>と
+      <code>read-japanese-math</code>，公開用例コーパス，検索ツールを収録しています．
+      用例の出典とCC BY 4.0・MITのライセンス表示は，配布先に記録しています．
+    </p>
+    <pre class="marketplace-install"><code>codex plugin marketplace add DempaComm/japanese-math-skills-marketplace
+codex plugin add japanese-math-skills@dempacomm</code></pre>
+    <p>
+      <a href="https://github.com/DempaComm/japanese-math-skills-marketplace/blob/main/README.md">日本語README・導入と更新</a> ·
+      <a href="https://github.com/DempaComm/japanese-math-skills-marketplace/blob/main/README.en.md">English README</a>
+    </p>
+
+    <p class="cngLang" lang="en">
+      Start a new chat after installation. In the desktop plugin directory, you can also select
+      the marketplace by its display name and install its plugin.
+      Releases are snapshots; each README explains how to check and update the installed version.
+    </p>
+    <p class="cngLang" lang="ja">
+      導入後は新しいチャットを開始してください．デスクトップアプリのプラグイン一覧で，
+      表示名からマーケットプレイスを選び，プラグインを導入することもできます．
+      配布版はスナップショットなので，版の確認と更新方法は各READMEを参照してください．
+    </p>
   </section>
 
   <!-- 各ツールの公開READMEに合わせて説明とリンクを更新してください． -->
@@ -283,8 +362,8 @@
         <span class="cngLang" lang="ja"><strong>作業範囲を伝える．</strong>研究プロジェクトにはハーネスと所有者向けガイドを，既存原稿の作業にはスキルを入口にします．対象のファイルと取り組む問いをエージェントに伝えます．</span>
       </li>
       <li>
-        <span class="cngLang" lang="en"><strong>Follow the setup guide.</strong> Clone the repositories you need. The harness uses Git and <code>uv</code>; the skills README explains installation for Codex and Claude Code. Add Kicho and a TeX environment for LaTeX work.</span>
-        <span class="cngLang" lang="ja"><strong>導入ガイドに従う．</strong>必要なリポジトリをクローンします．ハーネスはGitと<code>uv</code>を使い，スキルのREADMEにはCodex・Claude Code向けの導入方法があります．LaTeX作業にはKichoとTeX環境も用意します．</span>
+        <span class="cngLang" lang="en"><strong>Follow the setup guide.</strong> For Codex skills, use the <a href="#marketplace">marketplace commands above</a>. The harness uses Git and <code>uv</code>; the skills README also explains standalone installation for Codex and Claude Code. Add Kicho and a TeX environment for LaTeX work.</span>
+        <span class="cngLang" lang="ja"><strong>導入ガイドに従う．</strong>Codexのスキルは，<a href="#marketplace">上のマーケットプレイスのコマンド</a>から導入できます．ハーネスはGitと<code>uv</code>を使い，スキルのREADMEにはCodex・Claude Code向けの個別導入方法もあります．LaTeX作業にはKichoとTeX環境も用意します．</span>
       </li>
       <li>
         <span class="cngLang" lang="en"><strong>Make a concrete request.</strong> In Codex CLI or the IDE extension, for example: <code>$write-research-paper</code> “Revise Section 2, preserving the mathematical claims.” Record research progress in the harness. Request an independent reader explicitly when you need one.</span>
@@ -308,14 +387,14 @@
       <a href="https://github.com/haruhisa-enomoto/math-paper-skills">math-paper-skills</a>.
       I have added portable workflows from my own use while retaining the original MIT license and attribution.
       Personal research records and manuscript corpora are outside these public distributions.
-      All three tools introduced here are available under the MIT license.
+      The research harness, math-paper-skills, and Kicho are available under the MIT license.
     </p>
     <p class="cngLang" lang="ja">
       公開ハーネスと論文用スキルは，榎本悠久（Haruhisa Enomoto）氏の
       <a href="https://github.com/haruhisa-enomoto/math-research-harness">math-research-harness</a>と
       <a href="https://github.com/haruhisa-enomoto/math-paper-skills">math-paper-skills</a>を元にしています．
       元のMITライセンスと著作権表示を保持し，私の運用から再利用可能な手順を加えました．
-      個人の研究記録や論文コーパスは公開版に含めていません．ここで紹介した三つのツールはMITライセンスで公開しています．
+      個人の研究記録や論文コーパスは公開版に含めていません．研究ハーネス，math-paper-skills，KichoはMITライセンスで公開しています．
     </p>
     <p>
       <a href="https://github.com/yoshito-ishiki-math/math-research-harness-public/blob/main/PUBLIC-RELEASE.md">Harness: public scope</a> ·
