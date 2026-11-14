@@ -95,6 +95,7 @@
   <a href="papers.html">Papers</a>
   <a href="ai-research-reports.html">Preprints &amp; Reports</a>
   <a href="research-tools.html" aria-current="page">Harness &amp; Skills</a>
+  <a href="ai-math-getting-started.html" lang="ja">AI数学の始め方</a>
   <a href="notes.html">Notes</a>
   <a href="talks.html">Talks</a>
   <a href="lecturenotes.html">Lecture Notes</a>
@@ -122,8 +123,8 @@
     スキルをまとめて導入するには，<a href="#marketplace">マーケットプレイスの案内</a>をご覧ください．
   </p>
   <p class="tool-meta">
-    <span class="cngLang" lang="en">Last updated: <time datetime="2026-10-08">8 October 2026</time>.</span>
-    <span class="cngLang" lang="ja">最終更新：<time datetime="2026-10-08">2026年10月8日</time>．</span>
+    <span class="cngLang" lang="en">Last updated: <time datetime="2026-11-14">14 November 2026</time>.</span>
+    <span class="cngLang" lang="ja">最終更新：<time datetime="2026-11-14">2026年11月14日</time>．</span>
   </p>
 </header>
 
@@ -134,6 +135,7 @@
   <a href="#skills">Skills</a>
   <a href="#kicho">Kicho</a>
   <a href="#getting-started">Getting started / 使い始める</a>
+  <a href="#examples">Examples / 公開例</a>
   <a href="#credits">Credits / 元になったプロジェクト</a>
 </nav>
 
@@ -198,14 +200,14 @@
     <h3><a href="https://github.com/yoshito-ishiki-math/math-skills-marketplace">Math Skills Marketplace</a></h3>
     <p class="cngLang" lang="en">
       The marketplace appears as <strong>Yoshito Ishiki Math</strong>.
-      Its <strong>Math Paper Skills</strong> plugin installs <code>write-research-paper</code>,
+      Its <strong>Math Paper Skills</strong> plugin (0.1.3) installs <code>write-research-paper</code>,
       <code>read-research-paper</code>, and <code>latex-paragraph-ids</code> together.
       Kicho supplies the paragraph-ID package, tools, and submission cleanup;
       the paragraph-ID skill records editing conventions.
     </p>
     <p class="cngLang" lang="ja">
       一覧の表示名は<strong>Yoshito Ishiki Math</strong>です．
-      <strong>Math Paper Skills</strong>プラグインで，<code>write-research-paper</code>，
+      <strong>Math Paper Skills</strong>プラグイン（0.1.3）で，<code>write-research-paper</code>，
       <code>read-research-paper</code>，<code>latex-paragraph-ids</code>をまとめて導入します．
       段落IDのパッケージ・補助ツール・提出時の処理はKichoが管理し，
       段落IDのskillは編集時の利用規則を案内します．
@@ -220,14 +222,14 @@ codex plugin add math-paper-skills@yoshito-ishiki-math</code></pre>
     <h3><a href="https://github.com/DempaComm/japanese-math-skills-marketplace">DempaComm Skills Marketplace</a></h3>
     <p class="cngLang" lang="en">
       Choose <strong>DempaComm</strong> for Japanese mathematical writing.
-      The <strong>Japanese Math Skills</strong> plugin includes <code>write-japanese-math</code>
-      and <code>read-japanese-math</code>, with a public example corpus and search tools.
+      The <strong>Japanese Math Skills</strong> plugin (0.1.1) includes <code>write-japanese-math</code>
+      and <code>read-japanese-math</code>, with a public TeX example corpus and search tools that require Python 3.10 or later.
       The repository records the corpus attribution and CC BY 4.0 and MIT license notices.
     </p>
     <p class="cngLang" lang="ja">
       日本語の数学文書には，表示名<strong>DempaComm</strong>のマーケットプレイスを使えます．
-      <strong>Japanese Math Skills</strong>プラグインには，<code>write-japanese-math</code>と
-      <code>read-japanese-math</code>，公開用例コーパス，検索ツールを収録しています．
+      <strong>Japanese Math Skills</strong>プラグイン（0.1.1）には，<code>write-japanese-math</code>と
+      <code>read-japanese-math</code>，公開TeX用例コーパス，検索ツールを収録しています．検索にはPython 3.10以上が必要です．
       用例の出典とCC BY 4.0・MITのライセンス表示は，配布先に記録しています．
     </p>
     <pre class="marketplace-install"><code>codex plugin marketplace add DempaComm/japanese-math-skills-marketplace
@@ -238,14 +240,14 @@ codex plugin add japanese-math-skills@dempacomm</code></pre>
     </p>
 
     <p class="cngLang" lang="en">
-      Start a new chat after installation. In the desktop plugin directory, you can also select
-      the marketplace by its display name and install its plugin.
-      Releases are snapshots; each README explains how to check and update the installed version.
+      You can also select the marketplace by its display name in the desktop app’s plugin list.
+      Start a new chat after installation. Each marketplace ships a snapshot of its skill repository. To update, run <code>codex plugin marketplace upgrade</code>
+      with the marketplace ID (<code>yoshito-ishiki-math</code> or <code>dempacomm</code>), run the corresponding <code>codex plugin add</code> command again, and start a new chat.
     </p>
     <p class="cngLang" lang="ja">
-      導入後は新しいチャットを開始してください．デスクトップアプリのプラグイン一覧で，
-      表示名からマーケットプレイスを選び，プラグインを導入することもできます．
-      配布版はスナップショットなので，版の確認と更新方法は各READMEを参照してください．
+      デスクトップアプリのプラグイン一覧では，表示名からマーケットプレイスを選ぶこともできます．
+      導入後は新しいチャットを開始してください．マーケットプレイスは，スキルのリポジトリの特定時点の内容を配布します．更新するには，<code>codex plugin marketplace upgrade</code>に
+      マーケットプレイスID（<code>yoshito-ishiki-math</code>または<code>dempacomm</code>）を指定し，対応する<code>codex plugin add</code>を再実行してから，新しいチャットを開始してください．
     </p>
   </section>
 
@@ -263,22 +265,30 @@ codex plugin add japanese-math-skills@dempacomm</code></pre>
       次のセッションで記録された研究状態から再開できるようにします．
     </p>
     <ul class="cngLang" lang="en">
-      <li><code>AGENTS.md</code> defines the working contract; <code>STEERING.md</code> records current directions.</li>
+      <li>Open the project folder in your agent. Start with <code>AGENTS.md</code> (or <code>CLAUDE.md</code> for Claude Code), then read <code>STEERING.md</code> for the current research direction.</li>
       <li>Each research thread keeps its claims and ledger, with evidence and unresolved questions recorded separately.</li>
       <li>Workflows cover literature provenance, reproducible computation, Lean formalization, and review records tied to a specific manuscript version.</li>
-      <li>Numbered <code>paperN/</code> directories hold independent Kicho manuscript projects. The included research example is fictional.</li>
+      <li><code>PAPERS.md</code> indexes the independent Kicho manuscript projects in numbered <code>paperN/</code> directories. The included research example is fictional.</li>
     </ul>
     <ul class="cngLang" lang="ja">
-      <li><code>AGENTS.md</code>に作業規約を，<code>STEERING.md</code>に現在の方針を記録します．</li>
+      <li>プロジェクトのフォルダをエージェントで開き，<code>AGENTS.md</code>（Claude Codeでは<code>CLAUDE.md</code>）から読み始めます．<code>STEERING.md</code>に現在の研究方針を記録します．</li>
       <li>研究テーマごとに主張と台帳を持ち，証拠と未解決の問いを区別して残します．</li>
       <li>出典を残す文献調査，再現可能な計算，Leanによる形式化，原稿の版に対応した確認記録を扱います．</li>
-      <li><code>paperN/</code>に独立したKicho原稿を配置します．収録された研究例は，使い方を示す架空のサンプルです．</li>
+      <li><code>paperN/</code>に独立したKicho原稿を配置し，<code>PAPERS.md</code>に一覧を置きます．収録された研究例は，使い方を示す架空のサンプルです．</li>
     </ul>
+    <p class="cngLang" lang="en">Clone the repository or create one from the GitHub template. In the project folder, install the locked dependencies and run the setup checks.</p>
+    <p class="cngLang" lang="ja">リポジトリをクローンするか，GitHubのテンプレートから新しいリポジトリを作ります．プロジェクトのフォルダで，固定された依存関係を導入し，初期設定を確認します．</p>
+    <pre class="tool-command"><code>uv sync --locked
+uv run python tools/literature_preflight.py
+uv run python -m unittest discover -s tests</code></pre>
+    <p class="cngLang" lang="en">Keep writing rules that apply across manuscripts in a shared author profile used by your skills. Each project can refer to that profile and keep its own notation and conventions in its manuscript’s <code>STYLE.md</code>.</p>
+    <p class="cngLang" lang="ja">原稿をまたいで使う執筆規則は，スキルから参照する著者共通のプロファイルにまとめます．各プロジェクトではその参照先を指定し，その原稿だけの記号や規則を原稿側の<code>STYLE.md</code>に記します．</p>
     <p>
       <a href="https://github.com/yoshito-ishiki-math/math-research-harness-public/blob/main/README.ja.md">日本語README</a> ·
       <a href="https://github.com/yoshito-ishiki-math/math-research-harness-public/blob/main/README.md">English README</a> ·
       <a href="https://github.com/yoshito-ishiki-math/math-research-harness-public/blob/main/docs/OWNER-GUIDE.ja.md">所有者向けガイド</a> ·
-      <a href="https://github.com/yoshito-ishiki-math/math-research-harness-public/blob/main/examples/WORKED-SESSION.md">Worked session</a>
+      <a href="https://github.com/yoshito-ishiki-math/math-research-harness-public/blob/main/examples/WORKED-SESSION.md">Worked session</a> ·
+      <a href="https://github.com/yoshito-ishiki-math/math-research-harness-public/blob/main/docs/STYLE.md">Author style / 著者スタイル</a>
     </p>
   </section>
 
@@ -336,7 +346,8 @@ codex plugin add japanese-math-skills@dempacomm</code></pre>
     </p>
     <p>
       <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/README.ja.md">日本語README・導入手順</a> ·
-      <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/README.md">English README</a>
+      <a href="https://github.com/yoshito-ishiki-math/math-paper-skills/blob/main/README.md">English README</a> ·
+      <a href="https://github.com/DempaComm/japanese-math-skills">Japanese Math Skills</a>
     </p>
   </section>
 
@@ -352,17 +363,21 @@ codex plugin add japanese-math-skills@dempacomm</code></pre>
       <code>latexmk</code>，LuaLaTeX，Biberなどの通常のTeX環境と組み合わせて使い，
       英語・日本語のプロジェクト用テンプレートを提供します．
     </p>
+    <p class="cngLang" lang="en">The commands below describe GitHub’s <code>main</code> branch. For paragraph IDs and proofreading, follow the README to install from <code>main</code>. The latest tagged prerelease predates both features.</p>
+    <p class="cngLang" lang="ja">以下はGitHubの<code>main</code>ブランチの機能です．段落IDや校正を使うには，READMEに従って<code>main</code>から導入してください．最新のタグ付きプレリリースは，両機能の追加前の版です．</p>
     <ul class="cngLang" lang="en">
       <li><code>init</code> creates a project; <code>doctor</code> checks the environment; <code>check</code> validates project files.</li>
-      <li><code>build</code> compiles the PDF; <code>archive</code> saves a source, PDF, and metadata snapshot.</li>
+      <li><code>build</code> compiles the PDF and <code>archive</code> saves a source, PDF, and metadata snapshot. <code>check --log --json</code> reports unresolved citations and references. <code>build --strict</code> fails when they remain unresolved.</li>
       <li><code>flatten</code> combines supported source inclusions; <code>submit</code> prepares a local submission package, including an arXiv option.</li>
       <li><code>paraids</code> installs the paragraph-ID package and issues, finds, and checks IDs. Existing IDs and manuscript-local package versions are retained.</li>
+      <li><code>proofread</code> marks proposed corrections in the PDF and applies individual changes after author approval. Kicho saves the prior source and the approval record in <code>archives/proofread/</code>.</li>
     </ul>
     <ul class="cngLang" lang="ja">
       <li><code>init</code>でプロジェクトを作成し，<code>doctor</code>で環境を確認し，<code>check</code>でファイルを検査します．</li>
-      <li><code>build</code>でPDFを作り，<code>archive</code>でソース・PDF・メタデータのスナップショットを保存します．</li>
+      <li><code>build</code>でPDFを作り，<code>archive</code>でソース・PDF・メタデータのスナップショットを保存します．<code>check --log --json</code>は未解決の引用・参照を報告し，<code>build --strict</code>はそれらが残っていると失敗します．</li>
       <li><code>flatten</code>で対応するソースの読み込みをまとめ，<code>submit</code>で投稿用ファイルをローカルに準備します．arXiv用の出力にも対応します．</li>
       <li><code>paraids</code>で段落IDパッケージを導入し，IDの発行・検索・検査を行います．既存のIDと原稿側のパッケージの版を保持します．</li>
+      <li><code>proofread</code>で修正候補をPDFに赤字で示し，著者が承認した箇所を個別に反映します．反映前のソースと承認記録は<code>archives/proofread/</code>に保存します．</li>
     </ul>
     <p class="cngLang" lang="en">
       Check <code>kicho help paraids</code> for the installed interface.
@@ -382,20 +397,22 @@ kicho paraids check --root MyPaper</code></pre>
       and related settings in a submission copy, leaving the working manuscript intact.
       For manuscripts with IDs or notes, standard submission rebuilds the PDF from that copy;
       the arXiv option creates a source ZIP. <code>archive</code> retains the working IDs and notes.
-      Paragraph-ID commands and submission cleanup require Python 3.9 or later.
+      Submission stops while proofreading corrections are pending. Paragraph-ID commands, proofreading, and submission cleanup require Python 3.9 or later.
     </p>
     <p class="cngLang" lang="ja">
       <code>submit</code>と<code>submit --arxiv</code>は，作業原稿を保ったまま，提出用コピーの
       段落ID・赤字の編集注記・関連設定をコメントアウトします．
       ID・注記がある通常の提出ではそのコピーからPDFを作り直し，arXiv用にはソースZIPを作ります．
-      <code>archive</code>は作業中のIDと注記を残して保存します．段落IDのコマンドと提出時の処理にはPython 3.9以上が必要です．
+      <code>archive</code>は作業中のIDと注記を残して保存します．未処理の校正があると投稿用ファイルの作成は停止します．段落ID・校正のコマンドと提出時の処理にはPython 3.9以上が必要です．
     </p>
     <p class="cngLang" lang="en">Kicho is installed separately from the harness and skills. Its submission commands create files for you to review and upload.</p>
     <p class="cngLang" lang="ja">Kicho本体は，ハーネスやスキルとは別に導入します．投稿用コマンドで作ったファイルを確認し，自分で投稿先へアップロードします．</p>
     <p>
       <a href="https://github.com/yoshito-ishiki-math/kicho/blob/main/README.ja.md">日本語README</a> ·
       <a href="https://github.com/yoshito-ishiki-math/kicho/blob/main/README.md">English README</a> ·
-      <a href="https://github.com/yoshito-ishiki-math/kicho/blob/main/docs/paragraphids.md">段落ID・編集注記の利用方法</a>
+      <a href="https://github.com/yoshito-ishiki-math/kicho/blob/main/docs/paragraphids.md">段落ID・編集注記の利用方法</a> ·
+      <a href="https://github.com/yoshito-ishiki-math/kicho/blob/main/docs/proofread.md">Proofreading / 校正</a> ·
+      <a href="https://github.com/yoshito-ishiki-math/kicho/releases">GitHub Releases</a>
     </p>
   </section>
 
@@ -422,6 +439,23 @@ kicho paraids check --root MyPaper</code></pre>
     </ol>
     <p class="cngLang" lang="en">For the current skill format and discovery rules, see the <a href="https://learn.chatgpt.com/docs/build-skills">official OpenAI documentation</a>. Consult each repository's README for its setup details.</p>
     <p class="cngLang" lang="ja">現在のskillの形式と探索方法は，<a href="https://learn.chatgpt.com/docs/build-skills">OpenAI公式ドキュメント</a>を参照してください．各ツールの具体的な導入方法は，それぞれのREADMEにあります．</p>
+  </section>
+
+  <section id="examples" class="tool-section">
+    <h2 class="cngLang" lang="en">Public examples of computation and formalization</h2>
+    <h2 class="cngLang" lang="ja">計算と形式化の公開例</h2>
+    <ul>
+      <li>
+        <a href="https://github.com/yoshito-ishiki-math/ghdist"><code>ghdist</code></a><br>
+        <span class="cngLang" lang="en">A Rust command-line tool for computing Gromov–Hausdorff distances between finite metric spaces and between their Hausdorff hyperspaces. It returns exact distances when the search completes and established bounds when it reaches its limits.</span>
+        <span class="cngLang" lang="ja">有限距離空間どうしや，そのHausdorff超空間どうしのGromov–Hausdorff距離を計算するRust製CLIです．探索が完了すれば厳密値を，制限に達した場合は確定した上下界を出力します．</span>
+      </li>
+      <li>
+        <a href="https://github.com/yoshito-ishiki-math/lean-gh-space-hilbert"><code>lean-gh-space-hilbert</code></a><br>
+        <span class="cngLang" lang="en">A Lean formalization of the Hilbert-space classification of Gromov–Hausdorff space under five explicit assumptions drawn from the literature.</span>
+        <span class="cngLang" lang="ja">Gromov–Hausdorff空間のHilbert空間としての分類を，文献に基づく五つの仮定のもとでLeanにより形式化した例です．</span>
+      </li>
+    </ul>
   </section>
 
   <section id="credits">
